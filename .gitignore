@@ -1,0 +1,28 @@
+# deps
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+.next/
+out/
+
+# Vite / tooling
+*.local
+.vite/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

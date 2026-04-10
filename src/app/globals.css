@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-lo-syne);
+  --font-body: var(--font-lo-manrope);
+  --font-mono: var(--font-lo-ibm-mono);
+
+  --color-lo-bg: #03060f;
+  --color-lo-surface: #080e1e;
+  --color-lo-surface2: #0d1628;
+  --color-lo-accent: #4f9eff;
+  --color-lo-teal: #00e5c3;
+  --color-lo-purple: #a78bfa;
+  --color-lo-text: #e8f0ff;
+  --color-lo-muted: #6b7fa3;
+  --color-lo-dim: #3a4a6a;
+  --color-lo-border: rgba(99, 179, 255, 0.12);
+  --color-lo-border2: rgba(99, 179, 255, 0.22);
+
+  --animate-blink: blink 2s ease-in-out infinite;
+  --animate-cursor: blink 1s step-end infinite;
+  --animate-pulse-orb: pulse-orb 8s ease-in-out infinite alternate;
+  --animate-fade-up: fadeUp 0.6s ease both;
+  --animate-fade-up-1: fadeUp 0.6s 0.1s ease both;
+  --animate-fade-up-2: fadeUp 0.6s 0.2s ease both;
+  --animate-fade-up-3: fadeUp 0.6s 0.3s ease both;
+  --animate-fade-up-4: fadeUp 0.7s 0.4s ease both;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-orb {
+  from { transform: scale(1) translate(0, 0); opacity: 0.7; }
+  to { transform: scale(1.15) translate(20px, 30px); opacity: 1; }
+}
+
+/* In @layer base so Tailwind utilities (higher layer) can set margin/padding.
+   Unlayered * { margin:0; padding:0 } would override .p-4, .m-6, etc. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-lo-bg);
+    color: var(--color-lo-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Grid background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79, 158, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 158, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  animation: var(--animate-pulse-orb);
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -100px;
+  background: rgba(79, 158, 255, 0.12);
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  right: -150px;
+  background: rgba(0, 229, 195, 0.09);
+  animation-delay: 3s;
+}
+
+.orb-3 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: 30%;
+  background: rgba(167, 139, 250, 0.08);
+  animation-delay: 6s;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cursor blink */
+.cursor-blink {
+  animation: var(--animate-cursor);
+}
+
+/* Logo dot */
+.logo-dot {
+  animation: var(--animate-blink);
+}
+
+/* Fade up utility classes */
+.animate-fade-up   { animation: var(--animate-fade-up); }
+.animate-fade-up-1 { animation: var(--animate-fade-up-1); }
+.animate-fade-up-2 { animation: var(--animate-fade-up-2); }
+.animate-fade-up-3 { animation: var(--animate-fade-up-3); }
+.animate-fade-up-4 { animation: var(--animate-fade-up-4); }
+
+/* Consistent page container */
+.container {
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container { padding-left: 2rem; padding-right: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .container { padding-left: 3rem; padding-right: 3rem; }
+}
+
+/* Terminal scrolls on very small screens instead of overflowing */
+.terminal-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile nav open state */
+.mobile-nav-open {
+  display: flex;
+}
+
+/* Prevent orbs from adding horizontal scroll on mobile */
+.orb {
+  overflow: hidden;
+}

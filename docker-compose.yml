@@ -1,0 +1,10 @@
+# Local run mirroring Low-Ops container (HTTP on port 8000)
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      NODE_ENV: production
+      PORT: "8000"
+      HOSTNAME: "0.0.0.0"
