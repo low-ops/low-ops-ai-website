@@ -1,35 +1,29 @@
 FROM node:20-slim AS base
-
 WORKDIR /app
-ARG PORT=3000
 
 FROM base AS dependencies
-
 COPY package.json package-lock.json ./
-COPY prisma ./prisma
 RUN npm ci
 
-# Build
 FROM base AS build
-
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
-
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
-# Run
 FROM base AS run
-
-RUN apt-get update -y && apt-get install -y openssl
 ENV NODE_ENV=production
-ENV PORT=$PORT
-RUN mkdir .next
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=8000
+
+RUN groupadd --system --gid 1001 nodejs \
+  && useradd --system --uid 1001 --gid nodejs nextjs
 
 COPY --from=build /app/public ./public
-COPY --from=build /app/.next/standalone ./
-COPY --from=build /app/.next/static ./.next/static
+COPY --from=build --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=build --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-EXPOSE $PORT
+USER nextjs
+EXPOSE 8000
 
-ENV HOSTNAME="0.0.0.0"
-CMD ["sh", "-c", "npm run start"]
+CMD ["sh", "-c", "HOSTNAME=0.0.0.0 exec node server.js"]
