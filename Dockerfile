@@ -26,13 +26,10 @@ ENV PORT=$PORT
 RUN mkdir .next
 
 COPY --from=build /app/public ./public
-COPY --from=dependencies /app/prisma ./prisma
 COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
-RUN npm install @prisma/client
-RUN npx prisma generate
 
 EXPOSE $PORT
 
 ENV HOSTNAME="0.0.0.0"
-CMD ["sh", "-c", "npm run start:prod"]
+CMD ["sh", "-c", "npm run start"]
