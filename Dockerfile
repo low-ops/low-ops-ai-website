@@ -1,33 +1,38 @@
-# Low-Ops: app listens on HTTP port 8000 (see application specification)
-FROM node:22-alpine AS base
+FROM node:20-slim AS base
 
-FROM base AS deps
 WORKDIR /app
+ARG PORT=3000
+
+FROM base AS dependencies
+
 COPY package.json package-lock.json ./
+COPY prisma ./prisma
 RUN npm ci
 
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Build
+FROM base AS build
+
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
-ENV NEXT_TELEMETRY_DISABLED=1
+
 RUN npm run build
 
-FROM base AS runner
-WORKDIR /app
+# Run
+FROM base AS run
+
+RUN apt-get update -y && apt-get install -y openssl
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=8000
-ENV HOSTNAME=0.0.0.0
+ENV PORT=$PORT
+RUN mkdir .next
 
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
+COPY --from=build /app/public ./public
+COPY --from=dependencies /app/prisma ./prisma
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/.next/static ./.next/static
+RUN npm install @prisma/client
+RUN npx prisma generate
 
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+EXPOSE $PORT
 
-USER nextjs
-EXPOSE 8000
-
-CMD ["node", "server.js"]
+ENV HOSTNAME="0.0.0.0"
+CMD ["sh", "-c", "npm run start:prod"]
