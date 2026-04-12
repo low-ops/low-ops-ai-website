@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-lo-syne);
+  --font-display: var(--font-lo-sora);
   --font-body: var(--font-lo-manrope);
   --font-mono: var(--font-lo-ibm-mono);
 

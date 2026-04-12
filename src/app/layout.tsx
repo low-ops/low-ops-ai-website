@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Mono, Manrope, Syne } from 'next/font/google';
+import { IBM_Plex_Mono, Manrope, Sora } from 'next/font/google';
 import './globals.css';
 
-const syne = Syne({
+const sora = Sora({
   subsets: ['latin'],
-  variable: '--font-lo-syne',
+  variable: '--font-lo-sora',
   weight: ['400', '600', '700', '800'],
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${manrope.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`${sora.variable} ${manrope.variable} ${ibmPlexMono.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
