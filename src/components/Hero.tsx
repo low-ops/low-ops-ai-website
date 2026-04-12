@@ -54,7 +54,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="animate-fade-up-3 flex flex-col sm:flex-row gap-3 justify-center w-full max-w-sm sm:max-w-none">
           <a
-            href="#"
+            href="https://low-ops.com"
             className="no-underline px-7 py-3.5 rounded-lg text-base font-bold transition-all duration-200 text-center"
             style={{
               background: 'var(--color-lo-accent)',
@@ -73,7 +73,7 @@ export default function Hero() {
             Start for free →
           </a>
           <a
-            href="#"
+            href="https://docs.low-ops.com/docs/docs/low-ops-ai"
             className="no-underline px-7 py-3.5 rounded-lg text-base font-medium transition-all duration-200 text-center"
             style={{ border: '1px solid var(--color-lo-border2)', color: 'var(--color-lo-text)' }}
             onMouseEnter={(e) => {

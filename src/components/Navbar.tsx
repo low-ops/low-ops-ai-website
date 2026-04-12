@@ -8,8 +8,7 @@ const navLinks = [
   { label: 'Product', href: '#' },
   { label: 'MCP', href: '#mcp' },
   { label: 'Claude Plugin', href: '#claude-plugin' },
-  { label: 'Docs', href: '#' },
-  { label: 'Pricing', href: '#' },
+  { label: 'Docs', href: 'https://docs.low-ops.com/docs/docs/low-ops-ai' },
 ];
 
 export default function Navbar() {
@@ -61,7 +60,7 @@ export default function Navbar() {
         {/* Right CTAs */}
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            href="#"
+            href="https://portal.app.low-ops.com"
             className="hidden sm:block no-underline px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
             style={{ border: '1px solid var(--color-lo-border2)', color: 'var(--color-lo-text)' }}
             onMouseEnter={(e) => {
@@ -76,7 +75,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a
-            href="#"
+            href="https://low-ops.com"
             className="no-underline px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 whitespace-nowrap"
             style={{
               background: 'var(--color-lo-accent)',
