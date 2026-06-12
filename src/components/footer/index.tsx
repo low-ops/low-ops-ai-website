@@ -92,7 +92,7 @@ const Footer: FC<TProps> = (props) => {
                 <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">
                   <PiEnvelopeSimpleOpen size={22} />
                 </span>
-                <span>low-ops@cinaq.com</span>
+                <span>hello@low-ops.ai</span>
               </div>
               <div className="flex items-center gap-3 font-sans">
                 <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">

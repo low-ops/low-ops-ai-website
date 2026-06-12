@@ -174,7 +174,7 @@ const PrivacyPolicyPage = () => {
                 contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> privacy@cinaq.com
+                <strong>Email:</strong> privacy@low-ops.ai
                 <br />
                 <strong>Address:</strong> Bajonetstraat 50, 3014 ZK, Rotterdam,
                 The Netherlands
