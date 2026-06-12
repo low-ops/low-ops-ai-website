@@ -1,42 +1,76 @@
+import { nextMetadata, structuredData } from '@/data/seo';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-import { IBM_Plex_Mono, Manrope, Sora } from 'next/font/google';
+import { DM_Sans, Poppins } from 'next/font/google';
+import { ReactNode } from 'react';
 import './globals.css';
 
-const sora = Sora({
+const dmSans = DM_Sans({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-lo-sora',
-  weight: ['400', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-dm-sans',
 });
 
-const manrope = Manrope({
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-lo-manrope',
-  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  variable: '--font-lo-ibm-mono',
-  weight: ['400', '500'],
-});
+export const metadata: Metadata = nextMetadata;
 
-export const metadata: Metadata = {
-  title: 'Low-Ops | AI-Powered Operations Platform',
-  description:
-    'Low-Ops | AI-powered operations platform with MCP & Claude Plugin support. Deploy, manage, and scale with natural language.',
-  icons: {
-    icon: '/logo.svg',
-  },
-};
+type TProps = Readonly<{ children: ReactNode }>;
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout = (props: TProps) => {
+  const { children } = props;
+
   return (
-    <html lang="en" className={`${sora.variable} ${manrope.variable} ${ibmPlexMono.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
+      <body className="font-poppins text-neutral-700">
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <GoogleAnalytics gaId="G-8HTDC4DGP8" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              _linkedin_partner_id = "7447786";
+              window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+              window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+              
+              (function(l) {
+                if (!l){
+                  window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+                  window.lintrk.q=[];
+                }
+                var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript";
+                b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);
+              })(window.lintrk);
+            `,
+          }}
+        />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element -- tracking pixel, no next/image */}
+          <img
+            height="1"
+            width="1"
+            className="hidden"
+            alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=7447786&fmt=gif"
+          />
+        </noscript>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
