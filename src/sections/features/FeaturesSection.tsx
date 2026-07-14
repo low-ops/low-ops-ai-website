@@ -15,7 +15,7 @@ const FeaturesSection = () => {
   };
 
   return (
-    <section id="features" className="py-20 md:py-28 bg-white">
+    <section id="features" className="py-20 md:py-28">
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           subtitle="Features"

@@ -7,7 +7,7 @@ const PartnersSection = () => {
     return partnersData.map((partner) => (
       <Card
         key={partner.title}
-        className="prose md:prose-md flex flex-col justify-between gap-4 bg-primary/2"
+        className="prose md:prose-md flex flex-col justify-between gap-4 bg-[var(--lo-surface)] border-[var(--lo-line)]"
       >
         <Image
           src={partner.imagePath}
@@ -24,7 +24,7 @@ const PartnersSection = () => {
   };
 
   return (
-    <section id="features" className="py-20 md:py-28 bg-white">
+    <section id="features" className="py-20 md:py-28">
       <div className="container">
         {/* <SectionTitle
           subtitle={partnersMetadata.subtitle}

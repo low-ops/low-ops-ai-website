@@ -18,8 +18,8 @@ const AboutUsSection = () => {
           ))}
         </div>
         <div className="w-full max-w-3xl">
-          <blockquote className="rounded-2xl px-6 py-8 text-center">
-            <p className="text-lg font-sans font-light leading-relaxed text-slate-700 md:text-xl">
+          <blockquote className="rounded-2xl border border-[var(--lo-line)] bg-[var(--lo-surface)] px-6 py-8 text-center">
+            <p className="text-lg font-sans font-light leading-relaxed text-[var(--lo-fg-mut)] md:text-xl">
               With over 20 years of experience in the IT industry, we have seen many
               organizations struggle to deploy and manage applications in their
               private clouds and on-premises environments. From the lack of tools to
@@ -33,10 +33,10 @@ const AboutUsSection = () => {
               Everybody should be able to participate in creating and delivering innovative solutions within their organization. No more silos. No more waiting for approvals. No more excuses.
               
             </p>
-            <div className="mt-6 text-base font-sans text-slate-900 md:text-lg">
+            <div className="mt-6 text-base font-sans text-[var(--lo-fg)] md:text-lg">
               <span className="font-medium">Steven (Xiwen) Cheng</span>
               <br />
-              <span className="text-sm uppercase tracking-wide text-slate-500">
+              <span className="text-sm uppercase tracking-wide text-[var(--lo-fg-dim)]">
                 CEO & Founder
               </span>
             </div>

@@ -23,33 +23,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 221 36% 21%;
-    --text-neutral-700: #222e48;
-    --card: 0 0% 100%;
-    --card-foreground: 221 36% 21%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 221 36% 21%;
-    --primary: 217 97% 50%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 221 25% 31%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 221 25% 31%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 221 36% 21%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217 97% 50%;
+    /* Dark "console" theme — mapped to the --lo-* design system */
+    --background: 223 26% 5%;
+    --foreground: 40 27% 93%;
+    --text-neutral-700: #f2efe9;
+    --card: 222 27% 10%;
+    --card-foreground: 40 27% 93%;
+    --popover: 222 27% 10%;
+    --popover-foreground: 40 27% 93%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 221 27% 12%;
+    --secondary-foreground: 40 27% 93%;
+    --muted: 222 27% 10%;
+    --muted-foreground: 217 13% 65%;
+    --accent: 221 27% 12%;
+    --accent-foreground: 40 27% 93%;
+    --destructive: 0 72% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 23% 18%;
+    --input: 218 23% 18%;
+    --ring: 217 91% 60%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 187 82% 54%;
+    --chart-3: 152 60% 52%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
+}
+
+/* Tailwind Typography renders grayscale text by default, which disappears on
+   the dark ground. Re-point the prose color tokens at the console palette so
+   every `prose` block on the inner pages stays legible. */
+.prose {
+  --tw-prose-body: var(--lo-fg);
+  --tw-prose-headings: var(--lo-fg);
+  --tw-prose-lead: var(--lo-fg-mut);
+  --tw-prose-links: var(--lo-accent);
+  --tw-prose-bold: var(--lo-fg);
+  --tw-prose-counters: var(--lo-fg-mut);
+  --tw-prose-bullets: var(--lo-line);
+  --tw-prose-hr: var(--lo-line);
+  --tw-prose-quotes: var(--lo-fg);
+  --tw-prose-quote-borders: var(--lo-line);
+  --tw-prose-captions: var(--lo-fg-dim);
+  --tw-prose-code: var(--lo-fg);
+  --tw-prose-th-borders: var(--lo-line);
+  --tw-prose-td-borders: var(--lo-line);
 }
 
 @layer base {
@@ -87,5 +108,126 @@
   }
   body {
     @apply bg-background;
+  }
+}
+
+/* ============================================================
+   Landing redesign — "Golden Path" dark console design system
+   ============================================================ */
+:root {
+  --lo-ink: #0a0c11;
+  --lo-ink-2: #0d1017;
+  --lo-surface: #12161f;
+  --lo-surface-2: #161b26;
+  --lo-line: #232a38;
+  --lo-line-soft: #1b212d;
+  --lo-fg: #f2efe9;
+  --lo-fg-mut: #9aa3b2;
+  --lo-fg-dim: #626b7c;
+  --lo-accent: #3b82f6;
+  --lo-accent-hi: #60a5fa;
+  --lo-accent-deep: #2563eb;
+  --lo-cyan: #22d3ee;
+  --lo-green: #34d399;
+  --lo-glow: rgba(59, 130, 246, 0.2);
+}
+
+@utility lo-mono {
+  font-family:
+    ui-monospace, 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, Consolas,
+    monospace;
+}
+
+.lo-thread {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--lo-line) 3%,
+    var(--lo-line) 97%,
+    transparent
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+.lo-thread::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 130px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--lo-accent),
+    transparent
+  );
+  filter: drop-shadow(0 0 6px var(--lo-accent));
+  animation: lo-flow 7s linear infinite;
+}
+.lo-grid-mask {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--lo-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lo-line-soft) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 75%);
+  opacity: 0.5;
+}
+.lo-brand-mark::after {
+  content: '';
+  position: absolute;
+  inset: 6px 6px auto 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(10, 12, 17, 0.7);
+  box-shadow:
+    0 5px 0 rgba(10, 12, 17, 0.5),
+    0 10px 0 rgba(10, 12, 17, 0.32);
+}
+.lo-blink {
+  animation: lo-blink 1.4s ease-in-out infinite;
+}
+.lo-spin {
+  display: inline-block;
+  animation: lo-spin 1s linear infinite;
+}
+
+@keyframes lo-flow {
+  from {
+    top: -130px;
+  }
+  to {
+    top: 100%;
+  }
+}
+@keyframes lo-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+@keyframes lo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lo-thread::before,
+  .lo-blink,
+  .lo-spin {
+    animation: none;
   }
 }
