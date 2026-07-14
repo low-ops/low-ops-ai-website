@@ -40,9 +40,9 @@ const RoadmapSection = () => {
     <section id="roadmap" className="py-20 md:py-28 bg-primary/5">
       <div className="container relative flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
-          subtitle="Simple Steps to Success"
-          title="The roadmap to success, Start your journey now"
-          description="Getting started has never been easier. Our streamlined process ensures a hassle-free experience, guiding you every step of the way."
+          subtitle="How it works"
+          title="From login to live app in three steps"
+          description="A golden path from idea to production. Log in, build in your favorite IDE, and deploy to your private cloud — with best practices and security enforced automatically at every step."
         />
 
         <div className="relative flex flex-col items-center gap-12 h-auto xl:h-[500px] w-full">

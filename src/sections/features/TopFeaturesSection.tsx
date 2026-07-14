@@ -80,9 +80,9 @@ const TopFeaturesSection: React.FC = () => {
     <section className="py-20 md:py-28" id="features">
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
-          subtitle="Top Features"
-          title="Platform that Boosts Security and Productivity"
-          description="Enhance your business with features designed to streamline operations, automate tasks, and deliver applications to the production."
+          subtitle="Why Low-Ops"
+          title="Move faster with AI, without losing control"
+          description="A platform built for regulated, high-velocity teams — pairing the speed of AI-assisted development with the security, compliance and sovereignty your business demands."
         />
 
         <div className="flex flex-col gap-y-3 md:gap-y-6 w-full max-w-6xl mx-auto">

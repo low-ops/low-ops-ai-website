@@ -13,8 +13,8 @@ const CTASection = () => {
       <div className="container flex flex-col items-center gap-6 md:gap-10 bg-primary/5 rounded-lg p-10 lg:p-20 border border-primary/20 relative overflow-hidden">
         <SectionTitle
           subtitle="Get Started Today"
-          title="Deploy and manage your applications in minutes"
-          description="Join our community shipping faster with streamlined workflows, automated pipelines, and real-time visibility."
+          title="Give your AI-built apps a responsible path to production"
+          description="Join high-velocity teams shipping faster with automated pipelines, security guardrails and full data sovereignty — on your own private cloud."
         />
 
         <div className="flex items-center justify-center gap-4 flex-col lg:flex-row">

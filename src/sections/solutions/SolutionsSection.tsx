@@ -7,9 +7,9 @@ const SolutionsSection: FC = () => {
     <section className="w-full py-16 md:py-24">
       <div className="container">
         <SectionTitle
-          subtitle="You have created a fantastic app"
-          title="IT says: we don't have time to deploy and manage it."
-          description="Most organizations are not ready to handle high influx of small innovative apps. As a result there is a high risk insecure apps end up in public clouds. Waiting to be hacked."
+          subtitle="The AI adoption bottleneck"
+          title="AI made building easy. Deploying it responsibly is the hard part."
+          description="Leadership drives for growth, security mandates guardrails, developers want to ship, and operations is buried in manual deployments. So promising apps stall in development — or land in an unmanaged public cloud with sensitive data at risk. Low-Ops resolves the conflict for every stakeholder."
           className="mb-10 md:mb-12"
         />
         <SolutionTabs />

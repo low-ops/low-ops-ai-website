@@ -46,8 +46,8 @@ const TestimonialsSection: React.FC = () => {
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           subtitle="Testimonials"
-          title="Success Stories From Our Valued Clients"
-          description="Our mission is to provide businesses with the tools they need to succeed. But don't just take our word for it—hear from the companies."
+          title="Trusted by teams in regulated industries"
+          description="From financial services to fast-moving scale-ups, teams rely on Low-Ops to run apps securely in their own cloud. Don't just take our word for it — hear from them."
         />
         <div className="columns-1 md:columns-2 lg:columns-3 gap-x-6 w-full max-w-6xl mx-auto">
           {renderTestimonials()}

@@ -1,24 +1,24 @@
 
 export const faqDataStrategic = [
   {
-    title: 'What is Low-ops at its core?',
+    title: 'What is Low-Ops at its core?',
     description:
-    'Low-Ops is essentially our collective knowledge of building app platforms shaped in a reproducible software package. In the old days we would spend 3+ years in a team of 5-6 engineers to design and implement custom made app platforms. While there will always be a need for custom design platforms, we think many organizations benefit from having a standard platform that just works. The core is a collection of industry-proofen open source technologies like Kubernetes, Prometheus, helm, connected with each other via automation.',
+    'Low-Ops is essentially our collective knowledge of building app platforms, shaped into a reproducible software package. In the old days, we would spend 3+ years with a team of 5-6 engineers to design and implement a custom app platform. While there will always be a need for bespoke platforms, we believe many organizations benefit from a standard platform that just works. The core is a collection of industry-proven open source technologies like Kubernetes, Prometheus and Helm, connected together through automation.',
   },
   {
     title: 'How is this related to vibe-coding and other generative AI technologies?',
     description:
-    'Low-ops defines a simple specification that AI agents can use to create low-ops compatible apps. Think for instance how the code should consume database service and what port it should listen on. ',
+    'Low-Ops defines a simple app specification that AI assistants and agents use to create Low-Ops compatible apps — for example, how the code should consume a database service and which port it should listen on. With MCP support, agents can build and deploy directly, while built-in guardrails and best-practice scanning keep AI-generated apps safe, compliant and production-ready.',
   },
   {
     title: 'How can Low-Ops enable secure and compliant deployments?',
     description:
-    'Low-ops is designed to be deployed in a private cloud environment. This means that the platform is not accessible from the public internet. The platform is also designed to be secure and compliant with the latest security standards.',
+    'Low-Ops is designed to be deployed in a private cloud environment, so the platform is not exposed to the public internet. Every deployment runs through automated CI/CD with linting and Trivy security scanning, access management and full audit trails — giving you the guardrails and evidence needed to support frameworks such as GDPR, the EU AI Act, DORA and SOx.',
   },
   {
     title: 'Who is Low-Ops for?',
     description:
-      'Low-Ops is perfect for organizations that need flexibility and control over their applications and infrastructure without the need for a full-time IT team. Some industries that can benefit from Low-Ops are financial services, government, healthcare, education, and manufacturing.',
+      'Low-Ops is built for high-velocity teams (typically 5-50 people) that develop custom business software and handle sensitive data — especially in fintech, healthtech, insurtech, legaltech and biotech. It is ideal for teams leaning into modern AI-assisted development who need to ship fast without a full platform-engineering headcount.',
   },
   {
     title: 'Is this a service or a product?',
@@ -41,14 +41,14 @@ export const faqDataStrategic = [
       'Yes, we provide training for the platform. We offer a range of training options including online training, on-site training and remote training.',
   },
   {
-    title: 'How does Low-ops emable my sovereignty objectives?',
+    title: 'How does Low-Ops enable my sovereignty objectives?',
     description:
-      'Low-Ops together with Kubernetes and other open source technologies enables you to deploy your applications in your own infrastructure. This gives you complete control over your data and AI applications.',
+      'Low-Ops, together with Kubernetes and other open source technologies, lets you deploy your applications on your own infrastructure — in-region and under your control. This gives you complete sovereignty over your data and AI applications, helping you meet strict data-residency and compliance requirements.',
   },
   {
-    title: 'Why should I choose Low-ops over building my own platform?',
+    title: 'Why should I choose Low-Ops over building my own platform?',
     description:
-      'Low-ops is a fully featured platform that can be used to build and deploy any web application. It follows the best practices of platform engineering and is designed to be easy to use and maintain. It is also a lot cheaper than building your own platform.',
+      'Low-Ops is a fully featured platform for building and deploying any web application. It follows platform-engineering best practices, is easy to use and maintain, and is far cheaper and faster than assembling and operating your own platform — freeing your team to focus on your core product instead of infrastructure.',
   },
 ];
 
@@ -60,7 +60,7 @@ export const faqDataTechnical = [
       'Low-Ops platform is installed on your own infrastructure. You can use your own hardware, or we can help you set up a private cloud. We support any kubernetes compatible platform with block storage and load balancer services.',
   },
   {
-    title: 'How long does it take to setup a private cloud with Low-ops?',
+    title: 'How long does it take to set up a private cloud with Low-Ops?',
     description:
       'Assuming the minimum requirements are met, it takes less than a day to install Low-Ops.',
   },
@@ -70,9 +70,9 @@ export const faqDataTechnical = [
       'We regularly update the platform to the latest version of all dependencies. We also provide a security patch service to keep your platform secure.',
   },
   {
-    title: 'How do I keep my platform secure and up to date?',
+    title: 'Which compliance frameworks does Low-Ops help with?',
     description:
-      'We regularly update the platform to the latest version of all dependencies. We also provide a security patch service to keep your platform secure.',
+      'Low-Ops provides the technical controls that underpin many regulatory frameworks: private, self-hosted deployment for data residency and sovereignty, automated security scanning, access management, and complete audit trails. Teams use these capabilities to support GDPR, the EU AI Act, DORA and SOx. Low-Ops is an enabling platform, not a certification — your compliance posture also depends on your own processes.',
   },
   {
     title: 'What components are included in the platform?',
