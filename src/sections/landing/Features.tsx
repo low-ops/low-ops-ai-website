@@ -53,7 +53,7 @@ const Features: FC = () => {
         <div className="mt-13 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={(i % 3) * 0.06} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-6.5 transition-all duration-200 hover:-translate-y-1 hover:border-[color-mix(in_srgb,var(--lo-accent)_45%,var(--lo-line))]">
+              <div className="group relative h-full overflow-hidden rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-6.5 shadow-[var(--lo-shadow-sm)] transition-all duration-200 hover:-translate-y-1 hover:border-[color-mix(in_srgb,var(--lo-accent)_45%,var(--lo-line))] hover:shadow-[var(--lo-shadow-lg)]">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(120%_80%_at_100%_0%,var(--lo-glow),transparent_55%)]" />
                 <div className="lo-mono relative text-[12px] tracking-[0.06em] text-[var(--lo-cyan)]">
                   {f.tag}

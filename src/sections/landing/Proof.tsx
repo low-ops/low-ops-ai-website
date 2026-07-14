@@ -34,7 +34,7 @@ const Proof: FC = () => {
           {featured.map((t, i) => (
             <Reveal key={t.author} delay={i * 0.08} className="h-full">
               <figure
-                className={`flex h-full flex-col gap-4.5 rounded-[14px] border border-[var(--lo-line)] p-7.5 ${
+                className={`flex h-full flex-col gap-4.5 rounded-[14px] border border-[var(--lo-line)] p-7.5 shadow-[var(--lo-shadow-sm)] ${
                   i === 0
                     ? 'bg-[linear-gradient(160deg,var(--lo-surface-2),var(--lo-surface))]'
                     : 'bg-[var(--lo-surface)]'

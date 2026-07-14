@@ -23,39 +23,40 @@
 
 @layer base {
   :root {
-    /* Dark "console" theme — mapped to the --lo-* design system */
-    --background: 223 26% 5%;
-    --foreground: 40 27% 93%;
-    --text-neutral-700: #f2efe9;
-    --card: 222 27% 10%;
-    --card-foreground: 40 27% 93%;
-    --popover: 222 27% 10%;
-    --popover-foreground: 40 27% 93%;
-    --primary: 217 91% 60%;
+    /* Light "daylight console" theme — mapped to the --lo-* design system */
+    color-scheme: light;
+    --background: 220 40% 98%;
+    --foreground: 218 47% 10%;
+    --text-neutral-700: #0e1726;
+    --card: 0 0% 100%;
+    --card-foreground: 218 47% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 47% 10%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 221 27% 12%;
-    --secondary-foreground: 40 27% 93%;
-    --muted: 222 27% 10%;
-    --muted-foreground: 217 13% 65%;
-    --accent: 221 27% 12%;
-    --accent-foreground: 40 27% 93%;
-    --destructive: 0 72% 62%;
+    --secondary: 220 40% 96%;
+    --secondary-foreground: 218 40% 16%;
+    --muted: 220 33% 96%;
+    --muted-foreground: 217 16% 35%;
+    --accent: 220 40% 96%;
+    --accent-foreground: 218 47% 10%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 218 23% 18%;
-    --input: 218 23% 18%;
-    --ring: 217 91% 60%;
+    --border: 219 33% 92%;
+    --input: 219 33% 92%;
+    --ring: 221 83% 53%;
     --radius: 0.5rem;
-    --chart-1: 217 91% 60%;
-    --chart-2: 187 82% 54%;
-    --chart-3: 152 60% 52%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 221 83% 53%;
+    --chart-2: 190 85% 38%;
+    --chart-3: 152 60% 40%;
+    --chart-4: 43 74% 49%;
+    --chart-5: 27 87% 55%;
   }
 }
 
-/* Tailwind Typography renders grayscale text by default, which disappears on
-   the dark ground. Re-point the prose color tokens at the console palette so
-   every `prose` block on the inner pages stays legible. */
+/* Tailwind Typography ships its own grayscale palette; re-point the prose
+   color tokens at the console palette so every `prose` block on the inner
+   pages matches the rest of the theme. */
 .prose {
   --tw-prose-body: var(--lo-fg);
   --tw-prose-headings: var(--lo-fg);
@@ -112,24 +113,28 @@
 }
 
 /* ============================================================
-   Landing redesign — "Golden Path" dark console design system
+   Landing redesign — "Golden Path" daylight console design system
    ============================================================ */
 :root {
-  --lo-ink: #0a0c11;
-  --lo-ink-2: #0d1017;
-  --lo-surface: #12161f;
-  --lo-surface-2: #161b26;
-  --lo-line: #232a38;
-  --lo-line-soft: #1b212d;
-  --lo-fg: #f2efe9;
-  --lo-fg-mut: #9aa3b2;
-  --lo-fg-dim: #626b7c;
-  --lo-accent: #3b82f6;
-  --lo-accent-hi: #60a5fa;
-  --lo-accent-deep: #2563eb;
-  --lo-cyan: #22d3ee;
-  --lo-green: #34d399;
-  --lo-glow: rgba(59, 130, 246, 0.2);
+  --lo-ink: #f6f8fc;
+  --lo-ink-2: #eef2f9;
+  --lo-surface: #ffffff;
+  --lo-surface-2: #fbfcfe;
+  --lo-line: #e2e8f2;
+  --lo-line-soft: #edf1f8;
+  --lo-fg: #0e1726;
+  --lo-fg-mut: #4a5567;
+  --lo-fg-dim: #8a94a6;
+  --lo-accent: #2563eb;
+  --lo-accent-hi: #3b82f6;
+  --lo-accent-deep: #1d4ed8;
+  --lo-cyan: #0e9ab8;
+  --lo-green: #059669;
+  --lo-glow: rgba(37, 130, 235, 0.1);
+  --lo-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 26px -14px rgba(15, 23, 42, 0.18);
+  --lo-shadow-lg: 0 30px 60px -30px rgba(15, 23, 42, 0.28),
+    0 2px 6px rgba(15, 23, 42, 0.05);
 }
 
 @utility lo-mono {

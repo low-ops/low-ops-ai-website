@@ -49,7 +49,7 @@ const Problem: FC = () => {
         <div className="mt-13 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
           {STAKEHOLDERS.map((s, i) => (
             <Reveal key={s.role} delay={i * 0.06}>
-              <div className="h-full rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-5">
+              <div className="h-full rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-5 shadow-[var(--lo-shadow-sm)]">
                 <div className="lo-mono text-[11px] uppercase tracking-[0.14em] text-[var(--lo-accent)]">
                   {s.role}
                 </div>
