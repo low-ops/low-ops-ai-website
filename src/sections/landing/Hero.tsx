@@ -38,8 +38,8 @@ const Hero: FC = () => {
             <Reveal delay={0.05}>
               <h1 className="lo-display mt-6 text-[44px] text-balance text-[var(--lo-fg)] md:text-[72px] lg:text-[84px]">
                 Build, deploy &amp; manage apps{' '}
-                <span className="lo-serif relative whitespace-nowrap pr-[0.04em] text-[var(--lo-accent)]">
-                  responsibly
+                <span className="relative whitespace-nowrap">
+                  <span className="lo-em">responsibly</span>
                   <svg
                     className="lo-squiggle absolute inset-x-0 -bottom-[0.13em] h-[0.2em] w-full overflow-visible"
                     viewBox="0 0 300 24"

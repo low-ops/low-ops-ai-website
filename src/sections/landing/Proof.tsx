@@ -38,14 +38,14 @@ const Proof: FC = () => {
         <Reveal>
           <figure className="relative max-w-[900px]">
             <span
-              className="lo-serif pointer-events-none absolute -top-16 -left-4 text-[200px] leading-none text-[color-mix(in_srgb,var(--lo-accent)_16%,transparent)] select-none"
+              className="lo-display pointer-events-none absolute -top-14 -left-3 text-[180px] leading-none text-[color-mix(in_srgb,var(--lo-accent)_14%,transparent)] select-none"
               aria-hidden="true"
             >
               &ldquo;
             </span>
-            <blockquote className="lo-serif relative m-0 text-[24px] leading-[1.32] text-[var(--lo-fg)] md:text-[36px]">
+            <blockquote className="relative m-0 text-[22px] leading-[1.4] font-medium tracking-[-0.015em] text-[var(--lo-fg)] md:text-[32px]">
               The magic of Low-Ops is that we — a{' '}
-              <span className="text-[var(--lo-accent)]">
+              <span className="lo-em font-bold">
                 regulated financial services business
               </span>{' '}
               — can host our apps effortlessly in our own cloud and spin up

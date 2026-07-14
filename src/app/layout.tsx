@@ -1,12 +1,7 @@
 import { nextMetadata, structuredData } from '@/data/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-import {
-  Bricolage_Grotesque,
-  DM_Sans,
-  Fraunces,
-  Poppins,
-} from 'next/font/google';
+import { DM_Sans, Poppins } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -24,21 +19,6 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-// Display voice of the "Approved Blueprint" art direction.
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-bricolage',
-});
-
-// Italic serif accent used for single highlighted words in headlines.
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  style: ['italic'],
-  display: 'swap',
-  variable: '--font-fraunces',
-});
-
 export const metadata: Metadata = nextMetadata;
 
 type TProps = Readonly<{ children: ReactNode }>;
@@ -47,10 +27,7 @@ const RootLayout = (props: TProps) => {
   const { children } = props;
 
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${poppins.variable} ${bricolage.variable} ${fraunces.variable}`}
-    >
+    <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
       <body className="font-poppins bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         {children}
 

@@ -21,7 +21,7 @@ const Features: FC = () => {
             title={
               <>
                 Everything an AI-built app needs.{' '}
-                <span className="lo-serif text-[var(--lo-accent)]">
+                <span className="lo-em">
                   Nothing to wire up.
                 </span>
               </>

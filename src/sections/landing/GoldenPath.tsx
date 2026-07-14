@@ -40,7 +40,7 @@ const GoldenPath: FC = () => {
             title={
               <>
                 From a spark of an idea to{' '}
-                <span className="lo-serif text-[var(--lo-accent)]">
+                <span className="lo-em">
                   your own cloud.
                 </span>
               </>

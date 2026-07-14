@@ -20,7 +20,7 @@ const CTA: FC = () => {
             </Kicker>
             <h2 className="lo-display relative mt-4 text-[32px] text-balance text-[var(--lo-fg)] md:text-[56px]">
               Ship AI-built apps your security team{' '}
-              <span className="lo-serif text-[var(--lo-accent)]">
+              <span className="lo-em">
                 approves.
               </span>
             </h2>

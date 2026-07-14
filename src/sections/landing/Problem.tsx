@@ -42,7 +42,7 @@ const Problem: FC = () => {
             title={
               <>
                 AI made building easy. Deploying it{' '}
-                <span className="lo-serif text-[var(--lo-accent)]">
+                <span className="lo-em">
                   responsibly
                 </span>{' '}
                 is the hard part.

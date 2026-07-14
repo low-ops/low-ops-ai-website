@@ -14,7 +14,7 @@ const CTASection = () => {
           </span>
           <h2 className="lo-display relative mx-auto mt-4 max-w-2xl text-[30px] text-balance text-[var(--lo-fg)] md:text-[48px]">
             Give your AI-built apps a{' '}
-            <span className="lo-serif text-[var(--lo-accent)]">
+            <span className="lo-em">
               responsible
             </span>{' '}
             path to production
