@@ -1,130 +1,116 @@
 'use client';
 
-import { DECORATIVE_LABELS, QUICK_LINKS } from '@/data/footer';
+import BrandMark from '@/components/BrandMark';
+import { QUICK_LINKS } from '@/data/footer';
 import socials from '@/data/socials';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { FC } from 'react';
-import {
-  PiCaretRightLight,
-  PiEnvelopeSimpleOpen,
-  PiMapPinLine,
-} from 'react-icons/pi';
-import DecorativeLabel from '../DecorativeLabel';
-import AppLogo from '../header/AppLogo';
+import { PiEnvelopeSimpleOpen, PiMapPinLine } from 'react-icons/pi';
 
 type TProps = {
   classes?: string;
 };
 
-const Footer: FC<TProps> = (props) => {
-  const { classes } = props;
-
-  const renderQuickLinks = () => {
-    return QUICK_LINKS.map((link) => (
-      <li key={link.href}>
-        <Link
-          href={link.href}
-          className="font-sans hover:text-primary transition-colors flex items-center gap-1 font-light no-underline"
-        >
-          <PiCaretRightLight size={16} />
-          {link.label}
-        </Link>
-      </li>
-    ));
-  };
-
-  const renderSocials = () => {
-    return socials.map((social) => (
-      <a
-        key={social.name}
-        href={social.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative w-11 h-11 rounded-full border flex items-center justify-center text-primary border-primary transition-colors hover:bg-primary hover:text-white"
-        aria-label={social.name}
-      >
-        {social.icon(23)}
-      </a>
-    ));
-  };
-
+const Footer: FC<TProps> = ({ classes }) => {
   return (
     <footer
       id="footer"
       className={cn(
-        'w-full bg-cover bg-center bg-no-repeat bg-[url("/footer-bg.png")]',
+        'relative w-full border-t border-[var(--lo-line-soft)] bg-[var(--lo-ink-2)]',
         classes
       )}
     >
-      <div className="relative container py-14 lg:py-28">
-        {DECORATIVE_LABELS.map((item) => (
-          <DecorativeLabel
-            text={item.text}
-            planePosition={item.planePosition}
-            classes={item.classes}
-            key={item.text}
-          />
-        ))}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10 w-full">
-          <div className="flex flex-col gap-4 lg:gap-6 prose md:prose-md">
-            <AppLogo size="small" />
-            <p className="text-md lg:text-xl font-sans max-w-md font-light">
-              Low-Ops is an all-in-one Application Platform designed to
-              streamline the deployment and management of apps for
-              private clouds and on-premises environments.
-            </p>
-            <div className="flex gap-3">{renderSocials()}</div>
+      <div className="container relative z-10 grid grid-cols-1 gap-10 py-14 md:grid-cols-2 lg:grid-cols-3 lg:py-20">
+        <div className="flex flex-col gap-5">
+          <BrandMark />
+          <p className="max-w-md text-[15px] leading-relaxed text-[var(--lo-fg-mut)]">
+            Low-Ops is the private, AI-native developer platform that gives
+            AI-built apps a safe path to production — self-hosted on the cloud
+            you control.
+          </p>
+          <div className="flex gap-3">
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                className="grid h-10 w-10 place-items-center rounded-full border border-[var(--lo-line)] text-[var(--lo-fg-mut)] transition-colors hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)]"
+              >
+                {social.icon(20)}
+              </a>
+            ))}
           </div>
+        </div>
 
-          <div className="flex flex-col gap-2 md:gap-4 justify-self-start md:justify-self-center prose md:prose-md">
-            <h4>Quick Link</h4>
-            <ul className="flex flex-col gap-1 md:gap-2 p-0">
-              {renderQuickLinks()}
-            </ul>
-          </div>
+        <div className="flex flex-col gap-3.5 md:justify-self-center">
+          <h4 className="lo-mono text-[12px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)]">
+            Quick links
+          </h4>
+          <ul className="flex flex-col gap-2.5">
+            {QUICK_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-[15px] text-[var(--lo-fg-mut)] transition-colors hover:text-[var(--lo-accent)]"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <div className="flex flex-col gap-4 prose md:prose-md">
-            <h4>Contact Us</h4>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 font-sans">
-                <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">
-                  <PiEnvelopeSimpleOpen size={22} />
-                </span>
-                <span>hello@low-ops.ai</span>
-              </div>
-              <div className="flex items-center gap-3 font-sans">
-                <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">
-                  <PiMapPinLine size={22} />
-                </span>
-                <span>
-                  Bajonetstraat 50, 3014 ZK, Rotterdam, The Netherlands
-                  (Appointment only)
-                </span>
-              </div>
-            </div>
+        <div className="flex flex-col gap-3.5">
+          <h4 className="lo-mono text-[12px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)]">
+            Contact
+          </h4>
+          <a
+            href="mailto:hello@low-ops.ai"
+            className="flex items-center gap-3 text-[15px] text-[var(--lo-fg-mut)] transition-colors hover:text-[var(--lo-accent)]"
+          >
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[var(--lo-line)] text-[var(--lo-accent)]">
+              <PiEnvelopeSimpleOpen size={20} />
+            </span>
+            hello@low-ops.ai
+          </a>
+          <div className="flex items-center gap-3 text-[15px] text-[var(--lo-fg-mut)]">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[var(--lo-line)] text-[var(--lo-accent)]">
+              <PiMapPinLine size={20} />
+            </span>
+            Bajonetstraat 50, 3014 ZK, Rotterdam, The Netherlands (appointment
+            only)
           </div>
         </div>
       </div>
 
-      <div className="py-8 border-t border-primary/25">
-        <div className="container flex flex-col lg:flex-row items-center justify-between gap-4">
-          <span className="font-sans">
-            Copyright ©2026 LowOps All Rights Reserved. A product of <a href="https://cinaq.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">CINAQ</a>
+      <div className="border-t border-[var(--lo-line-soft)] py-7">
+        <div className="container flex flex-col items-center justify-between gap-3 lg:flex-row">
+          <span className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)]">
+            © 2026 Low-Ops · All rights reserved · A product of{' '}
+            <a
+              href="https://cinaq.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-[var(--lo-accent)]"
+            >
+              CINAQ
+            </a>
           </span>
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-sans">
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
             <Link
               href="/privacy-policy"
-              className="hover:text-primary transition-colors"
+              className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
               Privacy policy
             </Link>
             <Link
               href="/license-agreement"
-              className="hover:text-primary transition-colors"
+              className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
-              Terms & Conditions
+              Terms &amp; Conditions
             </Link>
           </nav>
         </div>

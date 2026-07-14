@@ -1,36 +1,24 @@
-import Reveal from '@/components/animations/Reveal';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import CTASection from '@/sections/cta/CTASection';
-import TopFeaturesSection from '@/sections/features/TopFeaturesSection';
-import HeroSection from '@/sections/hero/HeroSection';
-import StepsSection from '@/sections/hero/StepsSection';
-import SolutionsSection from '@/sections/solutions/SolutionsSection';
-import TestimonialsSection from '@/sections/testimonials/TestimonialsSection';
+import CTA from '@/sections/landing/CTA';
+import Features from '@/sections/landing/Features';
+import GoldenPath from '@/sections/landing/GoldenPath';
+import Hero from '@/sections/landing/Hero';
+import Problem from '@/sections/landing/Problem';
+import Proof from '@/sections/landing/Proof';
 
 const Home = () => {
   return (
     <>
       <Header />
-      <main>
-        <Reveal y={0}>
-          <HeroSection />
-        </Reveal>
-        <Reveal delay={0.05}>
-          <StepsSection />
-        </Reveal>
-        <Reveal delay={0.08}>
-          <SolutionsSection />
-        </Reveal>
-        <Reveal delay={0.1}>
-          <TopFeaturesSection />
-        </Reveal>
-        <Reveal delay={0.12}>
-          <TestimonialsSection />
-        </Reveal>
-        <Reveal delay={0.14}>
-          <CTASection />
-        </Reveal>
+      <main className="relative overflow-hidden bg-[var(--lo-ink)] text-[var(--lo-fg)]">
+        <div className="lo-thread" aria-hidden="true" />
+        <Hero />
+        <Problem />
+        <GoldenPath />
+        <Features />
+        <Proof />
+        <CTA />
       </main>
       <Footer />
     </>
