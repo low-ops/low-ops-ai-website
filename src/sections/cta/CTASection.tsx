@@ -1,4 +1,5 @@
 import data from '@/data';
+import Stamp from '@/sections/landing/Stamp';
 import { PiAddressBook, PiPaperPlaneTilt, PiUser } from 'react-icons/pi';
 
 const CTASection = () => {
@@ -6,11 +7,17 @@ const CTASection = () => {
     <section id="cta" className="py-20 md:py-28 px-4">
       <div className="container">
         <div className="relative overflow-hidden rounded-[18px] border border-[var(--lo-line)] px-6 py-14 text-center shadow-[var(--lo-shadow-sm)] md:px-16 md:py-20 bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
-          <span className="lo-mono inline-flex items-center justify-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
+          <div className="lo-blueprint [mask-image:radial-gradient(100%_100%_at_50%_0%,#000_20%,transparent_80%)]" />
+          <Stamp className="absolute top-6 right-6 hidden h-[104px] w-[104px] rotate-[9deg] opacity-90 md:block" />
+          <span className="lo-mono relative inline-flex items-center justify-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
             Get started today
           </span>
-          <h2 className="mx-auto mt-4 max-w-2xl text-[28px] leading-[1.05] font-extrabold tracking-[-0.02em] text-balance text-[var(--lo-fg)] md:text-[44px]">
-            Give your AI-built apps a responsible path to production
+          <h2 className="lo-display relative mx-auto mt-4 max-w-2xl text-[30px] text-balance text-[var(--lo-fg)] md:text-[48px]">
+            Give your AI-built apps a{' '}
+            <span className="lo-em">
+              responsible
+            </span>{' '}
+            path to production
           </h2>
           <p className="mx-auto mt-4.5 max-w-2xl text-[17px] text-[var(--lo-fg-mut)] md:text-[18px]">
             Join high-velocity teams shipping faster with automated pipelines,

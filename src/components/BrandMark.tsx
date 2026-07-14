@@ -14,7 +14,7 @@ const BrandMark: FC<TProps> = ({ className }) => {
   return (
     <Link
       href="/"
-      className={`flex items-center gap-[11px] text-[18px] font-bold tracking-[-0.02em] text-[var(--lo-fg)] ${className ?? ''}`}
+      className={`lo-display flex items-center gap-[11px] text-[19px] text-[var(--lo-fg)] ${className ?? ''}`}
       aria-label="Low-Ops home"
     >
       <span className="lo-brand-mark relative h-[26px] w-[26px] shrink-0 rounded-[7px] bg-[radial-gradient(circle_at_30%_30%,var(--lo-accent-hi),var(--lo-accent)_55%,var(--lo-accent-deep))] shadow-[0_0_18px_-4px_var(--lo-accent)]" />

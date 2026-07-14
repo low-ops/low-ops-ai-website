@@ -1,6 +1,7 @@
 import Reveal from '@/components/animations/Reveal';
+import { cn } from '@/lib/utils';
 import { FC } from 'react';
-import Kicker from './Kicker';
+import SplitHead from './SplitHead';
 
 const STAKEHOLDERS = [
   {
@@ -31,32 +32,48 @@ const Problem: FC = () => {
       id="problem"
       className="relative z-10 border-t border-[var(--lo-line-soft)] py-16 md:py-28"
     >
-      <div className="container">
-        <Reveal className="max-w-[720px]">
-          <Kicker>The AI adoption bottleneck</Kicker>
-          <h2 className="mt-4.5 text-[28px] leading-[1.05] font-extrabold tracking-[-0.02em] text-balance text-[var(--lo-fg)] md:text-[46px]">
-            AI made building easy. Deploying it responsibly is the hard part.
-          </h2>
-          <p className="mt-5 text-[18px] leading-relaxed text-[var(--lo-fg-mut)]">
-            Leadership drives for growth, security mandates guardrails,
-            developers want to ship, and operations is buried in manual
-            deployments. So promising apps stall in development — or land in an
-            unmanaged public cloud with sensitive data at risk. Low-Ops resolves
-            the conflict for every stakeholder.
-          </p>
+      <span className="lo-ghost" aria-hidden="true">
+        FRICTION
+      </span>
+      <div className="container relative">
+        <Reveal>
+          <SplitHead
+            kicker="The AI adoption bottleneck"
+            title={
+              <>
+                AI made building easy. Deploying it{' '}
+                <span className="lo-em">
+                  responsibly
+                </span>{' '}
+                is the hard part.
+              </>
+            }
+            side="Leadership drives for growth, security mandates guardrails, developers want to ship, and operations is buried in manual deployments. Promising apps stall — or land in an unmanaged public cloud with sensitive data at risk. Low-Ops resolves the conflict for every stakeholder."
+          />
         </Reveal>
 
-        <div className="mt-13 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
           {STAKEHOLDERS.map((s, i) => (
             <Reveal key={s.role} delay={i * 0.06}>
-              <div className="h-full rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-5 shadow-[var(--lo-shadow-sm)]">
-                <div className="lo-mono text-[11px] uppercase tracking-[0.14em] text-[var(--lo-accent)]">
+              <div
+                className={cn(
+                  'h-full rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-5 pt-5.5 shadow-[var(--lo-shadow-sm)] transition-all duration-200 hover:z-3 hover:-translate-y-1 hover:rotate-0 hover:shadow-[var(--lo-shadow-lg)]',
+                  i % 2 === 0
+                    ? 'lg:rotate-[-0.6deg]'
+                    : 'lg:translate-y-1.5 lg:rotate-[0.5deg]'
+                )}
+              >
+                <div className="lo-mono text-[10.5px] tracking-[0.1em] text-[var(--lo-fg-dim)]">
+                  st/{String(i + 1).padStart(2, '0')}
+                </div>
+                <div className="lo-mono mt-2.5 text-[11px] uppercase tracking-[0.14em] text-[var(--lo-accent)]">
                   {s.role}
                 </div>
-                <div className="mt-3 text-[16px] font-semibold text-[var(--lo-fg)]">
+                <div className="mt-3 text-[16px] font-bold tracking-[-0.01em] text-[var(--lo-fg)]">
                   {s.want}
                 </div>
                 <div className="mt-2 text-[14px] text-[var(--lo-fg-mut)]">
+                  <span className="text-[var(--lo-accent)]">⚠ </span>
                   {s.tension}
                 </div>
               </div>

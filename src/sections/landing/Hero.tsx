@@ -2,18 +2,32 @@ import Reveal from '@/components/animations/Reveal';
 import data from '@/data';
 import { FC } from 'react';
 import Console from './Console';
+import Stamp from './Stamp';
 
 const Hero: FC = () => {
   return (
-    <section className="relative overflow-hidden pt-14 pb-12 md:pt-[104px] md:pb-24">
-      {/* atmosphere */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_78%_8%,var(--lo-glow),transparent_60%),radial-gradient(50%_40%_at_10%_30%,rgba(34,211,238,0.10),transparent_65%)]" />
-        <div className="lo-grid-mask" />
-      </div>
+    <section className="relative overflow-hidden pt-14 pb-12 md:pt-24 md:pb-20">
+      {/* drafting-table atmosphere */}
+      <div className="lo-blueprint" aria-hidden="true" />
+      <span
+        className="lo-mono absolute top-4 left-5 hidden text-[10px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)] md:block"
+        aria-hidden="true"
+      >
+        51.91°N — 4.47°E
+        <br />
+        Rotterdam, NL
+      </span>
+      <span
+        className="lo-mono absolute top-4 right-5 hidden text-right text-[10px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)] md:block"
+        aria-hidden="true"
+      >
+        Drawing № LO-2026
+        <br />
+        Rev. C — Approved
+      </span>
 
       <div className="container relative z-2">
-        <div className="grid items-center gap-8 md:gap-14 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <Reveal>
               <span className="lo-mono inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
@@ -22,22 +36,31 @@ const Hero: FC = () => {
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h1 className="mt-5.5 text-[38px] leading-[1.04] font-extrabold tracking-[-0.02em] text-balance text-[var(--lo-fg)] md:text-[64px] lg:text-[72px]">
-                Build, deploy and manage apps{' '}
-                <span className="relative whitespace-nowrap text-[var(--lo-accent)]">
-                  responsibly
-                  <span className="absolute inset-x-0 bottom-[0.06em] h-[0.1em] rounded bg-[var(--lo-accent)] opacity-35" />
+              <h1 className="lo-display mt-6 text-[44px] text-balance text-[var(--lo-fg)] md:text-[72px] lg:text-[84px]">
+                Build, deploy &amp; manage apps{' '}
+                <span className="relative whitespace-nowrap">
+                  <span className="lo-em">responsibly</span>
+                  <svg
+                    className="lo-squiggle absolute inset-x-0 -bottom-[0.13em] h-[0.2em] w-full overflow-visible"
+                    viewBox="0 0 300 24"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      pathLength="1"
+                      d="M4,16 C40,6 70,20 105,12 S180,4 220,14 S280,10 296,13"
+                    />
+                  </svg>
                 </span>{' '}
                 with AI.
               </h1>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-[34em] text-[16px] leading-relaxed text-[var(--lo-fg-mut)] md:text-[19px]">
-                The private, self-hosted platform that gives AI-built apps a
-                safe path to production. Go from idea to your own cloud in
-                minutes — with security guardrails, audit trails and full data
-                sovereignty built in.
+              <p className="mt-7 max-w-[32em] text-[16px] leading-relaxed text-[var(--lo-fg-mut)] md:text-[19px]">
+                The self-hosted platform that gives AI-built apps a safe path
+                to production. Idea to your own cloud in minutes — guardrails,
+                audit trails and data sovereignty built in.
               </p>
             </Reveal>
 
@@ -56,7 +79,7 @@ const Hero: FC = () => {
                 </a>
                 <a
                   href="#golden-path"
-                  className="lo-mono inline-flex items-center gap-2 rounded-[10px] border border-[var(--lo-line)] px-5 py-3.5 text-[13.5px] text-[var(--lo-fg)] transition-all hover:-translate-y-0.5 hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)]"
+                  className="lo-mono inline-flex items-center gap-2 rounded-[10px] border border-[var(--lo-line)] bg-[var(--lo-surface)] px-5 py-3.5 text-[13.5px] text-[var(--lo-fg)] shadow-[var(--lo-shadow-sm)] transition-all hover:-translate-y-0.5 hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)]"
                 >
                   See how it works
                 </a>
@@ -85,7 +108,34 @@ const Hero: FC = () => {
           </div>
 
           <Reveal delay={0.15} y={20}>
-            <Console />
+            {/* figure frame with crop marks, stamp and caption */}
+            <div>
+              <div className="relative p-4">
+                <span
+                  className="absolute top-0 left-0 h-4 w-4 border-t-[1.5px] border-l-[1.5px] border-[var(--lo-fg-dim)]"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute top-0 right-0 h-4 w-4 border-t-[1.5px] border-r-[1.5px] border-[var(--lo-fg-dim)]"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute bottom-0 left-0 h-4 w-4 border-b-[1.5px] border-l-[1.5px] border-[var(--lo-fg-dim)]"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute right-0 bottom-0 h-4 w-4 border-r-[1.5px] border-b-[1.5px] border-[var(--lo-fg-dim)]"
+                  aria-hidden="true"
+                />
+                <Stamp className="absolute -top-13 right-2 z-3 h-[112px] w-[112px] rotate-[-12deg]" />
+                <Console />
+              </div>
+              <div className="mt-3 text-right">
+                <span className="lo-mono inline-flex items-center gap-2 text-[11px] tracking-[0.08em] text-[var(--lo-fg-dim)] before:h-px before:w-7 before:bg-[var(--lo-fg-dim)] before:opacity-60 before:content-['']">
+                  fig. 01 — the golden path, live
+                </span>
+              </div>
+            </div>
           </Reveal>
         </div>
       </div>
