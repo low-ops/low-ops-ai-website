@@ -17,7 +17,7 @@ const RoadmapSection = () => {
           )}
         >
           <div className="flex flex-col items-center gap-4 text-center prose md:prose-md">
-            <span className="text-primary font-sans border border-primary/20 rounded-2xl py-1.5 px-6 bg-white">
+            <span className="text-primary font-sans border border-primary/30 rounded-2xl py-1.5 px-6 bg-[var(--lo-surface)]">
               Step {index + 1}
             </span>
             <h4>{step.title}</h4>
@@ -25,7 +25,7 @@ const RoadmapSection = () => {
               {step.description}
             </p>
           </div>
-          <div className="hidden xl:flex w-[36px] h-[36px] rounded-full bg-white items-center justify-center shadow-md">
+          <div className="hidden xl:flex w-[36px] h-[36px] rounded-full bg-[var(--lo-surface)] border border-[var(--lo-line)] items-center justify-center shadow-md">
             <span className="w-[12px] h-[12px] rounded-full bg-primary" />
           </div>
           <span className="w-[80px] h-[80px] bg-primary rounded-full flex items-center justify-center">
