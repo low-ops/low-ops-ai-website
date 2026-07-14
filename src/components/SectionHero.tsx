@@ -14,11 +14,19 @@ const SectionHero = (props: TProps) => {
       id={title}
       className="relative overflow-hidden border-b border-[var(--lo-line-soft)] bg-[var(--lo-ink-2)] py-20 md:py-28"
     >
-      {/* atmosphere */}
+      {/* drafting-table atmosphere */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(60%_70%_at_50%_-10%,var(--lo-glow),transparent_60%)]" />
-        <div className="lo-grid-mask" />
+        <div className="lo-blueprint [mask-image:radial-gradient(110%_100%_at_50%_0%,#000_25%,transparent_80%)]" />
       </div>
+      <span
+        className="lo-mono absolute top-4 right-5 hidden text-right text-[10px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)] md:block"
+        aria-hidden="true"
+      >
+        Drawing № LO-2026
+        <br />
+        Rev. C — Approved
+      </span>
 
       <div className="container relative z-10 flex flex-col items-center gap-4 text-center">
         <Reveal>
@@ -27,7 +35,7 @@ const SectionHero = (props: TProps) => {
           </span>
         </Reveal>
         <Reveal delay={0.05}>
-          <h1 className="max-w-3xl text-[40px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance text-[var(--lo-fg)] md:text-[56px]">
+          <h1 className="lo-display max-w-3xl text-[42px] text-balance text-[var(--lo-fg)] md:text-[60px]">
             {capitalize(title)}
           </h1>
         </Reveal>

@@ -89,7 +89,7 @@ const Footer: FC<TProps> = ({ classes }) => {
       <div className="border-t border-[var(--lo-line-soft)] py-7">
         <div className="container flex flex-col items-center justify-between gap-3 lg:flex-row">
           <span className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)]">
-            © 2026 Low-Ops · All rights reserved · A product of{' '}
+            © 2026 Low-Ops · Drawing № LO-2026 · Rotterdam, NL · A product of{' '}
             <a
               href="https://cinaq.com"
               target="_blank"
