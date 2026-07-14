@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const nextMetadata: Metadata = {
   title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
   description:
-    'A private, self-hosted Internal Developer Platform for regulated, high-velocity teams. Ship AI-built apps from idea to production in minutes — with security guardrails, audit trails, compliance and full data sovereignty.',
+    'A private, self-hosted Internal Developer Platform for teams building with AI. Ship AI-built apps from idea to production in minutes — with security guardrails, audit trails and full data sovereignty, without compromising on compliance.',
   keywords: [
     'internal developer platform',
     'idp',
@@ -73,7 +73,7 @@ export const nextMetadata: Metadata = {
   openGraph: {
     title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
     description:
-      'The private, self-hosted developer platform for regulated teams. Build with AI assistants and agentic workflows, then deploy to your own cloud with security guardrails, audit trails and compliance built in.',
+      'The private, self-hosted developer platform for teams building with AI. Build with AI assistants and agentic workflows, then deploy to your own cloud with security guardrails, audit trails and data sovereignty built in.',
     url: 'https://low-ops.com',
     siteName: 'Low-Ops',
     type: 'website',
@@ -84,7 +84,7 @@ export const nextMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
     description:
-      'The private, self-hosted developer platform that lets regulated teams ship AI-built apps securely — from idea to production in minutes.',
+      'The private, self-hosted developer platform that lets teams ship AI-built apps securely — from idea to production in minutes.',
     images: ['https://low-ops.com/preview.png'],
   },
 };
@@ -102,7 +102,7 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is a private, self-hosted Internal Developer Platform for regulated teams to build, deploy and manage AI-built apps responsibly — with security, compliance and data sovereignty built in.',
+    'Low-Ops is a private, self-hosted Internal Developer Platform to build, deploy and manage AI-built apps responsibly — with security, compliance and data sovereignty built in.',
   featureList:
     'AI-assisted operations, MCP support, Automated CI/CD, Security scanning, Audit trails, Private cloud infrastructure, Observability, Disaster recovery, Compliance',
   screenshot: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png',

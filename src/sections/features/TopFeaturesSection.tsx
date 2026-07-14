@@ -82,7 +82,7 @@ const TopFeaturesSection: React.FC = () => {
         <SectionTitle
           subtitle="Why Low-Ops"
           title="Move faster with AI, without losing control"
-          description="A platform built for regulated, high-velocity teams — pairing the speed of AI-assisted development with the security, compliance and sovereignty your business demands."
+          description="For any team serious about shipping AI-built software — pairing the speed of AI-assisted development with the security, sovereignty and audit trails your business demands."
         />
 
         <div className="flex flex-col gap-y-3 md:gap-y-6 w-full max-w-6xl mx-auto">

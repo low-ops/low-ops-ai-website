@@ -29,10 +29,10 @@ const HeroSection: FC = () => {
 
           <Reveal delay={0.2}>
             <p className="mb-11 max-w-[580px] text-lg font-normal leading-[1.7] text-slate-500">
-              A private, self-hosted platform for high-velocity teams in
-              regulated industries. Go from idea to production in minutes — with
-              security guardrails, audit trails and full data sovereignty built
-              in.
+              The private, self-hosted platform that gives AI-built apps a safe
+              path to production. Go from idea to your own cloud in minutes —
+              with security guardrails, audit trails and full data sovereignty
+              built in.
             </p>
           </Reveal>
 

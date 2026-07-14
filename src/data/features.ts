@@ -51,7 +51,7 @@ export const topFeatures = [
     bullets: [
       'Self-hosted — your data never leaves your cloud.',
       'Audit trails and access management out of the box.',
-      'Aligned with GDPR, EU AI Act, DORA and SOx.',
+      'Controls that support GDPR, DORA and SOx.',
     ],
     icon: PiShieldCheckFill({ size: 32.5 }),
   },
@@ -61,7 +61,7 @@ export const features = [
   {
     title: 'Governance & Compliance',
     description:
-      'Centrally manage users, teams, and roles, and enforce best practices across every app. Detailed audit trails capture every administrative action for accountability and transparency — the evidence you need for GDPR, EU AI Act, DORA and SOx.',
+      'Centrally manage users, teams, and roles, and enforce best practices across every app. Detailed audit trails capture every administrative action for accountability and transparency — the technical controls that support frameworks like GDPR, the EU AI Act, DORA and SOx.',
     icon: PiBuildingApartmentFill({ size: 32.5 }),
   },
   {
