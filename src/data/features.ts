@@ -18,50 +18,50 @@ import {
 export const metadata = {
   title: 'Features',
   description:
-    'Streamline your private cloud operations with your own comprehensive private app platform for secure, scalable deployment and management.',
+    'A private, self-hosted Internal Developer Platform that lets regulated teams build, deploy and manage AI-built apps responsibly — secure, compliant and scalable by default.',
 };
 
 export const topFeatures = [
   {
-    title: 'Low costs & Simplicity',
+    title: 'AI-Powered Agility',
     description:
-      'Leveraging managed cloud platforms eliminates the need for heavy investments in infrastructure, slashing operational costs through pay-as-you-go models and built-in efficiencies.',
+      'Turn AI assistants and agentic workflows into shipped software. Low-Ops gives vibe-coded apps a golden path to production, so your team can outmaneuver competitors and continuously optimize operations.',
     bullets: [
-      'Small teams manage infra effortlessly.',
-      'Unlimited resources & fast tech adoption.',
-      'Teams scale effortlessly with growth.',
+      'MCP support to build and deploy with agents.',
+      'AI guardrails and best-practice scanning by default.',
+      'A standard app spec any AI assistant can target.',
     ],
-    icon: PiCurrencyCircleDollarFill({ size: 32.5 }),
+    icon: PiLightningFill({ size: 32.5 }),
   },
   {
-    title: 'Accelerated Productivity',
+    title: 'Accelerated Time-to-Market',
     description:
-      'Managed platforms free developers from infrastructure tasks to focus on features, speeding delivery and hitting deadlines.',
+      'Rapidly build and test proof of concepts to validate high-value ideas in days, not quarters. Automated CI/CD and self-service deployment remove the wait between idea and live URL.',
     bullets: [
-      'Focus on core product development.',
-      'Onboarding boosts team growth.',
-      'Deployments enable instant releases.',
+      'From idea to a live, shareable app in minutes.',
+      'Automated pipelines with tests and security scans.',
+      'Self-service environments, zero ticket queues.',
     ],
     icon: PiRocketFill({ size: 32.5 }),
   },
   {
-    title: 'Accelerated Time to Market',
+    title: 'Enterprise-Grade Security',
     description:
-      'Fast deployment cycles and scalable infrastructure enable on-time, on-budget application delivery.',
+      'Ship fast without compromising data integrity or compliance. Everything runs in your own private cloud with audit trails, access management and security scanning enforced by default.',
     bullets: [
-      'Automated setup deploys in minutes.',
-      'Standard steps keep delivery steady.',
-      'No blocks—teams deploy freely.',
+      'Self-hosted — your data never leaves your cloud.',
+      'Audit trails and access management out of the box.',
+      'Controls that support GDPR, DORA and SOx.',
     ],
-    icon: PiLightningFill({ size: 32.5 }),
+    icon: PiShieldCheckFill({ size: 32.5 }),
   },
 ];
 
 export const features = [
   {
-    title: 'Governance',
+    title: 'Governance & Compliance',
     description:
-      'Centrally manage users, teams, and roles. Customize app templates and track all administrative activities in one place. Monitor all actions in your system with detailed audit logs for accountability and transparency.',
+      'Centrally manage users, teams, and roles, and enforce best practices across every app. Detailed audit trails capture every administrative action for accountability and transparency — the technical controls that support frameworks like GDPR, the EU AI Act, DORA and SOx.',
     icon: PiBuildingApartmentFill({ size: 32.5 }),
   },
   {
@@ -109,7 +109,7 @@ export const features = [
   {
     title: 'Sovereignty',
     description:
-      'Low-Ops is installed on your own infrastructure. This gives you complete control over your data and AI applications. ',
+      'Low-Ops runs on your own infrastructure, giving you complete control and sovereignty over your data and AI applications. Keep sensitive data in-region and in your control to satisfy strict data-residency and compliance requirements.',
     icon: PiGlobeFill({ size: 32.5 }),
   },
   {
@@ -119,9 +119,9 @@ export const features = [
     icon: PiCurrencyCircleDollarFill({ size: 32.5 }),
   },
   {
-    title: 'AI ready',
+    title: 'AI ready & de-risked',
     description:
-      'Our app templates are designed to be AI ready. They include specifications for the AI agent to use to build the application. This also means you are free to build your own AI-powered solutions and manage them effortlessly.',
+      'Our app templates are AI ready, with a Low-Ops app specification that agents and AI assistants use to build compatible apps. MCP support lets agents deploy directly, while built-in guardrails and best-practice scanning protect your IP, compliance and brand reputation.',
     icon: PiBrain({ size: 32.5 }),
   },
   {

@@ -42,7 +42,7 @@ const SOLUTIONS: SolutionTabItem[] = [
     imagePath: deployDrawerImage,
     title: 'Focus on the solution without distractions',
     description:
-      'The complexity of apps are supposed to be the business logic. Understanding the core problem and solve it with code should be the focus. You should not be bothered with infrastructure details or wait for simple change requestst to be approved and processed. Low-ops addresses these with standard app Lifecycle Management workflows and self-service that implements best practices.',
+      'The complexity of apps are supposed to be the business logic. Understanding the core problem and solve it with code should be the focus. You should not be bothered with infrastructure details or wait for simple change requests to be approved and processed. Low-Ops addresses this with standard application lifecycle management workflows and self-service that implements best practices by default.',
     items: ['Self-service LCM', 'Ease of use', 'Any app frameworks'],
   },
   {
@@ -52,7 +52,7 @@ const SOLUTIONS: SolutionTabItem[] = [
     imagePath: envOverviewImage,
     title: 'Free up your time to focus on the big picture',
     description:
-      'The number of apps is growing fast. This means you are spending too much time on infrastructure and operations instead of focusing on high impact projects. Low-ops provides an all-in-one app platform as a service to non-developers to build and ship apps within the boundaries of your networks.',
+      'The number of apps is growing fast. This means you are spending too much time on infrastructure and operations instead of focusing on high impact projects. Low-Ops provides an all-in-one app platform as a service, so teams can build and ship apps within the boundaries of your network.',
     items: [
       'Low Maintenance',
       'Standard apps work out of box',

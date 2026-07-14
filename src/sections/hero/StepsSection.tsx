@@ -27,7 +27,7 @@ const StepsSection: FC = () => {
               <div className="w-28 h-28 flex items-center justify-center bg-yellow-50 p-4 rounded-xl">
                 <Image src={lightBulb} alt="Light Bulb" />
               </div>
-              <p>John is fed up with excel sheets</p>
+              <p>A high-value idea worth validating appears</p>
             </div>
           </Reveal>
 
@@ -45,7 +45,7 @@ const StepsSection: FC = () => {
               <div className="w-28 h-28 flex items-center justify-center bg-blue-50 p-4 rounded-xl">
                 <Image src={coding} alt="Coding" />
               </div>
-              <p>He builds an app with Claude Code</p>
+              <p>The team builds it with AI assistants in hours</p>
             </div>
           </Reveal>
 
@@ -63,7 +63,7 @@ const StepsSection: FC = () => {
               <div className="w-28 h-28 flex items-center justify-center bg-green-50 p-4 rounded-xl">
                 <Image src={share} alt="Share" />
               </div>
-              <p>He shares the app with colleagues</p>
+              <p>Low-Ops ships it to your private cloud — securely</p>
             </div>
           </Reveal>
         </div>

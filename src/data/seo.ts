@@ -1,15 +1,31 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Low-Ops: App platform for everyone',
+  title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
   description:
-    'Deploy and manage your (vibe coded) applications on a secure, scalable private cloud infrastructure. Perfect for medium to large organizations.',
+    'A private, self-hosted Internal Developer Platform for teams building with AI. Ship AI-built apps from idea to production in minutes — with security guardrails, audit trails and full data sovereignty, without compromising on compliance.',
   keywords: [
-    'mendix',
-    'private',
-    'cloud',
-    'infrastructure',
+    'internal developer platform',
+    'idp',
+    'AI native platform',
+    'vibe coding',
+    'agentic workflows',
+    'MCP',
+    'AI guardrails',
+    'GDPR',
+    'EU AI Act',
+    'DORA',
+    'SOx compliance',
     'data sovereignty',
+    'private cloud',
+    'self-hosted',
+    'fintech',
+    'healthtech',
+    'insurtech',
+    'legaltech',
+    'biotech',
+    'mendix',
+    'infrastructure',
     'enterprise',
     'reactjs',
     'nextjs',
@@ -55,9 +71,9 @@ export const nextMetadata: Metadata = {
     canonical: `https://low-ops.com`,
   },
   openGraph: {
-    title: 'Low-Ops: App platform for everyone',
+    title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
     description:
-      'Manage applications development, deployment, scaling, and security with Low-Ops for private clouds. Deliver applications with top-notch developer experience while adhering to industry best practices.',
+      'The private, self-hosted developer platform for teams building with AI. Build with AI assistants and agentic workflows, then deploy to your own cloud with security guardrails, audit trails and data sovereignty built in.',
     url: 'https://low-ops.com',
     siteName: 'Low-Ops',
     type: 'website',
@@ -66,9 +82,9 @@ export const nextMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Low-Ops: App platform for everyone',
+    title: 'Low-Ops — Build, deploy & manage apps responsibly with AI',
     description:
-      'Manage applications development, deployment, scaling, and security with Low-Ops for private clouds.',
+      'The private, self-hosted developer platform that lets teams ship AI-built apps securely — from idea to production in minutes.',
     images: ['https://low-ops.com/preview.png'],
   },
 };
@@ -86,9 +102,9 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is an all-in-one app platform for everyone, managing apps development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
+    'Low-Ops is a private, self-hosted Internal Developer Platform to build, deploy and manage AI-built apps responsibly — with security, compliance and data sovereignty built in.',
   featureList:
-    'Application management, Private cloud infrastructure, Automated deployment, Scaling, Security, Mendix',
+    'AI-assisted operations, MCP support, Automated CI/CD, Security scanning, Audit trails, Private cloud infrastructure, Observability, Disaster recovery, Compliance',
   screenshot: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png',
   softwareVersion: '3.5',
 };
