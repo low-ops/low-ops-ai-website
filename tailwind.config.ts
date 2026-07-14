@@ -148,8 +148,8 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         neutral: {
-          500: '#9AA3B2',
-          700: '#C9CDD6',
+          500: '#4A5567',
+          700: '#0E1726',
         },
         chart: {
           '1': 'hsl(var(--chart-1))',

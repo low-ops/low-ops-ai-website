@@ -5,7 +5,7 @@ const CTASection = () => {
   return (
     <section id="cta" className="py-20 md:py-28 px-4">
       <div className="container">
-        <div className="relative overflow-hidden rounded-[18px] border border-[var(--lo-line)] px-6 py-14 text-center md:px-16 md:py-20 bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
+        <div className="relative overflow-hidden rounded-[18px] border border-[var(--lo-line)] px-6 py-14 text-center shadow-[var(--lo-shadow-sm)] md:px-16 md:py-20 bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
           <span className="lo-mono inline-flex items-center justify-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
             Get started today
           </span>

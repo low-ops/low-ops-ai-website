@@ -1,5 +1,4 @@
 import { capitalize } from '@/lib/utils';
-import GradientBg from './GradientBg';
 import Reveal from './animations/Reveal';
 
 type TProps = {
@@ -13,18 +12,27 @@ const SectionHero = (props: TProps) => {
   return (
     <section
       id={title}
-      className="relative py-20 md:py-30 bg-primary/5 bg-cover bg-center bg-no-repeat"
+      className="relative overflow-hidden border-b border-[var(--lo-line-soft)] bg-[var(--lo-ink-2)] py-20 md:py-28"
     >
-      <GradientBg />
-      <div className="container relative z-10 flex flex-col items-center gap-2">
-        <Reveal>
-          <h2 className="text-[56px] font-medium text-white">
-            {capitalize(title)}
-          </h2>
-        </Reveal>
+      {/* atmosphere */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_70%_at_50%_-10%,var(--lo-glow),transparent_60%)]" />
+        <div className="lo-grid-mask" />
+      </div>
 
+      <div className="container relative z-10 flex flex-col items-center gap-4 text-center">
+        <Reveal>
+          <span className="lo-mono inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
+            Low-Ops
+          </span>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h1 className="max-w-3xl text-[40px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance text-[var(--lo-fg)] md:text-[56px]">
+            {capitalize(title)}
+          </h1>
+        </Reveal>
         <Reveal delay={0.1}>
-          <p className="flex items-center justify-center gap-1 text-white/70 font-light max-w-2xl text-center">
+          <p className="max-w-2xl text-[16px] font-light leading-relaxed text-[var(--lo-fg-mut)] md:text-[18px]">
             {description}
           </p>
         </Reveal>

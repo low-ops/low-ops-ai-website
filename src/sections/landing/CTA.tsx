@@ -11,7 +11,7 @@ const CTA: FC = () => {
     >
       <div className="container">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[18px] border border-[var(--lo-line)] px-6 py-12 text-center md:px-16 md:py-[72px] bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
+          <div className="relative overflow-hidden rounded-[18px] border border-[var(--lo-line)] px-6 py-12 text-center shadow-[var(--lo-shadow-sm)] md:px-16 md:py-[72px] bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
             <Kicker className="justify-center">
               Give your AI-built apps a golden path
             </Kicker>
