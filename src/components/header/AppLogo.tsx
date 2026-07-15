@@ -1,35 +1,25 @@
-import logo from '@/assets/logo.svg';
+import Logo from '@/components/Logo';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
-const SIZES = {
-  default: 150,
-  small: 130,
-  medium: 150,
-  large: 170,
+const HEIGHTS = {
+  default: 28,
+  small: 24,
+  medium: 28,
+  large: 32,
 };
 
 type TProps = {
   size?: 'small' | 'medium' | 'large';
 };
 
-const AppLogo: FC<TProps> = (props) => {
-  const { size } = props;
-  const width = size ? SIZES[size as keyof typeof SIZES] : SIZES.default;
+const AppLogo: FC<TProps> = ({ size }) => {
+  const height = size ? HEIGHTS[size] : HEIGHTS.default;
 
   return (
-    <Link href="/" className={cn('relative block')}>
-      <Image
-        src={logo}
-        alt="Low-Ops Platform"
-        quality={100}
-        width={width}
-        className="object-contain h-auto m-0"
-        placeholder="blur"
-        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
-      />
+    <Link href="/" className={cn('relative block text-[var(--lo-fg)]')}>
+      <Logo className="w-auto" style={{ height }} />
     </Link>
   );
 };
