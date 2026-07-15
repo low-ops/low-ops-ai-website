@@ -1,5 +1,4 @@
-import logo from '@/assets/logo.svg';
-import Image from 'next/image';
+import Logo from '@/components/Logo';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -11,16 +10,10 @@ const BrandMark: FC<TProps> = ({ className }) => {
   return (
     <Link
       href="/"
-      className={`flex shrink-0 items-center ${className ?? ''}`}
+      className={`flex shrink-0 items-center text-[var(--lo-fg)] ${className ?? ''}`}
       aria-label="Low-Ops home"
     >
-      <Image
-        src={logo}
-        alt="Low-Ops"
-        width={140}
-        priority
-        className="m-0 h-auto w-[126px] object-contain md:w-[140px]"
-      />
+      <Logo className="h-[26px] w-auto md:h-[28px]" />
     </Link>
   );
 };
