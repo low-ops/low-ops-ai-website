@@ -4,6 +4,7 @@ import CTA from '@/sections/landing/CTA';
 import Features from '@/sections/landing/Features';
 import GoldenPath from '@/sections/landing/GoldenPath';
 import Hero from '@/sections/landing/Hero';
+import Portal from '@/sections/landing/Portal';
 import Problem from '@/sections/landing/Problem';
 import Proof from '@/sections/landing/Proof';
 import Ticker from '@/sections/landing/Ticker';
@@ -18,6 +19,7 @@ const Home = () => {
         <Problem />
         <GoldenPath />
         <Features />
+        <Portal />
         <Proof />
         <CTA />
       </main>
