@@ -78,7 +78,7 @@ export const nextMetadata: Metadata = {
     siteName: 'Low-Ops',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png' }],
+    images: [{ url: 'https://low-ops.com/preview.png' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -105,6 +105,6 @@ export const structuredData = {
     'Low-Ops is a private, self-hosted platform to build, ship and operate AI agents and web apps safely — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
   featureList:
     'AI-assisted operations, MCP support, Automated CI/CD, Security scanning, Audit trails, Private cloud infrastructure, Observability, Disaster recovery, Compliance',
-  screenshot: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png',
+  screenshot: 'https://low-ops.com/preview.png',
   softwareVersion: '3.5',
 };
