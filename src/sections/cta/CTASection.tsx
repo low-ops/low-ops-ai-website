@@ -13,16 +13,16 @@ const CTASection = () => {
             Get started today
           </span>
           <h2 className="lo-display relative mx-auto mt-4 max-w-2xl text-[30px] text-balance text-[var(--lo-fg)] md:text-[48px]">
-            Give your AI-built apps a{' '}
+            Give your AI agents &amp; web apps a{' '}
             <span className="lo-em">
-              responsible
+              safe
             </span>{' '}
             path to production
           </h2>
           <p className="mx-auto mt-4.5 max-w-2xl text-[17px] text-[var(--lo-fg-mut)] md:text-[18px]">
-            Join high-velocity teams shipping faster with automated pipelines,
-            security guardrails and full data sovereignty — on your own private
-            cloud.
+            Join high-velocity teams shipping AI agents and web apps to their
+            own private cloud — software-engineering best practices enforced
+            automatically, for humans and AI agents alike.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3.5 lg:flex-row">

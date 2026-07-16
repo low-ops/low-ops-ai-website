@@ -20,13 +20,13 @@ const Features: FC = () => {
             kicker="What's in the platform"
             title={
               <>
-                Everything an AI-built app needs.{' '}
+                Everything your agents and apps need.{' '}
                 <span className="lo-em">
                   Nothing to wire up.
                 </span>
               </>
             }
-            side="A complete, self-hosted platform for building, deploying and operating AI-built apps — with security, compliance and cost control engineered in from the start."
+            side="A complete, self-hosted platform for building, shipping and operating AI agents and web apps — private cloud first, with software-engineering best practices, security and compliance engineered in from the start."
           />
         </Reveal>
 
@@ -39,12 +39,13 @@ const Features: FC = () => {
                 {'// paved-road'}
               </div>
               <h3 className="lo-display mt-3 text-[20px] text-[var(--lo-fg)]">
-                Golden paths to production
+                Best practices, paved into the road
               </h3>
               <p className="mt-2.5 max-w-[46em] text-[14.5px] text-[var(--lo-fg-mut)]">
-                A single, opinionated route from repo to running app. Every
-                team ships the same reliable way — no snowflake deployments,
-                no tribal knowledge, no 2 a.m. surprises.
+                A single, opinionated route from repo to running agent or app,
+                with software-engineering best practices built into every step.
+                Every team ships the same reliable way — no snowflake
+                deployments, no tribal knowledge, no 2 a.m. surprises.
               </p>
             </div>
           </Reveal>
@@ -116,16 +117,17 @@ const Features: FC = () => {
               </span>
               <div>
                 <div className="lo-mono text-[12px] tracking-[0.06em] text-[var(--lo-cyan)]">
-                  {'// no-k8s'}
+                  {'// human + agent'}
                 </div>
                 <h3 className="lo-display mt-3 text-[20px] text-[var(--lo-fg)]">
-                  Kubernetes, without the PhD
+                  One interface, for people and agents
                 </h3>
                 <p className="mt-2.5 max-w-[60em] text-[14.5px] text-[var(--lo-fg-mut)]">
-                  Run apps in a private cloud without being a Kubernetes
-                  expert. Low-Ops handles the hard parts — upgrades,
-                  certificates, networking, recovery — so your team ships
-                  apps, not infrastructure.
+                  The same console, API and MCP endpoints drive every deploy —
+                  whether a developer clicks the button or an AI agent calls
+                  it. And Low-Ops handles the hard infrastructure — upgrades,
+                  certificates, networking, recovery — so nobody needs a
+                  Kubernetes PhD to run apps in a private cloud.
                 </p>
               </div>
             </div>

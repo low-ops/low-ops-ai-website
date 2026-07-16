@@ -31,15 +31,15 @@ const Hero: FC = () => {
           <div>
             <Reveal>
               <span className="lo-mono inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-['']">
-                The private, AI-native developer platform
+                The private platform for AI agents &amp; web apps
               </span>
             </Reveal>
 
             <Reveal delay={0.05}>
               <h1 className="lo-display mt-6 text-[44px] text-balance text-[var(--lo-fg)] md:text-[72px] lg:text-[84px]">
-                Build, deploy &amp; manage apps{' '}
+                Ship AI agents &amp; web apps{' '}
                 <span className="relative whitespace-nowrap">
-                  <span className="lo-em">responsibly</span>
+                  <span className="lo-em">safely</span>
                   <svg
                     className="lo-squiggle absolute inset-x-0 -bottom-[0.13em] h-[0.2em] w-full overflow-visible"
                     viewBox="0 0 300 24"
@@ -51,16 +51,17 @@ const Hero: FC = () => {
                       d="M4,16 C40,6 70,20 105,12 S180,4 220,14 S280,10 296,13"
                     />
                   </svg>
-                </span>{' '}
-                with AI.
+                </span>
+                .
               </h1>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="mt-7 max-w-[32em] text-[16px] leading-relaxed text-[var(--lo-fg-mut)] md:text-[19px]">
-                The self-hosted platform that gives AI-built apps a safe path
-                to production. Idea to your own cloud in minutes — guardrails,
-                audit trails and data sovereignty built in.
+              <p className="mt-7 max-w-[33em] text-[16px] leading-relaxed text-[var(--lo-fg-mut)] md:text-[19px]">
+                The self-hosted platform that ships AI agents and web apps to a
+                private cloud you control — with software-engineering best
+                practices enforced automatically, on one interface that&rsquo;s
+                as easy for your AI agents to drive as it is for your team.
               </p>
             </Reveal>
 
@@ -90,19 +91,23 @@ const Hero: FC = () => {
               <div className="lo-mono mt-9 flex flex-wrap items-center gap-x-4.5 gap-y-2 text-[12px] tracking-[0.04em] text-[var(--lo-fg-dim)]">
                 <span>
                   <b className="font-medium text-[var(--lo-fg-mut)]">
-                    Self-hosted
+                    Private cloud
                   </b>{' '}
-                  · your cloud
+                  first
                 </span>
                 <span className="h-1 w-1 rounded-full bg-[var(--lo-cyan)]" />
                 <span>
                   <b className="font-medium text-[var(--lo-fg-mut)]">
-                    SOC-ready
+                    Best practices
                   </b>{' '}
-                  audit trails
+                  enforced
                 </span>
                 <span className="h-1 w-1 rounded-full bg-[var(--lo-cyan)]" />
-                <span>No Kubernetes expertise required</span>
+                <span>
+                  Built for humans{' '}
+                  <b className="font-medium text-[var(--lo-fg-mut)]">&amp;</b> AI
+                  agents
+                </span>
               </div>
             </Reveal>
           </div>

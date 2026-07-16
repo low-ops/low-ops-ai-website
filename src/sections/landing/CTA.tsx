@@ -16,18 +16,18 @@ const CTA: FC = () => {
             <div className="lo-blueprint [mask-image:radial-gradient(100%_100%_at_50%_0%,#000_20%,transparent_80%)]" />
             <Stamp className="absolute top-6 right-6 hidden h-[104px] w-[104px] rotate-[9deg] opacity-90 md:block" />
             <Kicker className="justify-center">
-              Give your AI-built apps a golden path
+              Give your agents and apps a golden path
             </Kicker>
             <h2 className="lo-display relative mt-4 text-[32px] text-balance text-[var(--lo-fg)] md:text-[56px]">
-              Ship AI-built apps your security team{' '}
+              Ship AI agents &amp; web apps your security team{' '}
               <span className="lo-em">
                 approves.
               </span>
             </h2>
             <p className="relative mx-auto mt-5 max-w-[42em] text-[18px] text-[var(--lo-fg-mut)]">
-              From prompt to production, responsibly — in minutes, not months.
-              Book a demo and watch an idea reach your private cloud,
-              guardrails and all.
+              From prompt to production, safely — in minutes, not months. Book
+              a demo and watch an agent or app reach your private cloud,
+              best practices and guardrails all enforced.
             </p>
             <div className="relative mt-8.5 flex flex-wrap items-center justify-center gap-3.5">
               <a

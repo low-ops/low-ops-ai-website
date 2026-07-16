@@ -25,9 +25,9 @@ const Footer: FC<TProps> = ({ classes }) => {
         <div className="flex flex-col gap-5">
           <BrandMark />
           <p className="max-w-md text-[15px] leading-relaxed text-[var(--lo-fg-mut)]">
-            Low-Ops is the private, AI-native developer platform that gives
-            AI-built apps a safe path to production — self-hosted on the cloud
-            you control.
+            Low-Ops is the private, self-hosted platform for shipping AI agents
+            and web apps safely — private cloud first, with software-engineering
+            best practices enforced for humans and AI agents alike.
           </p>
           <div className="flex gap-3">
             {socials.map((social) => (
