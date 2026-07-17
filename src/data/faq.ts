@@ -8,7 +8,7 @@ export const faqDataStrategic = [
   {
     title: 'How is this related to vibe-coding and other generative AI technologies?',
     description:
-    'Low-Ops defines a simple app specification that AI assistants and agents use to create Low-Ops compatible apps — for example, how the code should consume a database service and which port it should listen on. With MCP support, agents can build and deploy directly, while built-in guardrails and best-practice scanning keep AI-generated apps safe, compliant and production-ready.',
+    'Low-Ops defines a simple app specification that AI assistants and agents use to create Low-Ops compatible apps — for example, how the code should consume a database service and which port it should listen on. With MCP support, agents can build and deploy directly, while built-in guardrails and best-practice scanning keep AI-generated apps secure, compliant and production-ready.',
   },
   {
     title: 'How can Low-Ops enable secure and compliant deployments?',
