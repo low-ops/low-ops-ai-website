@@ -48,16 +48,16 @@ export const faqDataStrategic = [
   {
     title: 'Why should I choose Low-Ops over building my own platform?',
     description:
-      'Low-Ops is a fully featured platform for building and deploying any web application. It follows platform-engineering best practices, is easy to use and maintain, and is far cheaper and faster than assembling and operating your own platform — freeing your team to focus on your core product instead of infrastructure.',
+      'Low-Ops is a fully featured platform for building and deploying AI agents and web apps. It follows platform-engineering best practices, is easy to use and maintain, and is far cheaper and faster than assembling and operating your own platform — freeing your team to focus on your core product instead of infrastructure.',
   },
 ];
 
 
 export const faqDataTechnical = [
   {
-    title: 'What are system requirements?',
+    title: 'What are the system requirements?',
     description:
-      'Low-Ops platform is installed on your own infrastructure. You can use your own hardware, or we can help you set up a private cloud. We support any kubernetes compatible platform with block storage and load balancer services.',
+      'The Low-Ops platform is installed on your own infrastructure. You can use your own hardware, or we can help you set up a private cloud. We support any Kubernetes-compatible platform with block storage and load balancer services.',
   },
   {
     title: 'How long does it take to set up a private cloud with Low-Ops?',
@@ -77,6 +77,6 @@ export const faqDataTechnical = [
   {
     title: 'What components are included in the platform?',
     description:
-      'The actual list of components is constantly evolving. We follow industry best practices and open source trends to select the best components for the job. We also have a strong focus on security and compliance. Some examples are Kubernetes, Prometheus, helm, PostgreSQL, Redis, RabbitMQ, Keycloak, etc.',
+      'The actual list of components is constantly evolving. We follow industry best practices and open source trends to select the best components for the job. We also have a strong focus on security and compliance. Some examples are Kubernetes, Prometheus, Helm, PostgreSQL, Redis, RabbitMQ and Keycloak.',
   },
 ];

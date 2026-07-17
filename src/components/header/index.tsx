@@ -55,7 +55,7 @@ const Header: FC<TProps> = ({ classes }) => {
               rel="noopener noreferrer"
               className="lo-mono hidden rounded-[10px] border border-[var(--lo-line)] px-5 py-3 text-[13.5px] text-[var(--lo-fg)] transition-all hover:-translate-y-0.5 hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)] md:inline-flex"
             >
-              Free Access
+              Start free
             </a>
             <a
               href={data.cta.personalDemoLink}

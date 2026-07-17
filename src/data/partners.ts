@@ -4,7 +4,7 @@ import lowcodelabsLogo from '@/assets/lowcodelabs-logo.png';
 
 export const partnersMetadata = {
   subtitle: 'Partners',
-  title: 'Manage your app faster',
+  title: 'Build and ship faster, together',
   description:
     'Together with our partners, we can help you build and deploy your applications faster and easier. Our partners are experts in their field and can help you with the implementation and customization of Low-Ops.',
 };
@@ -24,7 +24,7 @@ export const partnersData = [
   },
   {
     title: 'Inntelligence AI',
-    description: `Inntelligence AI platform enables you to build custom AI workflows and agents for your business. All fully integrated within Low-Ops for a scalable and low maintenance.`,
+    description: `The Inntelligence AI platform enables you to build custom AI workflows and agents for your business — fully integrated with Low-Ops for a scalable, low-maintenance setup.`,
     imagePath: inntelligenceLogo,
     link: 'https://inntelligence.nl/',
   },

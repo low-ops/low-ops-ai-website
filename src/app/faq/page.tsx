@@ -11,7 +11,7 @@ const FAQPage = () => {
       <main>
         <SectionHero
           title="Frequently Asked Questions"
-          description="Based on our past conversions with others like you, we have compiled a list of popular questions and answers. You are of course more than welcome to contact us if you prefer."
+          description="Based on our past conversations with others like you, we have compiled a list of popular questions and answers. You are of course more than welcome to contact us if you prefer."
         />
         <FaqSection />
         <CTASection />

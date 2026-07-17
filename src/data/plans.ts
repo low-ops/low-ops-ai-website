@@ -6,7 +6,7 @@ export const plans = [
     description: 'For personal use',
     items: {
       'deployment model': 'SaaS',
-      scalability: 'None, auto turns off after 1 week',
+      scalability: 'None — apps auto-stop after 1 week',
       'high availability': 'No',
       'platform upgrades': 'Yes',
       'number of apps': '1',
@@ -23,7 +23,7 @@ export const plans = [
     value: 'professional',
     label: 'Professional',
     price: '16 EUR',
-    description: 'Per app (1GB RAM) in your own cloud',
+    description: 'Per app (1 GB RAM) in your own cloud',
     items: {
       'deployment model': 'Multi-node Kubernetes',
       scalability: 'Horizontal',

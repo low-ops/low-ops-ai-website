@@ -8,7 +8,7 @@ const TechWeUseSection = () => {
         <SectionTitle
           subtitle="Integrations"
           title="Tools we use"
-          description="We are using best open-source tools to achieve best results."
+          description="We build on proven open-source tools to deliver the best results."
         />
 
         <TechWeUse />

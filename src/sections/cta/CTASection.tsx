@@ -33,7 +33,7 @@ const CTASection = () => {
               className="lo-mono group inline-flex items-center gap-2 rounded-[10px] bg-[var(--lo-accent)] px-5 py-3.5 text-[13.5px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-12px_var(--lo-accent)]"
             >
               <PiPaperPlaneTilt size={18} />
-              Access Free Tier Now
+              Start free
             </a>
             <a
               href={data.cta.vipAccessLink}
