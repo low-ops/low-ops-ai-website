@@ -43,7 +43,7 @@ const Problem: FC = () => {
               <>
                 AI made building easy. Shipping it{' '}
                 <span className="lo-em">
-                  safely
+                  responsibly
                 </span>{' '}
                 is the hard part.
               </>

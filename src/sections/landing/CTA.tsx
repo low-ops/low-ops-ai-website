@@ -25,7 +25,7 @@ const CTA: FC = () => {
               </span>
             </h2>
             <p className="relative mx-auto mt-5 max-w-[42em] text-[18px] text-[var(--lo-fg-mut)]">
-              From prompt to production, safely — in minutes, not months. Book
+              From prompt to production, responsibly — in minutes, not months. Book
               a demo and watch an agent or app reach your private cloud,
               best practices and guardrails all enforced.
             </p>

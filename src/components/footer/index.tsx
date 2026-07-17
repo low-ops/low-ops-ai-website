@@ -26,7 +26,7 @@ const Footer: FC<TProps> = ({ classes }) => {
           <BrandMark />
           <p className="max-w-md text-[15px] leading-relaxed text-[var(--lo-fg-mut)]">
             Low-Ops is the private, self-hosted platform for shipping AI agents
-            and web apps safely — private cloud first, with software-engineering
+            and web apps responsibly — private cloud first, with software-engineering
             best practices enforced for humans and AI agents alike.
           </p>
           <div className="flex gap-3">

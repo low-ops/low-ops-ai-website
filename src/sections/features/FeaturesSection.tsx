@@ -19,7 +19,7 @@ const FeaturesSection = () => {
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           subtitle="Features"
-          title="Everything your team needs to ship safely"
+          title="Everything your team needs to ship responsibly"
           description="A complete, self-hosted platform for building, shipping and operating AI agents and web apps — private cloud first, with software-engineering best practices, security and compliance engineered in from the start."
         />
 

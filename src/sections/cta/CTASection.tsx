@@ -15,7 +15,7 @@ const CTASection = () => {
           <h2 className="lo-display relative mx-auto mt-4 max-w-2xl text-[30px] text-balance text-[var(--lo-fg)] md:text-[48px]">
             Give your AI agents &amp; web apps a{' '}
             <span className="lo-em">
-              safe
+              responsible
             </span>{' '}
             path to production
           </h2>

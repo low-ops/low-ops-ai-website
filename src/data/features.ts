@@ -18,7 +18,7 @@ import {
 export const metadata = {
   title: 'Features',
   description:
-    'A private, self-hosted platform that lets teams build, ship and operate AI agents and web apps safely — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
+    'A private, self-hosted platform that lets teams build, ship and operate AI agents and web apps responsibly — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
 };
 
 export const topFeatures = [

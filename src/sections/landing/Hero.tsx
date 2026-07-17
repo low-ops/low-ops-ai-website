@@ -39,7 +39,7 @@ const Hero: FC = () => {
               <h1 className="lo-display mt-6 text-[44px] text-balance text-[var(--lo-fg)] md:text-[72px] lg:text-[84px]">
                 Ship AI agents &amp; web apps{' '}
                 <span className="relative whitespace-nowrap">
-                  <span className="lo-em">safely</span>
+                  <span className="lo-em">responsibly</span>
                   <svg
                     className="lo-squiggle absolute inset-x-0 -bottom-[0.13em] h-[0.2em] w-full overflow-visible"
                     viewBox="0 0 300 24"

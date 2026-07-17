@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Low-Ops — Ship AI agents & web apps safely',
+  title: 'Low-Ops — Ship AI agents & web apps responsibly',
   description:
-    'A private, self-hosted platform for shipping AI agents and web apps safely. Private cloud first, software-engineering best practices enforced automatically, on one interface built for humans and AI agents alike — from idea to production in minutes.',
+    'A private, self-hosted platform for shipping AI agents and web apps responsibly. Private cloud first, software-engineering best practices enforced automatically, on one interface built for humans and AI agents alike — from idea to production in minutes.',
   keywords: [
     'internal developer platform',
     'idp',
@@ -71,9 +71,9 @@ export const nextMetadata: Metadata = {
     canonical: `https://low-ops.com`,
   },
   openGraph: {
-    title: 'Low-Ops — Ship AI agents & web apps safely',
+    title: 'Low-Ops — Ship AI agents & web apps responsibly',
     description:
-      'The private, self-hosted platform for shipping AI agents and web apps safely. Private cloud first, software-engineering best practices enforced automatically, on one interface built for humans and AI agents alike.',
+      'The private, self-hosted platform for shipping AI agents and web apps responsibly. Private cloud first, software-engineering best practices enforced automatically, on one interface built for humans and AI agents alike.',
     url: 'https://low-ops.com',
     siteName: 'Low-Ops',
     type: 'website',
@@ -82,9 +82,9 @@ export const nextMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Low-Ops — Ship AI agents & web apps safely',
+    title: 'Low-Ops — Ship AI agents & web apps responsibly',
     description:
-      'The private, self-hosted platform that lets teams ship AI agents and web apps safely — from idea to your own cloud in minutes.',
+      'The private, self-hosted platform that lets teams ship AI agents and web apps responsibly — from idea to your own cloud in minutes.',
     images: ['https://low-ops.com/preview.png'],
   },
 };
@@ -102,7 +102,7 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is a private, self-hosted platform to build, ship and operate AI agents and web apps safely — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
+    'Low-Ops is a private, self-hosted platform to build, ship and operate AI agents and web apps responsibly — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
   featureList:
     'AI-assisted operations, MCP support, Automated CI/CD, Security scanning, Audit trails, Private cloud infrastructure, Observability, Disaster recovery, Compliance',
   screenshot: 'https://low-ops.com/preview.png',

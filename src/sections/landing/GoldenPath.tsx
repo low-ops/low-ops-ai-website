@@ -21,7 +21,7 @@ const STEPS = [
   {
     n: '03 · SHIP',
     numeral: '03',
-    title: 'Low-Ops ships it — safely',
+    title: 'Low-Ops ships it — responsibly',
     body: 'Onto your private cloud, with best practices, scanning, guardrails and audit trails already enforced.',
     stagger: 'lg:mt-[68px]',
   },
@@ -45,7 +45,7 @@ const GoldenPath: FC = () => {
                 </span>
               </>
             }
-            side="Every agent and app follows the same paved road. Software-engineering best practices, security and audit are enforced automatically, so shipping fast and shipping safely stop being a trade-off."
+            side="Every agent and app follows the same paved road. Software-engineering best practices, security and audit are enforced automatically, so shipping fast and shipping responsibly stop being a trade-off."
           />
         </Reveal>
 
