@@ -14,15 +14,15 @@ const STEPS = [
   {
     n: '02 · BUILD',
     numeral: '02',
-    title: 'The team builds it with AI in hours',
-    body: 'AI assistants, agentic workflows and vibe coding turn the idea into a working app — fast.',
+    title: 'Humans and AI agents build it in hours',
+    body: 'AI assistants, agentic workflows and vibe coding turn the idea into a working agent or web app — fast.',
     stagger: 'lg:mt-[34px]',
   },
   {
     n: '03 · SHIP',
     numeral: '03',
-    title: 'Low-Ops ships it — securely',
-    body: 'Onto your private cloud, with scanning, guardrails and audit trails already in place.',
+    title: 'Low-Ops ships it — responsibly',
+    body: 'Onto your private cloud, with best practices, scanning, guardrails and audit trails already enforced.',
     stagger: 'lg:mt-[68px]',
   },
 ];
@@ -45,7 +45,7 @@ const GoldenPath: FC = () => {
                 </span>
               </>
             }
-            side="Every app follows the same paved road. Best practices, security and audit are enforced automatically, so shipping fast and shipping responsibly stop being a trade-off."
+            side="Every agent and app follows the same paved road. Software-engineering best practices, security and audit are enforced automatically, so shipping fast and shipping responsibly stop being a trade-off."
           />
         </Reveal>
 

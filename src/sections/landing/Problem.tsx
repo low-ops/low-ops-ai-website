@@ -12,7 +12,7 @@ const STAKEHOLDERS = [
   {
     role: 'Security',
     want: 'Wants guardrails on everything that ships.',
-    tension: "Can't review every AI-built app by hand.",
+    tension: "Can't review every AI-built agent by hand.",
   },
   {
     role: 'Developers',
@@ -41,14 +41,14 @@ const Problem: FC = () => {
             kicker="The AI adoption bottleneck"
             title={
               <>
-                AI made building easy. Deploying it{' '}
+                AI made building easy. Shipping it{' '}
                 <span className="lo-em">
                   responsibly
                 </span>{' '}
                 is the hard part.
               </>
             }
-            side="Leadership drives for growth, security mandates guardrails, developers want to ship, and operations is buried in manual deployments. Promising apps stall — or land in an unmanaged public cloud with sensitive data at risk. Low-Ops resolves the conflict for every stakeholder."
+            side="Leadership drives for growth, security mandates guardrails, developers want to ship, and operations is buried in manual deployments. Promising agents and apps stall — or land in an unmanaged public cloud with sensitive data at risk. Low-Ops resolves the conflict for every stakeholder."
           />
         </Reveal>
 

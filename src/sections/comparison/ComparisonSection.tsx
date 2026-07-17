@@ -184,8 +184,8 @@ const ComparisonSection = () => {
       <div className="container flex flex-col gap-12 md:gap-20">
         <SectionTitle
           subtitle="Comparison"
-          title="Our comparisons"
-          description="Compare our product with our competitors"
+          title="How Low-Ops compares"
+          description="Compare Low-Ops with other platforms to choose the right fit for your needs."
         />
         <div className="hidden md:block overflow-x-auto rounded-lg border border-primary/30 bg-card">
           <Table>

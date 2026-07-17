@@ -49,11 +49,11 @@ const Portal: FC = () => {
             kicker="Inside the portal"
             title={
               <>
-                Every app, environment and deploy.{' '}
+                Every agent, app, environment and deploy.{' '}
                 <span className="lo-em">One console.</span>
               </>
             }
-            side="The Low-Ops portal is where your team lives day to day: application status, alerts, environments, packages and deployments — self-hosted on your cloud, with the audit trail written for you."
+            side="The Low-Ops portal is where your team lives day to day: application status, alerts, environments, packages and deployments — self-hosted on your cloud, with the audit trail written for you. Every action is an API and MCP call too, so your AI agents can drive the exact same workflows."
           />
         </Reveal>
 

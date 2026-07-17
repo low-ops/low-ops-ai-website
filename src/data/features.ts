@@ -7,8 +7,6 @@ import {
   PiFalloutShelterFill,
   PiFlowArrowFill,
   PiHammerFill,
-  PiLightningFill,
-  PiRocketFill,
   PiShieldCheckFill,
   PiGlobeFill,
   PiBrain,
@@ -18,44 +16,8 @@ import {
 export const metadata = {
   title: 'Features',
   description:
-    'A private, self-hosted Internal Developer Platform that lets regulated teams build, deploy and manage AI-built apps responsibly — secure, compliant and scalable by default.',
+    'A private, self-hosted platform that lets teams build, ship and operate AI agents and web apps responsibly — private cloud first, with software-engineering best practices enforced for humans and AI agents alike.',
 };
-
-export const topFeatures = [
-  {
-    title: 'AI-Powered Agility',
-    description:
-      'Turn AI assistants and agentic workflows into shipped software. Low-Ops gives vibe-coded apps a golden path to production, so your team can outmaneuver competitors and continuously optimize operations.',
-    bullets: [
-      'MCP support to build and deploy with agents.',
-      'AI guardrails and best-practice scanning by default.',
-      'A standard app spec any AI assistant can target.',
-    ],
-    icon: PiLightningFill({ size: 32.5 }),
-  },
-  {
-    title: 'Accelerated Time-to-Market',
-    description:
-      'Rapidly build and test proof of concepts to validate high-value ideas in days, not quarters. Automated CI/CD and self-service deployment remove the wait between idea and live URL.',
-    bullets: [
-      'From idea to a live, shareable app in minutes.',
-      'Automated pipelines with tests and security scans.',
-      'Self-service environments, zero ticket queues.',
-    ],
-    icon: PiRocketFill({ size: 32.5 }),
-  },
-  {
-    title: 'Enterprise-Grade Security',
-    description:
-      'Ship fast without compromising data integrity or compliance. Everything runs in your own private cloud with audit trails, access management and security scanning enforced by default.',
-    bullets: [
-      'Self-hosted — your data never leaves your cloud.',
-      'Audit trails and access management out of the box.',
-      'Controls that support GDPR, DORA and SOx.',
-    ],
-    icon: PiShieldCheckFill({ size: 32.5 }),
-  },
-];
 
 export const features = [
   {
@@ -73,7 +35,7 @@ export const features = [
   {
     title: 'Automation',
     description:
-      'Streamline builds with fully automated pipelines that runs unit tests, and checks for best practices. Identify vulnerabilities early for smoother deployments.',
+      'Streamline builds with fully automated pipelines that run unit tests and check for best practices. Identify vulnerabilities early for smoother deployments.',
     icon: PiFlowArrowFill({ size: 32.5 }),
   },
   {
@@ -115,7 +77,7 @@ export const features = [
   {
     title: 'Cost effective',
     description:
-      'We prioritize resources sharing to keep costs down. For example a single database cluster is used by multiple applications. Just like onboarding a new is a few minutes, offboarding it also is just a few clicks away. Cleaning up irrelevant apps is a breeze.',
+      'We prioritize resource sharing to keep costs down — for example, a single database cluster serves multiple applications. Onboarding a new app takes minutes, and offboarding one is just a few clicks, so cleaning up irrelevant apps is a breeze.',
     icon: PiCurrencyCircleDollarFill({ size: 32.5 }),
   },
   {
@@ -125,9 +87,9 @@ export const features = [
     icon: PiBrain({ size: 32.5 }),
   },
   {
-    title: 'Any App types',
+    title: 'Any app type',
     description:
-      'Low-Ops does not limit you to a specific app type. You can build and deploy any type of application you need. We support a wide range of app types including web applications as long as it can be packaged with docker.',
+      'Low-Ops does not limit you to a specific app type. You can build and deploy web apps, AI agents, APIs and background services — anything that can be packaged with Docker.',
     icon: PiPackage({ size: 32.5 }),
   },
 ];

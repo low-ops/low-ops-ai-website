@@ -11,7 +11,7 @@ const PricingPage = () => {
       <Header />
       <SectionHero
         title="Pricing"
-        description="We offer flexible and transparent pricing plans to help you choose the perfect fit for your needs. Whether you're just starting or looking to scale."
+        description="Flexible, transparent pricing that fits your needs — whether you're just starting or looking to scale."
       />
       <main>
         <PricingSection />

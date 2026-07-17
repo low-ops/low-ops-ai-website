@@ -11,7 +11,7 @@ const FeaturesPage = () => {
       <Header />
       <SectionHero
         title="Features"
-        description="Low-Ops is a full-featured, self-hosted platform for building and deploying any web application. It follows platform-engineering best practices — secure, compliant and easy to operate — so your team can focus on the product, not the infrastructure."
+        description="Low-Ops is a full-featured, self-hosted platform for building and shipping AI agents and web apps. It enforces software-engineering best practices — secure, compliant and easy to operate for humans and AI agents alike — so your team can focus on the product, not the infrastructure."
       />
       <main>
         <FeaturesSection />

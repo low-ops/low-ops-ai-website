@@ -28,7 +28,7 @@ const Page = () => {
           </p>
           <p className="text-center">
             If you have any questions, please contact me at{' '}
-            <a href="mailto:steven@cinaq.com" className="text-primary">
+            <a href="mailto:steven@low-ops.ai" className="text-primary">
               steven@low-ops.ai
             </a>
             .

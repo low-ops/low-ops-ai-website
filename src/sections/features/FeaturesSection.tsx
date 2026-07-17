@@ -20,7 +20,7 @@ const FeaturesSection = () => {
         <SectionTitle
           subtitle="Features"
           title="Everything your team needs to ship responsibly"
-          description="A complete, self-hosted platform for building, deploying and operating AI-built apps — with security, compliance and cost control engineered in from the start."
+          description="A complete, self-hosted platform for building, shipping and operating AI agents and web apps — private cloud first, with software-engineering best practices, security and compliance engineered in from the start."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full max-w-6xl mx-auto">

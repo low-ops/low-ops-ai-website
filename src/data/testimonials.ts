@@ -1,6 +1,6 @@
 export const testimonials = [
   {
-    text: 'For me the magic of low-ops is that us as a regulated financial services business are able to host mendix effortlessly in our own cloud and create unlimited instances for our white label clients in minutes at the push of a button.',
+    text: 'For me the magic of Low-Ops is that we, as a regulated financial services business, are able to host Mendix effortlessly in our own cloud and create unlimited instances for our white-label clients in minutes, at the push of a button.',
     company: 'Efficient Group',
     author: 'Emile Wegner, Managing Director',
   },
@@ -10,17 +10,17 @@ export const testimonials = [
     author: 'Platform Product Owner',
   },
   {
-    text: `We benefitted of more freedom, direct access to the dev team, and a flexible setup for running your own infrastructure.`,
+    text: `We benefitted from more freedom, direct access to the dev team, and a flexible setup for running our own infrastructure.`,
     company: 'Startup',
     author: 'Technical Director',
   },
   {
-    text: 'We host Mendix in a private cloud environment, and Low Ops has made our Infrastructure and DevOps experience probably a 100% better than using standard Kubernetes.  You don’t have to be a Kubernetes expert to run Mendix in a private cloud environment',
+    text: 'We host Mendix in a private cloud environment, and Low-Ops has made our infrastructure and DevOps experience probably 100% better than using standard Kubernetes. You don’t have to be a Kubernetes expert to run Mendix in a private cloud environment.',
     company: 'Efficient Group',
     author: 'Andre Grobbelaar, CTO',
   },
   {
-    text: `Great logging, metrics and many more capabilities that works out of the box.`,
+    text: `Great logging, metrics and many more capabilities that work out of the box.`,
     company: 'Startup',
     author: 'Mendix Developer',
   },
