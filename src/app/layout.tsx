@@ -1,22 +1,15 @@
 import { nextMetadata, structuredData } from '@/data/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-import { DM_Sans, Poppins } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
 
 const dmSans = DM_Sans({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-dm-sans',
-});
-
-const poppins = Poppins({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = nextMetadata;
@@ -27,8 +20,8 @@ const RootLayout = (props: TProps) => {
   const { children } = props;
 
   return (
-    <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
-      <body className="font-poppins bg-[var(--lo-ink)] text-[var(--lo-fg)]">
+    <html lang="en" className={dmSans.variable}>
+      <body className="font-sans bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         {children}
 
         <script

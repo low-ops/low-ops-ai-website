@@ -7,7 +7,7 @@ type TProps = {
 
 const Kicker: FC<TProps> = ({ children, className }) => (
   <span
-    className={`lo-mono inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.22em] text-[var(--lo-accent)] before:h-px before:w-[22px] before:bg-[var(--lo-accent)] before:opacity-70 before:content-[''] ${className ?? ''}`}
+    className={`inline-flex items-center text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--lo-accent)] ${className ?? ''}`}
   >
     {children}
   </span>

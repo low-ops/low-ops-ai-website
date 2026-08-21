@@ -1,57 +1,38 @@
-'use client';
-
 import SectionTitle from '@/components/SectionTitle';
 import { roadmapSteps } from '@/data/roadmap';
-import { cn } from '@/lib/utils';
-import WavyLineSvg from '@/sections/features/WavyLine';
 
 const RoadmapSection = () => {
-  const renderRoadmapSteps = () => {
-    return roadmapSteps.map((step, index) => (
-      <div key={step.step} className="relative mx-auto xl:mx-0">
-        <div
-          className={cn(
-            'relative xl:absolute flex items-center gap-4 xl:gap-8 justify-center text-center max-w-[300px]',
-            step.positionClasses,
-            index === 1 ? 'flex-col xl:flex-col-reverse' : 'flex-col'
-          )}
-        >
-          <div className="flex flex-col items-center gap-4 text-center prose md:prose-md">
-            <span className="text-primary font-sans border border-primary/30 rounded-2xl py-1.5 px-6 bg-[var(--lo-surface)]">
-              Step {index + 1}
-            </span>
-            <h4>{step.title}</h4>
-            <p className="text-sm font-light font-sans max-w-70">
-              {step.description}
-            </p>
-          </div>
-          <div className="hidden xl:flex w-[36px] h-[36px] rounded-full bg-[var(--lo-surface)] border border-[var(--lo-line)] items-center justify-center shadow-md">
-            <span className="w-[12px] h-[12px] rounded-full bg-primary" />
-          </div>
-          <span className="w-[80px] h-[80px] bg-primary rounded-full flex items-center justify-center">
-            <step.Icon size={32.5} className="text-white" />
-          </span>
-        </div>
-      </div>
-    ));
-  };
-
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-primary/5">
-      <div className="container relative flex flex-col items-center gap-12 md:gap-20">
+    <section id="roadmap" className="py-20 md:py-24 bg-primary/5">
+      <div className="container flex flex-col items-center gap-12 md:gap-16">
         <SectionTitle
           subtitle="How it works"
           title="From login to live app in three steps"
           description="A golden path from idea to production. Log in, build in your favorite IDE, and deploy to your private cloud — with best practices and security enforced automatically at every step."
         />
 
-        <div className="relative flex flex-col items-center gap-12 h-auto xl:h-[500px] w-full">
-          <div className="hidden xl:block absolute top-1/2 -translate-y-1/2">
-            <WavyLineSvg />
-          </div>
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 md:gap-10 w-full max-w-6xl mx-auto">
-            {renderRoadmapSteps()}
-          </div>
+        <div className="grid w-full max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
+          {roadmapSteps.map((step, index) => (
+            <div
+              key={step.step}
+              className="flex h-full flex-col items-start gap-4 rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-7 shadow-[var(--lo-shadow-sm)]"
+            >
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-lg bg-[color-mix(in_srgb,var(--lo-accent)_10%,var(--lo-surface))] text-[var(--lo-accent)]">
+                  <step.Icon size={22} />
+                </span>
+                <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--lo-fg-dim)]">
+                  Step {index + 1}
+                </span>
+              </div>
+              <h3 className="lo-display text-[19px] text-[var(--lo-fg)]">
+                {step.title}
+              </h3>
+              <p className="text-[15px] leading-relaxed text-[var(--lo-fg-mut)]">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

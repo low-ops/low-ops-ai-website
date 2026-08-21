@@ -7,7 +7,6 @@ import Hero from '@/sections/landing/Hero';
 import Portal from '@/sections/landing/Portal';
 import Problem from '@/sections/landing/Problem';
 import Proof from '@/sections/landing/Proof';
-import Ticker from '@/sections/landing/Ticker';
 
 const Home = () => {
   return (
@@ -15,7 +14,6 @@ const Home = () => {
       <Header />
       <main className="relative overflow-hidden bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         <Hero />
-        <Ticker />
         <Problem />
         <GoldenPath />
         <Features />
