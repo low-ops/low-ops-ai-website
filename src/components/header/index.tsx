@@ -40,10 +40,9 @@ const Header: FC<TProps> = ({ classes }) => {
               <Link
                 key={item.name}
                 href={normalizeHref(item.href)}
-                className="lo-mono group relative text-[13px] text-[var(--lo-fg-mut)] transition-colors hover:text-[var(--lo-fg)]"
+                className="text-[14px] font-medium text-[var(--lo-fg-mut)] transition-colors hover:text-[var(--lo-fg)]"
               >
                 {item.name}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-[var(--lo-accent)] transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -53,7 +52,7 @@ const Header: FC<TProps> = ({ classes }) => {
               href={data.cta.freeAccessLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="lo-mono hidden rounded-[10px] border border-[var(--lo-line)] px-5 py-3 text-[13.5px] text-[var(--lo-fg)] transition-all hover:-translate-y-0.5 hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)] md:inline-flex"
+              className="hidden rounded-lg border border-[var(--lo-line)] px-4.5 py-2.5 text-[14px] font-medium text-[var(--lo-fg)] transition-colors hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)] md:inline-flex"
             >
               Start free
             </a>
@@ -61,12 +60,9 @@ const Header: FC<TProps> = ({ classes }) => {
               href={data.cta.personalDemoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="lo-mono group inline-flex items-center gap-2 rounded-[10px] bg-[var(--lo-accent)] px-5 py-3 text-[13.5px] font-semibold text-white shadow-[0_0_0_0_var(--lo-glow)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-12px_var(--lo-accent)]"
+              className="inline-flex items-center rounded-lg bg-[var(--lo-accent)] px-4.5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[var(--lo-accent-deep)]"
             >
               Book a demo
-              <span className="transition-transform group-hover:translate-x-0.5">
-                →
-              </span>
             </a>
             <button
               type="button"
@@ -107,7 +103,7 @@ const Header: FC<TProps> = ({ classes }) => {
               key={item.name}
               href={normalizeHref(item.href)}
               onClick={() => setOpen(false)}
-              className="lo-mono border-b border-[var(--lo-line-soft)] py-5 text-lg text-[var(--lo-fg)]"
+              className="border-b border-[var(--lo-line-soft)] py-5 text-lg font-medium text-[var(--lo-fg)]"
             >
               {item.name}
             </Link>
@@ -116,9 +112,9 @@ const Header: FC<TProps> = ({ classes }) => {
             href={data.cta.personalDemoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="lo-mono mt-8 inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--lo-accent)] px-5 py-4 text-sm font-semibold text-white"
+            className="mt-8 inline-flex items-center justify-center rounded-lg bg-[var(--lo-accent)] px-5 py-4 text-[15px] font-semibold text-white"
           >
-            Book a demo →
+            Book a demo
           </a>
         </nav>
       </div>

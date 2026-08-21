@@ -95,7 +95,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-dm-sans)'],
-        poppins: ['var(--font-poppins)'],
       },
       container: {
         center: true,

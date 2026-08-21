@@ -16,7 +16,7 @@ const SplitHead: FC<TProps> = ({ kicker, title, side }) => {
     <div className="mb-10 grid grid-cols-1 items-end gap-6 md:mb-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
       <div>
         <Kicker>{kicker}</Kicker>
-        <h2 className="lo-display mt-4.5 text-[32px] text-balance text-[var(--lo-fg)] md:text-[52px]">
+        <h2 className="lo-display mt-4 text-[30px] text-balance text-[var(--lo-fg)] md:text-[44px]">
           {title}
         </h2>
       </div>

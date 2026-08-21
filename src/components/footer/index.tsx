@@ -46,7 +46,7 @@ const Footer: FC<TProps> = ({ classes }) => {
         </div>
 
         <div className="flex flex-col gap-3.5 md:justify-self-center">
-          <h4 className="lo-mono text-[12px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)]">
+          <h4 className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--lo-fg-dim)]">
             Quick links
           </h4>
           <ul className="flex flex-col gap-2.5">
@@ -64,7 +64,7 @@ const Footer: FC<TProps> = ({ classes }) => {
         </div>
 
         <div className="flex flex-col gap-3.5">
-          <h4 className="lo-mono text-[12px] uppercase tracking-[0.14em] text-[var(--lo-fg-dim)]">
+          <h4 className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--lo-fg-dim)]">
             Contact
           </h4>
           <a
@@ -88,8 +88,8 @@ const Footer: FC<TProps> = ({ classes }) => {
 
       <div className="border-t border-[var(--lo-line-soft)] py-7">
         <div className="container flex flex-col items-center justify-between gap-3 lg:flex-row">
-          <span className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)]">
-            © 2026 Low-Ops · Drawing № LO-2026 · Rotterdam, NL · A product of{' '}
+          <span className="text-[13px] text-[var(--lo-fg-dim)]">
+            © 2026 Low-Ops · Rotterdam, NL · A product of{' '}
             <a
               href="https://cinaq.com"
               target="_blank"
@@ -102,13 +102,13 @@ const Footer: FC<TProps> = ({ classes }) => {
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
             <Link
               href="/privacy-policy"
-              className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
+              className="text-[13px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
               Privacy policy
             </Link>
             <Link
               href="/license-agreement"
-              className="lo-mono text-[12.5px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
+              className="text-[13px] text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
               Terms &amp; Conditions
             </Link>

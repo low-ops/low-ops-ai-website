@@ -60,7 +60,7 @@ const nodeClasses = (state: Stage['state']) => {
 const Console: FC = () => {
   return (
     <div
-      className="lo-mono relative z-2 overflow-hidden rounded-[14px] border border-[var(--lo-line)] bg-[linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))] text-[13px] shadow-[var(--lo-shadow-lg)]"
+      className="lo-mono relative z-2 overflow-hidden rounded-xl border border-[var(--lo-line)] bg-[linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))] text-[13px] shadow-[var(--lo-shadow-lg)]"
       role="img"
       aria-label="Deployment pipeline: an AI agent or web app built and reviewed, image built and scanned, guardrails passed, shipping to your private cloud, audit and observability queued."
     >
