@@ -80,8 +80,8 @@ const Footer: FC<TProps> = ({ classes }) => {
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[var(--lo-line)] text-[var(--lo-accent)]">
               <PiMapPinLine size={20} />
             </span>
-            Bajonetstraat 50, 3014 ZK, Rotterdam, The Netherlands (appointment
-            only)
+            Schiedamse Vest 154, 3011 BH, Rotterdam, The Netherlands
+            (appointment only)
           </div>
         </div>
       </div>
