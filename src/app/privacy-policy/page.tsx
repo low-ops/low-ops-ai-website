@@ -176,8 +176,8 @@ const PrivacyPolicyPage = () => {
               <p className="mt-2">
                 <strong>Email:</strong> privacy@low-ops.ai
                 <br />
-                <strong>Address:</strong> Bajonetstraat 50, 3014 ZK, Rotterdam,
-                The Netherlands
+                <strong>Address:</strong> Schiedamse Vest 154, 3011 BH,
+                Rotterdam, The Netherlands
               </p>
             </section>
           </div>
