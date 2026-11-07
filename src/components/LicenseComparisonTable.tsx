@@ -1,209 +1,236 @@
-'use client';
+import CtaLink from '@/components/CtaLink';
+import { PLAN_ROW_KEYS, plans } from '@/data/plans';
+import { cn } from '@/lib/utils';
+import { Fragment } from 'react';
 
-import { plans } from '@/data/plans';
-import { capitalize, cn } from '@/lib/utils';
-import { Check, X } from 'lucide-react';
-import { Fragment, useMemo } from 'react';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
-
+/** Pricing matrix: three plan columns, Professional set on a dark column. */
 const PricingComparisonTable = () => {
-  const allKeys = Array.from(
-    new Set(plans.flatMap((plan) => Object.keys(plan.items)))
-  );
-
-  // Hooks
-  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- static icon mapping, memoization intentional
-  const valuesWithIcon = useMemo(() => {
-    return {
-      yes: (
-        <>
-          <Check className="w-4 h-4 text-green-500" />
-          Yes
-        </>
-      ),
-      no: (
-        <>
-          <X className="w-4 h-4 text-red-500" />
-          No
-        </>
-      ),
-    };
-  }, []);
-
-  // Renders
-  const renderPlans = () => {
-    return (
-      <>
-        <div />
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className={cn(
-              'text-center flex flex-col items-center justify-between gap-3 h-full p-8 prose md:prose-md',
-              plan.isPopular ? 'bg-primary text-white' : 'undefined',
-              index === 0 ? 'bg-primary/5' : undefined
-            )}
-          >
-            <h5
-              className={cn(
-                'text-neutral-500',
-                plan.isPopular ? 'text-white' : undefined
-              )}
-            >
-              {plan.label}
-            </h5>
-            <h2
-              className={cn(
-                'text-neutral-500',
-                plan.isPopular ? 'text-white' : undefined
-              )}
-            >
-              {plan.price}
-            </h2>
-            <p
-              className={cn(
-                'text-neutral-500',
-                plan.isPopular ? 'text-white' : undefined
-              )}
-            >
-              {plan.description}
-            </p>
-
-            {plan.link ? (
-              <a
-                href={plan.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'inline-block w-full px-4',
-                  plan.isPopular ? 'text-primary' : undefined
-                )}
-              >
-                <Button
-                  variant={plan.isPopular ? 'secondary' : 'primaryOutline'}
-                  className={'mb-2 w-full'}
-                >
-                  Start Now
-                </Button>
-              </a>
-            ) : (
-              <a
-                href="/contact-us"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'inline-block w-full px-4',
-                  plan.isPopular ? 'text-primary' : undefined
-                )}
-              >
-                <Button
-                  variant={plan.isPopular ? 'secondary' : 'primaryOutline'}
-                  className={'mb-2 w-full'}
-                >
-                  Contact Us
-                </Button>
-              </a>
-            )}
-          </div>
-        ))}
-      </>
-    );
-  };
-
-  const renderItems = () => {
-    return allKeys.map((key, index) => (
-      <Fragment key={key}>
-        <div
-          className={cn(
-            'border-b py-3 border-primary/20 px-6 text-neutral-500 font-light',
-            index === 0 ? 'border-t border-primary/20' : undefined
-          )}
-        >
-          {capitalize(key)}
-        </div>
-        {plans.map((plan, i) => {
-          const value = plan.items[key as keyof typeof plan.items] || '-';
-          const resultValue =
-            valuesWithIcon[
-              value.toLowerCase() as keyof typeof valuesWithIcon
-            ] ?? value;
-
-          return (
-            <div
-              key={`${plan.value}-${key}`}
-              className={cn(
-                'border-b py-3 border-primary/20 font-light flex justify-center items-center gap-2 px-4 text-neutral-500',
-                plan.isPopular
-                  ? 'bg-primary text-white border-white/5'
-                  : undefined,
-                i === 0 ? 'bg-primary/5' : undefined,
-                index === 0 ? 'border-t border-primary/20' : undefined,
-                index === 0 && plan.isPopular
-                  ? 'border-t border-white/5'
-                  : undefined
-              )}
-            >
-              {resultValue}
-            </div>
-          );
-        })}
-      </Fragment>
-    ));
-  };
-
-  const renderMobilePlans = () => {
-    return plans.map((plan, index) => (
-      <Card
-        key={index}
-        className="flex flex-col gap-6 w-full prose md:prose-md bg-transparent"
-      >
-        <div className="flex flex-col items-center justify-center gap-3 h-full">
-          <div className="w-full flex flex-col items-center justify-center">
-            <h3>{plan.label}</h3>
-            <h2 className="text-neutral-500">{plan.price}</h2>
-          </div>
-
-          <a href={plan.link} target="_blank" rel="noopener noreferrer">
-            <Button variant="primaryOutline" className="mb-2 w-full">
-              Get Started
-            </Button>
-          </a>
-        </div>
-        <div className="">
-          {Object.entries(plan.items).map(([key, value]) => (
-            <div
-              key={`${key}-${plan.value}`}
-              className={cn(
-                'flex items-center justify-between p-3 border-b border-primary/20'
-              )}
-            >
-              <div className="font-medium text-muted-foreground">
-                {capitalize(key)}
-              </div>
-              <div
-                key={`${plan.value}-${key}`}
-                className="text-foreground font-medium flex items-center justify-center gap-2"
-              >
-                {valuesWithIcon[
-                  value.toLowerCase() as keyof typeof valuesWithIcon
-                ] ?? value}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Card>
-    ));
-  };
-
   return (
     <>
-      <div className="flex flex-col border border-primary/20 rounded-lg">
-        <div className="hidden lg:grid grid-cols-4">{renderPlans()}</div>
-        <div className="hidden lg:grid grid-cols-4">{renderItems()}</div>
+      {/* Desktop */}
+      <div className="hidden overflow-hidden rounded-[8px] border border-[var(--lo-line-strong)] lg:block">
+        <div className="grid grid-cols-[1fr_1.1fr_1.1fr_1.1fr]">
+          <div className="bg-[var(--lo-surface)] p-8">
+            <span className="lo-label text-[var(--lo-fg-dim)]">Plans</span>
+            <p className="mt-6 max-w-[16em] text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+              Every tier runs on infrastructure you control. The difference is
+              how much of the operations we take off your plate.
+            </p>
+          </div>
+          {plans.map((plan) => {
+            const dark = plan.isPopular;
+            return (
+              <div
+                key={plan.value}
+                data-tone={dark ? 'dark' : undefined}
+                className={cn(
+                  'flex flex-col border-l border-[var(--lo-line)] p-8',
+                  dark
+                    ? 'border-[var(--lo-black-line)] bg-[var(--lo-black)] text-[var(--lo-on-black)]'
+                    : 'bg-[var(--lo-surface)]',
+                )}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className={cn(
+                      'lo-label',
+                      dark
+                        ? 'text-[var(--lo-accent)]'
+                        : 'text-[var(--lo-fg-dim)]',
+                    )}
+                  >
+                    {plan.label}
+                  </span>
+                  {dark && (
+                    <span className="lo-label text-[var(--lo-on-black-dim)]">
+                      Most chosen
+                    </span>
+                  )}
+                </div>
+                <div className="mt-5 flex items-baseline gap-2">
+                  <span
+                    className={cn(
+                      'lo-display text-[34px]',
+                      dark
+                        ? 'text-[var(--lo-on-black)]'
+                        : 'text-[var(--lo-fg)]',
+                    )}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    className={cn(
+                      'text-[13px]',
+                      dark
+                        ? 'text-[var(--lo-on-black-dim)]'
+                        : 'text-[var(--lo-fg-dim)]',
+                    )}
+                  >
+                    {plan.priceNote}
+                  </span>
+                </div>
+                <p
+                  className={cn(
+                    'mt-3 text-[14px] leading-relaxed',
+                    dark
+                      ? 'text-[var(--lo-on-black-mut)]'
+                      : 'text-[var(--lo-fg-mut)]',
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'lo-label mr-2',
+                      dark
+                        ? 'text-[var(--lo-on-black-dim)]'
+                        : 'text-[var(--lo-fg-dim)]',
+                    )}
+                  >
+                    Best for
+                  </span>
+                  {plan.description}
+                </p>
+                <div className="mt-auto pt-6">
+                  <CtaLink
+                    href={plan.link}
+                    variant={dark ? 'inverse' : 'secondary'}
+                    size="sm"
+                    className="w-full"
+                  >
+                    {plan.ctaLabel}
+                  </CtaLink>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-[1fr_1.1fr_1.1fr_1.1fr]">
+          {PLAN_ROW_KEYS.map((key) => (
+            <Fragment key={key}>
+              <div className="border-t border-[var(--lo-line)] bg-[var(--lo-surface-2)] px-8 py-3.5 text-[14px] font-medium text-[var(--lo-fg)]">
+                {key}
+              </div>
+              {plans.map((plan) => {
+                const dark = plan.isPopular;
+                return (
+                  <div
+                    key={`${plan.value}-${key}`}
+                    className={cn(
+                      'flex items-center border-t border-l px-8 py-3.5 text-[14px]',
+                      dark
+                        ? 'border-[var(--lo-black-line)] bg-[var(--lo-black)] font-medium text-[var(--lo-on-black)]'
+                        : 'border-[var(--lo-line)] bg-[var(--lo-surface)] text-[var(--lo-fg-mut)]',
+                    )}
+                  >
+                    {plan.items[key]}
+                  </div>
+                );
+              })}
+            </Fragment>
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col items-center gap-10 lg:gap-20 lg:hidden w-full">
-        {renderMobilePlans()}
+
+      {/* Mobile */}
+      <div className="flex w-full flex-col gap-4 lg:hidden">
+        {plans.map((plan) => {
+          const dark = plan.isPopular;
+          return (
+            <article
+              key={plan.value}
+              data-tone={dark ? 'dark' : undefined}
+              className={cn(
+                'overflow-hidden rounded-[8px] border',
+                dark
+                  ? 'border-[var(--lo-black-line)] bg-[var(--lo-black)] text-[var(--lo-on-black)]'
+                  : 'border-[var(--lo-line-strong)] bg-[var(--lo-surface)]',
+              )}
+            >
+              <div className="p-6">
+                <span
+                  className={cn(
+                    'lo-label',
+                    dark
+                      ? 'text-[var(--lo-accent)]'
+                      : 'text-[var(--lo-fg-dim)]',
+                  )}
+                >
+                  {plan.label}
+                </span>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span
+                    className={cn(
+                      'lo-display text-[32px]',
+                      dark
+                        ? 'text-[var(--lo-on-black)]'
+                        : 'text-[var(--lo-fg)]',
+                    )}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    className={cn(
+                      'text-[13px]',
+                      dark
+                        ? 'text-[var(--lo-on-black-dim)]'
+                        : 'text-[var(--lo-fg-dim)]',
+                    )}
+                  >
+                    {plan.priceNote}
+                  </span>
+                </div>
+                <p
+                  className={cn(
+                    'mt-2 text-[14px] leading-relaxed',
+                    dark
+                      ? 'text-[var(--lo-on-black-mut)]'
+                      : 'text-[var(--lo-fg-mut)]',
+                  )}
+                >
+                  {plan.description}
+                </p>
+                <div className="mt-5">
+                  <CtaLink
+                    href={plan.link}
+                    variant={dark ? 'inverse' : 'secondary'}
+                    size="sm"
+                    className="w-full"
+                  >
+                    {plan.ctaLabel}
+                  </CtaLink>
+                </div>
+              </div>
+              <dl
+                className={cn(
+                  'divide-y border-t text-[13.5px]',
+                  dark
+                    ? 'divide-[var(--lo-black-line)] border-[var(--lo-black-line)]'
+                    : 'divide-[var(--lo-line)] border-[var(--lo-line)]',
+                )}
+              >
+                {PLAN_ROW_KEYS.map((key) => (
+                  <div
+                    key={`${key}-${plan.value}`}
+                    className="flex items-start justify-between gap-4 px-6 py-3"
+                  >
+                    <dt
+                      className={
+                        dark
+                          ? 'text-[var(--lo-on-black-mut)]'
+                          : 'text-[var(--lo-fg-mut)]'
+                      }
+                    >
+                      {key}
+                    </dt>
+                    <dd className="text-right font-medium">
+                      {plan.items[key]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+          );
+        })}
       </div>
     </>
   );

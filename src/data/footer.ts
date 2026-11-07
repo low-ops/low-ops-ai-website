@@ -1,9 +1,19 @@
+import { industries } from '@/data/industries';
+
 export const QUICK_LINKS = [
   { label: 'Features', href: '/features' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Partners', href: '/partners' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About Us', href: '/about-us' },
+];
+
+export const INDUSTRY_LINKS = [
+  ...industries.map((industry) => ({
+    label: industry.name,
+    href: `/solutions/${industry.slug}`,
+  })),
+  { label: 'All solutions', href: '/solutions' },
 ];
 
 export const DECORATIVE_LABELS = [

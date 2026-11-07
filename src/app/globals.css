@@ -7,7 +7,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--lo-line, currentColor);
   }
 }
 
@@ -23,40 +23,38 @@
 
 @layer base {
   :root {
-    /* Light "daylight console" theme — mapped to the --lo-* design system */
+    /* shadcn tokens mapped onto the Low-Ops.AI brand (blue #4a90e2, graphite #595959) */
     color-scheme: light;
-    --background: 220 40% 98%;
-    --foreground: 218 47% 10%;
-    --text-neutral-700: #0e1726;
+    --background: 60 8% 96%;
+    --foreground: 220 8% 8%;
+    --text-neutral-700: #111214;
     --card: 0 0% 100%;
-    --card-foreground: 218 47% 10%;
+    --card-foreground: 220 8% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 218 47% 10%;
-    --primary: 221 83% 53%;
+    --popover-foreground: 220 8% 8%;
+    --primary: 212 72% 59%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 40% 96%;
-    --secondary-foreground: 218 40% 16%;
-    --muted: 220 33% 96%;
-    --muted-foreground: 217 16% 35%;
-    --accent: 220 40% 96%;
-    --accent-foreground: 218 47% 10%;
+    --secondary: 60 8% 94%;
+    --secondary-foreground: 220 8% 14%;
+    --muted: 60 8% 94%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 60 8% 94%;
+    --accent-foreground: 220 8% 8%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 219 33% 92%;
-    --input: 219 33% 92%;
-    --ring: 221 83% 53%;
-    --radius: 0.5rem;
-    --chart-1: 221 83% 53%;
-    --chart-2: 190 85% 38%;
+    --border: 60 6% 88%;
+    --input: 60 6% 88%;
+    --ring: 212 72% 59%;
+    --radius: 0.375rem;
+    --chart-1: 212 72% 59%;
+    --chart-2: 0 0% 35%;
     --chart-3: 152 60% 40%;
     --chart-4: 43 74% 49%;
     --chart-5: 27 87% 55%;
   }
 }
 
-/* Tailwind Typography ships its own grayscale palette; re-point the prose
-   color tokens at the console palette so every `prose` block on the inner
-   pages matches the rest of the theme. */
+/* Tailwind Typography palette → brand palette */
 .prose {
   --tw-prose-body: var(--lo-fg);
   --tw-prose-headings: var(--lo-fg);
@@ -64,7 +62,7 @@
   --tw-prose-links: var(--lo-accent);
   --tw-prose-bold: var(--lo-fg);
   --tw-prose-counters: var(--lo-fg-mut);
-  --tw-prose-bullets: var(--lo-line);
+  --tw-prose-bullets: var(--lo-line-strong);
   --tw-prose-hr: var(--lo-line);
   --tw-prose-quotes: var(--lo-fg);
   --tw-prose-quote-borders: var(--lo-line);
@@ -72,6 +70,13 @@
   --tw-prose-code: var(--lo-fg);
   --tw-prose-th-borders: var(--lo-line);
   --tw-prose-td-borders: var(--lo-line);
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 @layer base {
@@ -113,34 +118,125 @@
 }
 
 /* ============================================================
-   Design system — clean, professional B2B ("daylight console")
+   Design system — "paper & graphite"
+   Warm paper background, graphite type, hairline rules, a single
+   brand blue, and the 9-dot diamond from the logo as the motif.
    ============================================================ */
 :root {
-  --lo-ink: #f6f8fc;
-  --lo-ink-2: #eef2f9;
+  /* surfaces (light) */
+  --lo-ink: #f4f4f1; /* page background — warm paper */
+  --lo-ink-2: #ebebe6; /* deeper paper */
   --lo-surface: #ffffff;
-  --lo-surface-2: #fbfcfe;
-  --lo-line: #e2e8f2;
-  --lo-line-soft: #edf1f8;
-  --lo-fg: #0e1726;
-  --lo-fg-mut: #4a5567;
-  --lo-fg-dim: #8a94a6;
-  --lo-accent: #2563eb;
-  --lo-accent-hi: #3b82f6;
-  --lo-accent-deep: #1d4ed8;
-  --lo-cyan: #0e9ab8;
-  --lo-green: #059669;
-  --lo-glow: rgba(37, 130, 235, 0.1);
-  --lo-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04),
-    0 10px 26px -14px rgba(15, 23, 42, 0.18);
-  --lo-shadow-lg: 0 30px 60px -30px rgba(15, 23, 42, 0.28),
-    0 2px 6px rgba(15, 23, 42, 0.05);
+  --lo-surface-2: #fafaf8;
+
+  /* surfaces (dark bands) */
+  --lo-black: #111214;
+  --lo-black-2: #1a1c1f;
+  --lo-black-line: #2a2d31;
+  --lo-on-black: #f4f4f1;
+  --lo-on-black-mut: #a3a6ab;
+  --lo-on-black-dim: #6c7076;
+
+  /* rules */
+  --lo-line: #e2e2dc;
+  --lo-line-soft: #ebebe6;
+  --lo-line-strong: #c9c9c1;
+
+  /* type */
+  --lo-fg: #111214;
+  --lo-fg-mut: #595959; /* brand graphite */
+  --lo-fg-dim: #8b8b86;
+
+  /* brand */
+  --lo-accent: #4a90e2;
+  --lo-accent-hi: #6ea6ea;
+  --lo-accent-deep: #2f74c9;
+  --lo-graphite: #595959;
+  --lo-cyan: #2f9fbf;
+  --lo-green: #2f9e6b;
+
+  /* legacy glow token — now neutral so old gradients fade to nothing */
+  --lo-glow: rgba(74, 144, 226, 0.08);
+
+  --lo-shadow-sm: 0 1px 0 rgba(17, 18, 20, 0.04);
+  --lo-shadow-lg: 0 40px 80px -40px rgba(17, 18, 20, 0.35),
+    0 1px 0 rgba(17, 18, 20, 0.06);
 }
 
+/* Font helpers — all one family (Inter); these only set weight/tracking/figures. */
 @utility lo-mono {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum', 'ss01';
+}
+
+@utility lo-display {
   font-family:
-    ui-monospace, 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, Consolas,
-    monospace;
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+/* Two-tone headline emphasis: graphite instead of a coloured word. */
+@utility lo-em {
+  color: var(--lo-fg-dim);
+}
+.lo-dark .lo-em,
+[data-tone='dark'] .lo-em {
+  color: var(--lo-on-black-dim);
+}
+
+/* Dot-grid texture echoing the logo mark */
+@utility lo-dots {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--lo-line-strong) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+}
+@utility lo-dots-dark {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--lo-black-line) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+}
+
+/* Ledger grid: cells separated by hairlines, no card shadows */
+@utility lo-ledger {
+  display: grid;
+  gap: 1px;
+  background: var(--lo-line);
+  border: 1px solid var(--lo-line);
+}
+@utility lo-ledger-dark {
+  display: grid;
+  gap: 1px;
+  background: var(--lo-black-line);
+  border: 1px solid var(--lo-black-line);
+}
+@utility lo-cell {
+  background: var(--lo-surface);
+}
+@utility lo-cell-dark {
+  background: var(--lo-black);
+}
+
+/* Small-caps label */
+@utility lo-label {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .lo-blink {
@@ -172,17 +268,36 @@
   }
 }
 
-/* Display headings */
-@utility lo-display {
-  font-family:
-    var(--font-dm-sans), system-ui, -apple-system, 'Segoe UI', Roboto,
-    sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
+/* Range inputs for the ROI calculator */
+input[type='range'].lo-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--lo-line-strong);
+  outline: none;
+}
+input[type='range'].lo-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--lo-fg);
+  border: 3px solid var(--lo-surface);
+  box-shadow: 0 0 0 1px var(--lo-fg);
+  cursor: pointer;
+}
+input[type='range'].lo-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--lo-fg);
+  border: 3px solid var(--lo-surface);
+  box-shadow: 0 0 0 1px var(--lo-fg);
+  cursor: pointer;
 }
 
-/* color emphasis for a highlighted word in headlines */
-@utility lo-em {
-  color: var(--lo-accent);
+::selection {
+  background: var(--lo-accent);
+  color: #fff;
 }

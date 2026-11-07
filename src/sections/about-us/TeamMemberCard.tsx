@@ -1,58 +1,64 @@
-import { Card } from '@/components/ui/card';
 import { TeamMember } from '@/data/about-us';
 import Image from 'next/image';
-import { PiGithubLogoFill, PiLinkedinLogoFill } from 'react-icons/pi';
+import { PiGithubLogo, PiLinkedinLogo } from 'react-icons/pi';
 
 interface TeamMemberCardProps {
   member: TeamMember;
+  index: number;
 }
 
-const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
+/** Portrait in a hairline cell; details always visible (no hover-only content). */
+const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
   return (
-    <Card className="relative bg-[var(--lo-surface-2)] border-[var(--lo-line)] p-0 group overflow-hidden">
-      <div className="relative w-full flex items-center justify-center">
-        <div className="overflow-hidden w-[300px] h-[400px] relative">
-          <Image
-            src={member.image}
-            alt={`${member.name} - ${member.position}`}
-            fill
-            className="object-cover"
-          />
-        </div>
+    <li className="lo-cell flex h-full flex-col">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[var(--lo-ink-2)]">
+        <Image
+          src={member.image}
+          alt={`${member.name} — ${member.position}`}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover object-top grayscale transition-[filter] duration-500 hover:grayscale-0"
+        />
+        <span className="lo-label absolute left-4 top-4 rounded-[4px] bg-[var(--lo-surface)] px-2 py-1 text-[var(--lo-fg-dim)]">
+          0{index + 1}
+        </span>
       </div>
-
-      <div className="p-6 w-full bg-[color-mix(in_srgb,var(--lo-surface)_92%,transparent)] backdrop-blur-md text-[var(--lo-fg)] rounded-lg flex flex-col items-center gap-1 absolute bottom-2 left-0 right-0 mx-auto max-w-70 translate-y-0 opacity-100 border border-[var(--lo-line)] transition-all duration-300 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:translate-y-3 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0">
-        <h5 className="font-semibold">{member.name}</h5>
-        <p className="text-sm font-sans font-light">{member.position}</p>
-        <p className="text-sm font-sans font-light">{member.bio}</p>
-
-        <div className="flex items-center gap-2 pt-2">
+      <div className="flex flex-1 flex-col px-6 py-5">
+        <h3 className="lo-display text-[20px] text-[var(--lo-fg)]">
+          {member.name}
+        </h3>
+        <span className="lo-label mt-1 text-[var(--lo-accent)]">
+          {member.position}
+        </span>
+        <p className="mt-3 text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+          {member.bio}
+        </p>
+        <div className="mt-auto flex items-center gap-3 pt-5">
           {member.social.linkedin && (
             <a
               href={member.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              title="LinkedIn"
-              className="w-[27px] h-[27px] relative hover:scale-105 transition-transform"
+              aria-label={`${member.name} on LinkedIn`}
+              className="text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
-              <PiLinkedinLogoFill size={27} className="text-primary" />
+              <PiLinkedinLogo size={20} />
             </a>
           )}
-
           {member.social.github && (
             <a
               href={member.social.github}
-              title="GitHub"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[26px] h-[26px] relative hover:scale-105 transition-transform"
+              aria-label={`${member.name} on GitHub`}
+              className="text-[var(--lo-fg-dim)] transition-colors hover:text-[var(--lo-accent)]"
             >
-              <PiGithubLogoFill size={26} className="text-primary" />
+              <PiGithubLogo size={20} />
             </a>
           )}
         </div>
       </div>
-    </Card>
+    </li>
   );
 };
 

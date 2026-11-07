@@ -1,208 +1,244 @@
-'use client';
-
-import SectionTitle from '@/components/SectionTitle';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
+import Reveal from '@/components/animations/Reveal';
+import SplitHead from '@/sections/landing/SplitHead';
 import { cn } from '@/lib/utils';
 
 const COLUMNS = [
-  { id: 'custom', label: 'Custom Build', sub: 'Mix & match open-source tools' },
+  { id: 'custom', label: 'Custom build', sub: 'Mix & match open-source tools' },
   {
     id: 'hosted',
-    label: 'Hosted Control Plane',
+    label: 'Hosted control plane',
     sub: 'Qovery, Porter, Flightcontrol',
   },
   {
     id: 'saas',
-    label: 'SaaS / Cloud PaaS',
+    label: 'SaaS / cloud PaaS',
     sub: 'Heroku, Render, Vercel, Railway',
   },
-  { id: 'offtheshelf', label: 'Off-the-Shelf', sub: 'Low Ops' },
+  { id: 'offtheshelf', label: 'Low-Ops.AI', sub: 'Off-the-shelf, self-hosted' },
 ] as const;
 
-const COMPARISON_ROWS: Array<{
-  criteria: string;
-  custom: string;
-  hosted: string;
-  saas: string;
-  offtheshelf: string;
-}> = [
-  {
-    criteria: 'DevOps / CI/CD',
-    custom: 'Self-managed (e.g. GitLab, Gitea)',
-    hosted: 'Bring your own CI/CD',
-    saas: 'Bring your own CI/CD',
-    offtheshelf: 'Included with automated CI/CD',
-  },
-  {
-    criteria: 'Internal Developer Portal',
-    custom: 'Optional (e.g. Backstage)',
-    hosted: 'Included',
-    saas: 'Included',
-    offtheshelf: 'Included (app management built-in)',
-  },
-  {
-    criteria: 'Monitoring',
-    custom: 'Any tool (self-integrated)',
-    hosted: 'Sometimes included',
-    saas: 'Bring your own (e.g. Datadog)',
-    offtheshelf: 'Built-in (OpenTelemetry, Prometheus, Grafana stack)',
-  },
-  {
-    criteria: 'Database',
-    custom: 'Any',
-    hosted: 'Your choice',
-    saas: 'Sometimes included',
-    offtheshelf: 'PostgreSQL included',
-  },
-  {
-    criteria: 'Object Storage',
-    custom: 'Any',
-    hosted: 'Your choice',
-    saas: 'Sometimes included',
-    offtheshelf: 'S3-compatible storage',
-  },
-  {
-    criteria: 'Disaster Recovery',
-    custom: 'High effort (fully your responsibility)',
-    hosted: 'High effort (your responsibility)',
-    saas: 'Sometimes included',
-    offtheshelf: 'Included (e.g. with Kanister)',
-  },
-  {
-    criteria: 'Container Platform',
-    custom: 'Any',
-    hosted: 'Mostly Kubernetes-based',
-    saas: 'Included (abstracted)',
-    offtheshelf: 'Kubernetes-based',
-  },
-  {
-    criteria: 'Control Plane',
-    custom: 'Self-managed',
-    hosted: 'SaaS',
-    saas: 'SaaS',
-    offtheshelf: 'Self-hosted',
-  },
-  {
-    criteria: 'Private Infrastructure',
-    custom: 'Yes',
-    hosted: 'Yes',
-    saas: 'No',
-    offtheshelf: 'Yes (including control plane)',
-  },
-  {
-    criteria: 'Flexibility',
-    custom: 'Very high (full control)',
-    hosted: 'High (choose infra provider)',
-    saas: 'Medium (platform constraints)',
-    offtheshelf: 'High',
-  },
-  {
-    criteria: 'Total Cost of Ownership',
-    custom: 'Low license cost, high labor & maintenance',
-    hosted: 'High license cost, high devops responsibility',
-    saas: 'Very high recurring costs',
-    offtheshelf: 'Medium cost, minimal maintenance',
-  },
-];
+type ColumnId = (typeof COLUMNS)[number]['id'];
+
+const COMPARISON_ROWS: Array<{ criteria: string } & Record<ColumnId, string>> =
+  [
+    {
+      criteria: 'DevOps / CI/CD',
+      custom: 'Self-managed (e.g. GitLab, Gitea)',
+      hosted: 'Bring your own CI/CD',
+      saas: 'Bring your own CI/CD',
+      offtheshelf: 'Included with automated CI/CD',
+    },
+    {
+      criteria: 'Internal developer portal',
+      custom: 'Optional (e.g. Backstage)',
+      hosted: 'Included',
+      saas: 'Included',
+      offtheshelf:
+        'Included — self-service for domain experts, oversight for IT',
+    },
+    {
+      criteria: 'AI agent access (MCP)',
+      custom: 'Build it yourself',
+      hosted: 'Rare',
+      saas: 'Rare',
+      offtheshelf: 'Built-in MCP server with the same governance as humans',
+    },
+    {
+      criteria: 'Monitoring',
+      custom: 'Any tool (self-integrated)',
+      hosted: 'Sometimes included',
+      saas: 'Bring your own (e.g. Datadog)',
+      offtheshelf: 'Built-in (OpenTelemetry, Prometheus, Grafana)',
+    },
+    {
+      criteria: 'Database',
+      custom: 'Any',
+      hosted: 'Your choice',
+      saas: 'Sometimes included',
+      offtheshelf: 'PostgreSQL included',
+    },
+    {
+      criteria: 'Object storage',
+      custom: 'Any',
+      hosted: 'Your choice',
+      saas: 'Sometimes included',
+      offtheshelf: 'S3-compatible storage included',
+    },
+    {
+      criteria: 'Disaster recovery',
+      custom: 'High effort (fully your responsibility)',
+      hosted: 'High effort (your responsibility)',
+      saas: 'Sometimes included',
+      offtheshelf: 'Included (automated backups & restore)',
+    },
+    {
+      criteria: 'Control plane',
+      custom: 'Self-managed',
+      hosted: 'SaaS',
+      saas: 'SaaS',
+      offtheshelf: 'Self-hosted',
+    },
+    {
+      criteria: 'Private infrastructure',
+      custom: 'Yes',
+      hosted: 'Yes',
+      saas: 'No',
+      offtheshelf: 'Yes (including control plane)',
+    },
+    {
+      criteria: 'Licensing model',
+      custom: 'Free software, paid people',
+      hosted: 'Per seat / per environment',
+      saas: 'Per seat / per resource',
+      offtheshelf: 'Per app in production — unlimited creators',
+    },
+    {
+      criteria: 'Total cost of ownership',
+      custom: 'Low licence cost, high labour & maintenance',
+      hosted: 'High licence cost, high DevOps responsibility',
+      saas: 'Very high recurring costs',
+      offtheshelf: 'Medium cost, minimal maintenance',
+    },
+  ];
 
 const ComparisonSection = () => {
-  const renderColumns = () => {
-    return COLUMNS.map((col) => (
-      <TableHead
-        key={col.id}
-        className={cn(
-          'min-w-[160px] font-semibold text-foreground py-4 px-3',
-          'align-top border-r border-primary/20 last:border-r-0'
-        )}
-      >
-        <span className="block">{col.label}</span>
-        <span className="block text-xs font-normal text-muted-foreground mt-0.5">
-          {col.sub}
-        </span>
-      </TableHead>
-    ));
-  };
-
-  const renderRows = () => {
-    return COMPARISON_ROWS.map((row) => (
-      <TableRow key={row.criteria} className="border-primary/10">
-        <TableCell className="font-medium text-foreground min-w-[140px] py-3 px-4 border-r border-primary/20 last:border-r-0">
-          {row.criteria}
-        </TableCell>
-        <TableCell className="min-w-[160px] text-muted-foreground whitespace-normal py-3 px-3 border-r border-primary/20 last:border-r-0">
-          {row.custom}
-        </TableCell>
-        <TableCell className="min-w-[160px] text-muted-foreground whitespace-normal py-3 px-3 border-r border-primary/20 last:border-r-0">
-          {row.hosted}
-        </TableCell>
-        <TableCell className="min-w-[160px] text-muted-foreground whitespace-normal py-3 px-3 border-r border-primary/20 last:border-r-0">
-          {row.saas}
-        </TableCell>
-        <TableCell className="min-w-[160px] text-muted-foreground whitespace-normal py-3 px-3 border-r border-primary/20 last:border-r-0">
-          {row.offtheshelf}
-        </TableCell>
-      </TableRow>
-    ));
-  };
-
-  const renderMobileCards = () => {
-    return COMPARISON_ROWS.map((row) => (
-      <Card key={row.criteria} className="overflow-hidden">
-        <CardHeader className="pb-2">
-          <CardTitle className="text-base font-semibold">
-            {row.criteria}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="pt-0 space-y-3">
-          {COLUMNS.map((col) => (
-            <div
-              key={col.id}
-              className="flex flex-col gap-0.5 border-b border-primary/10 pb-3 last:border-0 last:pb-0"
-            >
-              <span className="text-xs font-medium text-muted-foreground">
-                {col.label}
-                {col.sub ? ` (${col.sub})` : ''}
-              </span>
-              <span className="text-sm text-foreground">{row[col.id]}</span>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
-    ));
-  };
-
   return (
-    <section className="w-full py-20 md:py-28">
-      <div className="container flex flex-col gap-12 md:gap-20">
-        <SectionTitle
-          subtitle="Comparison"
-          title="How Low-Ops compares"
-          description="Compare Low-Ops with other platforms to choose the right fit for your needs."
-        />
-        <div className="hidden md:block overflow-x-auto rounded-lg border border-primary/30 bg-card">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-muted/50 hover:bg-muted/50">
-                <TableHead className="min-w-[140px] font-semibold text-foreground py-4 px-4 border-r border-primary/20 last:border-r-0">
-                  Criteria
-                </TableHead>
-                {renderColumns()}
-              </TableRow>
-            </TableHeader>
-            <TableBody>{renderRows()}</TableBody>
-          </Table>
-        </div>
+    <section className="w-full py-16 md:py-24">
+      <div className="container">
+        <Reveal>
+          <SplitHead
+            index="01"
+            kicker="Comparison"
+            title={
+              <>
+                Four ways to run internal apps.{' '}
+                <span className="lo-em">One keeps IT in control.</span>
+              </>
+            }
+            side="Building your own platform, renting a hosted control plane, moving to a public PaaS — or installing Low-Ops.AI on infrastructure you already own."
+          />
+        </Reveal>
 
-        <div className="flex flex-col gap-4 md:hidden">
-          {renderMobileCards()}
+        {/* Desktop matrix */}
+        <Reveal>
+          <div className="hidden overflow-hidden rounded-[8px] border border-[var(--lo-line-strong)] md:block">
+            <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1.2fr]">
+              <div className="bg-[var(--lo-surface-2)] px-5 py-5">
+                <span className="lo-label text-[var(--lo-fg-dim)]">
+                  Criteria
+                </span>
+              </div>
+              {COLUMNS.map((col) => {
+                const us = col.id === 'offtheshelf';
+                return (
+                  <div
+                    key={col.id}
+                    data-tone={us ? 'dark' : undefined}
+                    className={cn(
+                      'border-l px-5 py-5',
+                      us
+                        ? 'border-[var(--lo-black-line)] bg-[var(--lo-black)] text-[var(--lo-on-black)]'
+                        : 'border-[var(--lo-line)] bg-[var(--lo-surface-2)]',
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'block text-[15px] font-semibold',
+                        us
+                          ? 'text-[var(--lo-on-black)]'
+                          : 'text-[var(--lo-fg)]',
+                      )}
+                    >
+                      {col.label}
+                    </span>
+                    <span
+                      className={cn(
+                        'mt-0.5 block text-[12.5px]',
+                        us
+                          ? 'text-[var(--lo-on-black-dim)]'
+                          : 'text-[var(--lo-fg-dim)]',
+                      )}
+                    >
+                      {col.sub}
+                    </span>
+                  </div>
+                );
+              })}
+
+              {COMPARISON_ROWS.map((row) => (
+                <div key={row.criteria} className="contents">
+                  <div className="border-t border-[var(--lo-line)] bg-[var(--lo-surface)] px-5 py-3.5 text-[14px] font-medium text-[var(--lo-fg)]">
+                    {row.criteria}
+                  </div>
+                  {COLUMNS.map((col) => {
+                    const us = col.id === 'offtheshelf';
+                    return (
+                      <div
+                        key={col.id}
+                        className={cn(
+                          'border-t border-l px-5 py-3.5 text-[13.5px] leading-snug',
+                          us
+                            ? 'border-[var(--lo-black-line)] bg-[var(--lo-black)] text-[var(--lo-on-black)]'
+                            : 'border-[var(--lo-line)] bg-[var(--lo-surface)] text-[var(--lo-fg-mut)]',
+                        )}
+                      >
+                        {row[col.id]}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Mobile */}
+        <div className="flex flex-col gap-3 md:hidden">
+          {COMPARISON_ROWS.map((row) => (
+            <Reveal key={row.criteria}>
+              <div className="rounded-[8px] border border-[var(--lo-line-strong)] bg-[var(--lo-surface)]">
+                <div className="border-b border-[var(--lo-line)] px-5 py-3.5 text-[15px] font-semibold text-[var(--lo-fg)]">
+                  {row.criteria}
+                </div>
+                <dl className="divide-y divide-[var(--lo-line)]">
+                  {COLUMNS.map((col) => {
+                    const us = col.id === 'offtheshelf';
+                    return (
+                      <div
+                        key={col.id}
+                        className={cn(
+                          'px-5 py-3',
+                          us &&
+                            'bg-[var(--lo-black)] text-[var(--lo-on-black)]',
+                        )}
+                      >
+                        <dt
+                          className={cn(
+                            'lo-label',
+                            us
+                              ? 'text-[var(--lo-accent)]'
+                              : 'text-[var(--lo-fg-dim)]',
+                          )}
+                        >
+                          {col.label}
+                        </dt>
+                        <dd
+                          className={cn(
+                            'mt-1 text-[14px]',
+                            us
+                              ? 'text-[var(--lo-on-black)]'
+                              : 'text-[var(--lo-fg-mut)]',
+                          )}
+                        >
+                          {row[col.id]}
+                        </dd>
+                      </div>
+                    );
+                  })}
+                </dl>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

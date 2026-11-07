@@ -1,30 +1,68 @@
 import comotionLogo from '@/assets/comotion-logo.png';
 import inntelligenceLogo from '@/assets/inntelligence-logo.png';
 import lowcodelabsLogo from '@/assets/lowcodelabs-logo.png';
+import { formatEur, PRICING } from '@/data/pricing';
 
 export const partnersMetadata = {
-  subtitle: 'Partners',
-  title: 'Build and ship faster, together',
+  title: 'Partners',
   description:
-    'Together with our partners, we can help you build and deploy your applications faster and easier. Our partners are experts in their field and can help you with the implementation and customization of Low-Ops.',
+    'The Low-Ops.AI partner programme for MSPs, IT consultancies and AI studios: deploy a governed environment per client, pass through the Professional licence, keep the margin on implementation and managed services.',
 };
 
-export const partnersData = [
+/** Why an MSP, consultancy or AI studio partners with us (GTM Play 3). */
+export const partnerBenefits = [
+  {
+    title: 'One governed environment per client',
+    body: 'Spin up a private Low-Ops.AI environment for each client in a day. Every client gets the same self-service portal, SSO, pipelines and audit trail — you get a standard you can operate at scale.',
+  },
+  {
+    title: `Pass-through licence, your margin on top`,
+    body: `The Professional licence (${formatEur(PRICING.professionalMonthly)}/mo, ${PRICING.professionalIncludedApps} apps included) is passed through transparently. Implementation, the apps you build and the managed service around them are your revenue.`,
+  },
+  {
+    title: 'Recurring managed-service revenue',
+    body: 'Operate client environments yourself or resell our Managed Service add-on. Either way, every digital employee you deploy becomes a monthly line on your invoice, not a one-off project.',
+  },
+  {
+    title: 'Enablement, not just a reseller agreement',
+    body: 'Technical training for your engineers, co-marketing with the Shadow AI audit and ROI calculator plays, and a direct line to the team that builds the platform.',
+  },
+];
+
+export type PartnerType = 'Implementation partner' | 'Technology partner';
+
+export const partnersData: {
+  title: string;
+  type: PartnerType;
+  region: string;
+  description: string;
+  imagePath: typeof comotionLogo;
+  link: string;
+}[] = [
   {
     title: 'Comotion',
-    description: `Comotion is based in South Africa. They are certified in both Mendix app development and Low-Ops implementation.`,
+    type: 'Implementation partner',
+    region: 'South Africa · USA',
+    description:
+      'Certified in both Mendix app development and Low-Ops.AI implementation. Comotion delivers governed low-code and AI solutions for mid-market clients on their own infrastructure.',
     imagePath: comotionLogo,
     link: 'https://www.comotion.us/',
   },
   {
     title: 'Lowcode Labs',
-    description: `Lowcode Labs is based in India. They are experts in Mendix development and Low-Ops implementation.`,
+    type: 'Implementation partner',
+    region: 'India',
+    description:
+      'Experts in Mendix development and Low-Ops.AI implementation, helping organisations move from scattered experiments to one governed platform.',
     imagePath: lowcodelabsLogo,
     link: 'https://lowcodelabs.in/',
   },
   {
     title: 'Inntelligence AI',
-    description: `The Inntelligence AI platform enables you to build custom AI workflows and agents for your business — fully integrated with Low-Ops for a scalable, low-maintenance setup.`,
+    type: 'Technology partner',
+    region: 'The Netherlands',
+    description:
+      'The Inntelligence AI platform lets you build custom AI workflows and agents for your business — fully integrated with Low-Ops.AI for a private, scalable, low-maintenance setup.',
     imagePath: inntelligenceLogo,
     link: 'https://inntelligence.nl/',
   },

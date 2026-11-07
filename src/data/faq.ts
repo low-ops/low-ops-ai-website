@@ -1,82 +1,133 @@
+export type FaqItem = {
+  title: string;
+  description: string;
+};
 
-export const faqDataStrategic = [
+export type FaqGroup = {
+  id: string;
+  label: string;
+  title: string;
+  titleEm: string;
+  side: string;
+  items: FaqItem[];
+};
+
+export const faqDataStrategic: FaqItem[] = [
   {
-    title: 'What is Low-Ops at its core?',
+    title: 'What is Low-Ops.AI in one sentence?',
     description:
-    'Low-Ops is essentially our collective knowledge of building app platforms, shaped into a reproducible software package. In the old days, we would spend 3+ years with a team of 5-6 engineers to design and implement a custom app platform. While there will always be a need for bespoke platforms, we believe many organizations benefit from a standard platform that just works. The core is a collection of industry-proven open source technologies like Kubernetes, Prometheus and Helm, connected together through automation.',
+      'Low-Ops.AI is the Internal Developer Platform for the AI era: it lets domain experts build and deploy custom AI agents and web apps at rapid pace, while IT keeps complete oversight, governance and data privacy — on infrastructure you control.',
   },
   {
-    title: 'How is this related to vibe-coding and other generative AI technologies?',
+    title: 'Who is Low-Ops.AI for?',
     description:
-    'Low-Ops defines a simple app specification that AI assistants and agents use to create Low-Ops compatible apps — for example, how the code should consume a database service and which port it should listen on. With MCP support, agents can build and deploy directly, while built-in guardrails and best-practice scanning keep AI-generated apps secure, compliant and production-ready.',
+      'Mid-market organisations — typically 100 to 400 employees with dedicated IT leadership — in regulated or data-sensitive sectors such as healthcare, government, pharma, financial services and construction, plus the MSPs and IT consultancies that serve them. That is where the friction between business agility and IT governance is highest, and where Shadow AI does the most damage.',
   },
   {
-    title: 'How can Low-Ops enable secure and compliant deployments?',
+    title: 'What do you mean by "Shadow AI"?',
     description:
-    'Low-Ops is designed to be deployed in a private cloud environment, so the platform is not exposed to the public internet. Every deployment runs through automated CI/CD with linting and Trivy security scanning, access management and full audit trails — giving you the guardrails and evidence needed to support frameworks such as GDPR, the EU AI Act, DORA and SOx.',
+      'Shadow AI is the growing inventory of AI tools, scripts and low-code apps that employees adopt without IT ever seeing them: no owner, no audit trail, and company data flowing into public clouds. Low-Ops.AI replaces it with one centralised, self-hosted self-service portal — so the business keeps building and IT finally has visibility and control.',
   },
   {
-    title: 'Who is Low-Ops for?',
+    title: 'How is this different from a low-code tool or an AI assistant?',
     description:
-      'Low-Ops is built for high-velocity teams (typically 5-50 people) that develop custom business software and handle sensitive data — especially in fintech, healthtech, insurtech, legaltech and biotech. It is ideal for teams leaning into modern AI-assisted development who need to ship fast without a full platform-engineering headcount.',
+      'Low-code tools and AI assistants help someone build something. Low-Ops.AI is what that something runs on afterwards: a governed platform that provisions the database, CI/CD pipeline, SSO, backups and private hosting, records every action in an audit log, and gives IT a single place to see all apps and owners. Build with whatever tools you like — including AI coding assistants via our MCP server — then click deploy.',
   },
   {
-    title: 'Is this a service or a product?',
+    title: 'Who actually builds the apps and agents?',
     description:
-      'Low-Ops is a product. It is installed on your own infrastructure. We provide support and maintenance for the product. If desired additional services like support, training and consulting can be added.',
+      'Your domain experts — the people in finance, HR, legal, operations or the clinic who know the work. With modern AI assistants they can turn an idea into a working app in an afternoon. Low-Ops.AI gives them a paved road to production so they never have to wait weeks for IT, and gives IT the guardrails to say yes.',
   },
   {
-    title: 'Do you host the platform for me?',
+    title: 'Where does my data live? Do you host the platform?',
     description:
-      'No, we provide the platform as a self-hosted solution. You can install it on your own infrastructure or on a cloud provider of your choice.',
+      'Low-Ops.AI is self-hosted by design: it runs in your private cloud, your on-premises data centre or your own tenancy at any cloud provider. Apps and agents are private by default and reachable only via the corporate network. If you have no internal DevOps capacity, our optional Managed Service add-on lets us run and operate your Low-Ops.AI environment for you — still on infrastructure that stays under your name.',
   },
   {
-    title: 'Do you provide support for the platform?',
+    title: 'How does pricing work?',
     description:
-      'Yes, we provide support for the platform. We offer a range of support options including email support, phone support and on-site support.',
+      'Software licensing is decoupled from headcount. The Community edition is free and open source. Professional starts at €499 per month, includes the centralised self-service portal, MCP server, automated pipelines and three apps or agents in production; each additional app is €39 per month. Unlimited creators, unlimited experiments — you only pay for the digital employees that actually make it to production.',
   },
   {
-    title: 'Do you provide training for the platform?',
+    title: 'How do I calculate the return on investment?',
     description:
-      'Yes, we provide training for the platform. We offer a range of training options including online training, on-site training and remote training.',
+      'Think of each app or agent as a permanent digital employee. If three apps each save one person 40 hours a month at a fully loaded cost of €60 per hour, that is €7,200 of value per month against €499 of platform cost — an ROI above 1,000%. Our ROI calculator on the home page lets you plug in your own numbers.',
   },
   {
-    title: 'How does Low-Ops enable my sovereignty objectives?',
+    title: 'Am I locked in?',
     description:
-      'Low-Ops, together with Kubernetes and other open source technologies, lets you deploy your applications on your own infrastructure — in-region and under your control. This gives you complete sovereignty over your data and AI applications, helping you meet strict data-residency and compliance requirements.',
+      'No. The core engine is open source, built on industry-standard components such as Kubernetes, PostgreSQL and Keycloak, and your apps are ordinary containers. You can run the Community edition yourself, export everything, or leave at any time. The Professional tier buys you the governed portal and automated operations — not a cage.',
   },
   {
-    title: 'Why should I choose Low-Ops over building my own platform?',
+    title: 'How does Low-Ops.AI help with compliance?',
     description:
-      'Low-Ops is a fully featured platform for building and deploying AI agents and web apps. It follows platform-engineering best practices, is easy to use and maintain, and is far cheaper and faster than assembling and operating your own platform — freeing your team to focus on your core product instead of infrastructure.',
+      'It provides the technical controls most frameworks ask for: private, self-hosted deployment for data residency and sovereignty, SSO and role-based access, automated security scanning in every pipeline, backups and complete audit trails. Teams use these to support GDPR, the EU AI Act, NIS2, DORA, ISO 27001 and SOx. Low-Ops.AI is an enabling platform, not a certificate — your processes still matter.',
+  },
+  {
+    title: 'I am an MSP or IT consultancy. How do I work with you?',
+    description:
+      'You deploy a governed Low-Ops.AI environment per client, pass the Professional licence through and keep the margin on implementation and managed services. Partners receive training, co-marketing and a direct line to our engineers. See our MSP & consultancies solution page or the Partners page to get started.',
   },
 ];
 
+export const faqDataTechnical: FaqItem[] = [
+  {
+    title: 'What are the infrastructure requirements?',
+    description:
+      'Any Kubernetes-compatible platform with block storage and a load balancer — your own hardware, a private cloud or a tenancy at AWS, Azure, GCP or a regional provider. We can help you set one up if you do not have one yet.',
+  },
+  {
+    title: 'How long does installation take?',
+    description:
+      'With the requirements in place, a Professional environment is installed in less than a day. Domain experts can deploy their first app the same afternoon.',
+  },
+  {
+    title: 'What does a domain expert actually need to know?',
+    description:
+      'The Low-Ops.AI app specification is intentionally small: which port the app listens on, how it reads its database connection, and how it is packaged. AI assistants understand it natively, and we ship templates for common app types. Everything else — pipelines, SSO, hosting, backups — is handled by the platform.',
+  },
+  {
+    title: 'How does the MCP server work?',
+    description:
+      'The portal exposes every action as an API and as a Model Context Protocol server. AI coding assistants such as Cursor, Claude Code or Copilot can create apps, trigger builds and deploy to environments directly — under exactly the same roles, guardrails and audit trail as a human clicking in the portal.',
+  },
+  {
+    title: 'What does IT see in the oversight portal?',
+    description:
+      'Every application with its owner, environments (development, staging, production), packages traced back to their commit, scan results, deployments and a complete audit log of who did what and when. Teams and roles come from your identity provider via SSO.',
+  },
+  {
+    title: 'Which app types are supported?',
+    description:
+      'Anything that can be packaged as a container: web apps, AI agents, APIs, background workers and scheduled jobs. Apps can share platform services such as PostgreSQL, Redis, RabbitMQ and object storage, which keeps infrastructure costs low.',
+  },
+  {
+    title: 'How are security updates and backups handled?',
+    description:
+      'Every build runs through automated pipelines with linting and vulnerability scanning. Databases are backed up automatically and can be restored in a click. We keep the platform and its dependencies patched; with the Managed Service add-on we also operate upgrades, monitoring and recovery for you.',
+  },
+  {
+    title: 'Which components are in the platform?',
+    description:
+      'An evolving set of proven open-source building blocks: Kubernetes, Tekton pipelines, Gitea, Harbor, Keycloak, PostgreSQL, Redis, RabbitMQ, MinIO, Prometheus and Grafana, connected and operated by Low-Ops.AI automation.',
+  },
+];
 
-export const faqDataTechnical = [
+export const faqGroups: FaqGroup[] = [
   {
-    title: 'What are the system requirements?',
-    description:
-      'The Low-Ops platform is installed on your own infrastructure. You can use your own hardware, or we can help you set up a private cloud. We support any Kubernetes-compatible platform with block storage and load balancer services.',
+    id: 'strategic',
+    label: 'For decision makers',
+    title: 'The questions CIOs and CEOs',
+    titleEm: 'ask us first.',
+    side: 'Positioning, pricing, privacy and risk — the things that come up in the first conversation with IT leadership and the board.',
+    items: faqDataStrategic,
   },
   {
-    title: 'How long does it take to set up a private cloud with Low-Ops?',
-    description:
-      'Assuming the minimum requirements are met, it takes less than a day to install Low-Ops.',
-  },
-  {
-    title: 'How do I keep my platform secure and up to date?',
-    description:
-      'We regularly update the platform to the latest version of all dependencies. We also provide a security patch service to keep your platform secure.',
-  },
-  {
-    title: 'Which compliance frameworks does Low-Ops help with?',
-    description:
-      'Low-Ops provides the technical controls that underpin many regulatory frameworks: private, self-hosted deployment for data residency and sovereignty, automated security scanning, access management, and complete audit trails. Teams use these capabilities to support GDPR, the EU AI Act, DORA and SOx. Low-Ops is an enabling platform, not a certification — your compliance posture also depends on your own processes.',
-  },
-  {
-    title: 'What components are included in the platform?',
-    description:
-      'The actual list of components is constantly evolving. We follow industry best practices and open source trends to select the best components for the job. We also have a strong focus on security and compliance. Some examples are Kubernetes, Prometheus, Helm, PostgreSQL, Redis, RabbitMQ and Keycloak.',
+    id: 'technical',
+    label: 'For builders and operators',
+    title: 'The questions IT teams and',
+    titleEm: 'domain experts ask next.',
+    side: 'Requirements, installation, the app spec, the MCP server and what runs under the hood.',
+    items: faqDataTechnical,
   },
 ];

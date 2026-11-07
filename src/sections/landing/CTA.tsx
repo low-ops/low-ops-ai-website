@@ -1,46 +1,70 @@
 import Reveal from '@/components/animations/Reveal';
+import CtaLink from '@/components/CtaLink';
+import { LogoMark } from '@/components/Logo';
 import data from '@/data';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import Kicker from './Kicker';
 
-const CTA: FC = () => {
+type TProps = {
+  kicker?: string;
+  title?: ReactNode;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+};
+
+/** Play 1 — the Shadow AI audit is the default closing CTA site-wide. Dark band. */
+const CTA: FC<TProps> = ({
+  kicker = 'End Shadow AI',
+  title = (
+    <>
+      Find out how much Shadow AI is in your{' '}
+      <span className="lo-em">organisation.</span>
+    </>
+  ),
+  body = 'Book a free Shadow AI audit. We help you identify how many ungoverned AI tools your employees already use — and show how the Low-Ops.AI Professional tier brings them under one governed, self-hosted roof.',
+  primaryLabel = 'Book a free Shadow AI audit',
+  primaryHref = data.cta.shadowAiAuditLink,
+  secondaryLabel = 'Start free with Community',
+  secondaryHref = data.cta.communityLink,
+}) => {
   return (
     <section
       id="cta"
-      className="relative z-10 border-t border-[var(--lo-line-soft)] py-16 md:py-24"
+      data-tone="dark"
+      className="relative z-10 overflow-hidden border-t border-[var(--lo-black-line)] bg-[var(--lo-black)] py-20 text-[var(--lo-on-black)] md:py-28"
     >
-      <div className="container">
+      <div
+        className="lo-dots-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_80%_at_80%_50%,rgba(0,0,0,0.9),transparent)]"
+        aria-hidden="true"
+      />
+      <LogoMark
+        className="pointer-events-none absolute -right-[6%] top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 opacity-[0.12] lg:block"
+        graphite="#a3a6ab"
+      />
+      <div className="container relative">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--lo-line)] px-6 py-14 text-center shadow-[var(--lo-shadow-sm)] md:px-16 md:py-20 bg-[radial-gradient(80%_130%_at_50%_0%,var(--lo-glow),transparent_60%),linear-gradient(180deg,var(--lo-surface-2),var(--lo-surface))]">
-            <Kicker className="justify-center">
-              Give your agents and apps a golden path
-            </Kicker>
-            <h2 className="lo-display relative mx-auto mt-4 max-w-3xl text-[30px] text-balance text-[var(--lo-fg)] md:text-[44px]">
-              Ship AI agents &amp; web apps your security team{' '}
-              <span className="lo-em">approves.</span>
+          <div className="max-w-[760px]">
+            <Kicker tone="dark">{kicker}</Kicker>
+            <h2 className="lo-display mt-6 text-[36px] text-balance text-[var(--lo-on-black)] md:text-[56px]">
+              {title}
             </h2>
-            <p className="relative mx-auto mt-5 max-w-[42em] text-[16px] leading-relaxed text-[var(--lo-fg-mut)] md:text-[17px]">
-              From prompt to production, responsibly — in minutes, not months.
-              Book a demo and watch an agent or app reach your private cloud,
-              best practices and guardrails all enforced.
+            <p className="mt-6 max-w-[40em] text-[16px] leading-relaxed text-[var(--lo-on-black-mut)] md:text-[17px]">
+              {body}
             </p>
-            <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={data.cta.personalDemoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-[var(--lo-accent)] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--lo-accent-deep)]"
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <CtaLink href={primaryHref} variant="inverse">
+                {primaryLabel}
+              </CtaLink>
+              <CtaLink
+                href={secondaryHref}
+                variant="secondary"
+                className="border-[var(--lo-black-line)] text-[var(--lo-on-black)] hover:border-[var(--lo-on-black)]"
               >
-                Book a demo
-              </a>
-              <a
-                href={data.cta.freeAccessLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[var(--lo-line)] bg-[var(--lo-surface)] px-6 py-3 text-[15px] font-medium text-[var(--lo-fg)] shadow-[var(--lo-shadow-sm)] transition-colors hover:border-[var(--lo-accent)] hover:text-[var(--lo-accent)]"
-              >
-                Start free
-              </a>
+                {secondaryLabel}
+              </CtaLink>
             </div>
           </div>
         </Reveal>

@@ -4,16 +4,17 @@ import { FC } from 'react';
 
 type TProps = {
   className?: string;
+  tone?: 'light' | 'dark';
 };
 
-const BrandMark: FC<TProps> = ({ className }) => {
+const BrandMark: FC<TProps> = ({ className, tone = 'light' }) => {
   return (
     <Link
       href="/"
-      className={`flex shrink-0 items-center text-[var(--lo-fg)] ${className ?? ''}`}
-      aria-label="Low-Ops home"
+      className={`flex shrink-0 items-center ${className ?? ''}`}
+      aria-label="Low-Ops.AI home"
     >
-      <Logo className="h-[26px] w-auto md:h-[28px]" />
+      <Logo size={24} tone={tone} />
     </Link>
   );
 };

@@ -1,31 +1,50 @@
-import SectionTitle from '@/components/SectionTitle';
-import { features } from '@/data/features';
-import FeaturesItem from '@/sections/features/FeaturesItem';
+import Reveal from '@/components/animations/Reveal';
+import { featureGroups } from '@/data/features';
+import SplitHead from '@/sections/landing/SplitHead';
 
+/** Features grouped by the three GTM personas, each as a hairline ledger. */
 const FeaturesSection = () => {
-  const renderFeatures = () => {
-    return features.map((feature, index) => (
-      <FeaturesItem
-        key={index}
-        icon={feature.icon}
-        title={feature.title}
-        description={feature.description}
-      />
-    ));
-  };
-
   return (
-    <section id="features" className="py-20 md:py-28">
-      <div className="container flex flex-col items-center gap-12 md:gap-20">
-        <SectionTitle
-          subtitle="Features"
-          title="Everything your team needs to ship responsibly"
-          description="A complete, self-hosted platform for building, shipping and operating AI agents and web apps — private cloud first, with software-engineering best practices, security and compliance engineered in from the start."
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full max-w-6xl mx-auto">
-          {renderFeatures()}
-        </div>
+    <section id="features" className="py-16 md:py-24">
+      <div className="container flex flex-col gap-20 md:gap-28">
+        {featureGroups.map((group) => (
+          <div key={group.id} id={group.id}>
+            <Reveal>
+              <SplitHead
+                index={group.index}
+                kicker={group.audience}
+                title={
+                  <>
+                    {group.title} <span className="lo-em">{group.titleEm}</span>
+                  </>
+                }
+                side={group.side}
+              />
+            </Reveal>
+            <Reveal>
+              <ul className="lo-ledger grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                {group.features.map((f, i) => (
+                  <li
+                    key={f.title}
+                    className="lo-cell flex h-full flex-col gap-5 px-6 py-6"
+                  >
+                    <span className="lo-label text-[var(--lo-fg-dim)]">
+                      {group.index}.{String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 className="lo-display text-[20px] text-[var(--lo-fg)]">
+                        {f.title}
+                      </h3>
+                      <p className="mt-2.5 text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+                        {f.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        ))}
       </div>
     </section>
   );

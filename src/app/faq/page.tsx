@@ -3,15 +3,23 @@ import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import CTASection from '@/sections/cta/CTASection';
 import FaqSection from '@/sections/faq/FaqSection';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'FAQ',
+  description:
+    'Answers for CIOs, CEOs, IT teams and domain experts: what Low-Ops.AI is, who it is for, how Shadow AI is solved, how per-app pricing works, where your data lives and what runs under the hood.',
+};
 
 const FAQPage = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         <SectionHero
-          title="Frequently Asked Questions"
-          description="Based on our past conversations with others like you, we have compiled a list of popular questions and answers. You are of course more than welcome to contact us if you prefer."
+          kicker="FAQ"
+          title="Straight answers, before the demo."
+          description="The questions we hear from IT leadership, executives and the domain experts who end up building. If yours is missing, book a call — we would rather answer it in person than guess."
         />
         <FaqSection />
         <CTASection />

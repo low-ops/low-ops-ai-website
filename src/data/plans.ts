@@ -1,60 +1,202 @@
-export const plans = [
+import data from '@/data';
+import { PRICING } from '@/data/pricing';
+
+/** Comparison rows, in display order. Keys are the row labels. */
+export const PLAN_ROW_KEYS = [
+  'Software license',
+  'Included apps / agents',
+  'Additional apps / agents',
+  'Deployment',
+  'Creators & users',
+  'Governance & UX',
+] as const;
+
+export type PlanRowKey = (typeof PLAN_ROW_KEYS)[number];
+
+export type Plan = {
+  value: string;
+  label: string;
+  /** Large headline price. */
+  price: string;
+  /** Small text next to the headline price. */
+  priceNote: string;
+  /** "Best for" line. */
+  description: string;
+  items: Record<PlanRowKey, string>;
+  isPopular: boolean;
+  link: string;
+  ctaLabel: string;
+};
+
+export const plans: Plan[] = [
   {
-    value: 'free',
-    label: 'Free tier',
-    price: '0 EUR',
-    description: 'For personal use',
+    value: 'community',
+    label: 'Community',
+    price: 'Free',
+    priceNote: '€0 · open source',
+    description:
+      'Teams wanting to experience an easy to upgrade and maintain private platform.',
     items: {
-      'deployment model': 'SaaS',
-      scalability: 'None — apps auto-stop after 1 week',
-      'high availability': 'No',
-      'platform upgrades': 'Yes',
-      'number of apps': '1',
-      'platform memory (RAM)': '1 GB',
-      'subscription model': 'None',
-      storage: '1 GB',
-      users: '1',
-      SLA: 'None',
+      'Software license': 'Free / €0 (open source)',
+      'Included apps / agents': 'Unlimited',
+      'Additional apps / agents': 'Free',
+      Deployment: 'Self-hosted',
+      'Creators & users': 'Unlimited',
+      'Governance & UX': 'Manual config via CLI / Git',
     },
     isPopular: false,
-    link: 'https://portal.app.low-ops.com',
+    link: data.cta.communityLink,
+    ctaLabel: 'Get the code',
   },
   {
     value: 'professional',
     label: 'Professional',
-    price: '16 EUR',
-    description: 'Per app (1 GB RAM) in your own cloud',
+    price: `From ${PRICING.currency}${PRICING.professionalMonthly}`,
+    priceNote: 'per month',
+    description: 'CIOs rolling out company-wide AI with strict governance.',
     items: {
-      'deployment model': 'Multi-node Kubernetes',
-      scalability: 'Horizontal',
-      'high availability': 'Yes',
-      'platform upgrades': 'Yes',
-      'number of apps': '10',
-      'platform memory (RAM)': '60 GB',
-      'subscription model': 'Monthly',
-      storage: 'Unlimited',
-      users: '20',
-      SLA: '99%',
+      'Software license': `Starts at ${PRICING.currency}${PRICING.professionalMonthly} / month`,
+      'Included apps / agents': `${PRICING.professionalIncludedApps}`,
+      'Additional apps / agents': `${PRICING.currency}${PRICING.additionalAppMonthly} / month`,
+      Deployment: 'Self-hosted (managed available)',
+      'Creators & users': 'Unlimited',
+      'Governance & UX': 'Centralized self-service portal',
     },
     isPopular: true,
+    link: data.cta.personalDemoLink,
+    ctaLabel: 'Book a demo',
   },
   {
     value: 'enterprise',
     label: 'Enterprise',
-    price: 'Quote',
-    description: 'For enterprises with advanced requirements',
+    price: 'Custom',
+    priceNote: 'pricing',
+    description:
+      'Large organizations requiring white-glove support and custom scale.',
     items: {
-      'deployment model': 'Multi-node Kubernetes',
-      scalability: 'Horizontal',
-      'high availability': 'Yes',
-      'platform upgrades': 'Yes',
-      'number of apps': 'Unlimited',
-      'platform memory (RAM)': 'Unlimited',
-      'subscription model': 'Custom',
-      storage: 'Unlimited',
-      users: 'Unlimited',
-      SLA: '99.9%',
+      'Software license': 'Custom pricing',
+      'Included apps / agents': 'Unlimited',
+      'Additional apps / agents': 'Custom volume rates',
+      Deployment: 'Self-hosted or fully managed',
+      'Creators & users': 'Unlimited',
+      'Governance & UX': 'Professional + advanced audit log',
     },
     isPopular: false,
+    link: data.cta.personalDemoLink,
+    ctaLabel: 'Talk to sales',
+  },
+];
+
+export type PlanDetail = {
+  id: string;
+  label: string;
+  title: string;
+  tagline: string;
+  points: { term: string; body: string }[];
+  dark?: boolean;
+};
+
+/** Long-form description of each tier (shown under the comparison table). */
+export const planDetails: PlanDetail[] = [
+  {
+    id: 'community',
+    label: 'Community',
+    title: 'The open-source core',
+    tagline:
+      'Our barebone, open-source version. Proof that our "no vendor lock-in" promise is real.',
+    points: [
+      { term: 'License fee', body: 'Free forever.' },
+      {
+        term: 'Infrastructure',
+        body: 'Self-hosted on your own servers or local hardware.',
+      },
+      {
+        term: 'Core capabilities',
+        body: 'Access to the foundational open-source engine to run AI apps and agents.',
+      },
+      {
+        term: 'Manual operations',
+        body: 'You handle allocation of Git projects, PostgreSQL databases and roles, RabbitMQ, and object storage access.',
+      },
+      { term: 'Support', body: 'Community forums and documentation.' },
+    ],
+  },
+  {
+    id: 'professional',
+    label: 'Professional',
+    title: 'The AI innovation factory',
+    tagline:
+      'Designed for organizations executing their AI transformation. Empower domain experts to build at a rapid pace while IT retains complete data privacy and architectural control.',
+    dark: true,
+    points: [
+      {
+        term: 'Software license',
+        body: `${PRICING.currency}${PRICING.professionalMonthly}/month.`,
+      },
+      {
+        term: 'Deployment',
+        body: 'Self-hosted in your own environment — keep 100% of your data internal.',
+      },
+      {
+        term: `${PRICING.professionalIncludedApps} solutions included`,
+        body: 'A baseline portfolio to immediately accelerate employee productivity.',
+      },
+      {
+        term: 'Self-service portal',
+        body: 'Domain experts deploy solutions via a governed, automated portal without waiting for IT support.',
+      },
+      {
+        term: 'MCP server included',
+        body: 'Your coding agent can access Low-Ops.AI to speed up app troubleshooting.',
+      },
+      {
+        term: 'Day 1 & 2 operations automated',
+        body: 'CI/CD pipelines, automated backups, centralized authentication (Keycloak) and advanced monitoring are handled out of the box.',
+      },
+    ],
+  },
+  {
+    id: 'enterprise',
+    label: 'Enterprise',
+    title: 'Limitless scale',
+    tagline: 'For organizations scaling beyond 400 employees.',
+    points: [
+      { term: 'Unlimited everything', body: 'Uncapped apps and agents.' },
+      {
+        term: 'White-glove support',
+        body: 'Dedicated account manager and prioritized IT-support SLA.',
+      },
+      {
+        term: 'Roadmap VIP',
+        body: 'Your feature requests end up higher in the backlog that shapes our roadmap.',
+      },
+    ],
+  },
+];
+
+export const managedServiceAddon = {
+  label: 'Add-on',
+  title: 'Fully managed service',
+  body: "Don't want to manage your own infrastructure? Let us handle the hosting. We can deploy, monitor and maintain your Low-Ops.AI Professional or Enterprise environment in our secure, private cloud.",
+  note: 'Pricing depends on compute and storage requirements.',
+};
+
+/** "How our pricing scales with your success". */
+export const pricingPrinciples = [
+  {
+    title: 'Absolute data privacy',
+    body: 'Because you self-host by default, your AI agents, corporate data and web apps never leave your corporate network.',
+  },
+  {
+    title: 'Zero "creator" taxes',
+    body: 'We want all your domain experts experimenting. No charges per user.',
+  },
+  {
+    title: 'The app license',
+    body: `When a domain expert builds a tool that saves your team 50 hours a month, that tool becomes a permanent digital employee. At ${PRICING.currency}${PRICING.additionalAppMonthly}/month for an additional app on the Professional tier, the ROI on each deployed solution is massive and immediate.`,
+  },
+  {
+    title: 'Built-in cost governance',
+    body: 'Abandoned projects and Shadow AI are naturally cleaned up. If an app is no longer driving business value, simply delete it from the central portal and your billing instantly updates.',
   },
 ];

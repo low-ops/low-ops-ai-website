@@ -1,15 +1,15 @@
 import { nextMetadata, structuredData } from '@/data/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-import { DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
 
-const dmSans = DM_Sans({
-  weight: ['300', '400', '500', '600', '700'],
+/** One straight, professional typeface for everything — display, body and labels. */
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-dm-sans',
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = nextMetadata;
@@ -20,8 +20,8 @@ const RootLayout = (props: TProps) => {
   const { children } = props;
 
   return (
-    <html lang="en" className={dmSans.variable}>
-      <body className="font-sans bg-[var(--lo-ink)] text-[var(--lo-fg)]">
+    <html lang="en" className={inter.variable}>
+      <body className="font-sans bg-[var(--lo-ink)] text-[var(--lo-fg)] antialiased">
         {children}
 
         <script

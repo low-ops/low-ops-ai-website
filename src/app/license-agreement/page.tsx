@@ -4,7 +4,7 @@ import Header from '@/components/header';
 const LicenseAgreementPage = () => {
   return (
     <>
-      <Header classes="border-b border-gray-100" />
+      <Header />
       <main className="min-h-screen w-full pt-[120px] pb-[40px]">
         <div className="container">
           <h1 className="text-3xl font-medium text-center mb-10">
@@ -153,7 +153,7 @@ const LicenseAgreementPage = () => {
           </p>
         </div>
       </main>
-      <Footer classes="border-t border-gray-100" />
+      <Footer />
     </>
   );
 };

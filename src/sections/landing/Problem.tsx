@@ -2,66 +2,65 @@ import Reveal from '@/components/animations/Reveal';
 import { FC } from 'react';
 import SplitHead from './SplitHead';
 
-const STAKEHOLDERS = [
+const SYMPTOMS = [
   {
-    role: 'Leadership',
-    want: 'Wants fast validation of high-value ideas.',
-    tension: "Can't gamble on compliance or data exposure.",
+    title: 'Shadow AI',
+    body: 'Employees adopt AI tools IT has never seen. No inventory, no audit trail, no idea where company data goes.',
   },
   {
-    role: 'Security',
-    want: 'Wants guardrails on everything that ships.',
-    tension: "Can't review every AI-built agent by hand.",
+    title: 'The unmaintainable web',
+    body: 'Every successful experiment becomes an internal app nobody owns, hosts, secures or backs up properly.',
   },
   {
-    role: 'Developers',
-    want: 'Want to ship what they built, today.',
-    tension: 'Blocked by tickets, infra and unknowns.',
+    title: 'IT as the bottleneck',
+    body: 'Every request for hosting, a database or SSO lands on the same small team. Good ideas wait for weeks.',
   },
   {
-    role: 'Operations',
-    want: 'Wants standardized, repeatable deploys.',
-    tension: 'Buried in manual, one-off provisioning.',
+    title: 'The per-seat creator tax',
+    body: 'Low-code and AI tools charge per creator — punishing exactly the experimentation you want to encourage.',
   },
 ];
 
 const Problem: FC = () => {
   return (
-    <section
-      id="problem"
-      className="relative z-10 border-t border-[var(--lo-line-soft)] bg-[var(--lo-surface-2)] py-16 md:py-24"
-    >
+    <section id="problem" className="relative z-10 py-16 md:py-24">
       <div className="container relative">
         <Reveal>
           <SplitHead
+            index="01"
             kicker="The AI adoption bottleneck"
             title={
               <>
-                AI made building easy. Shipping it{' '}
-                <span className="lo-em">responsibly</span> is the hard part.
+                Your business has more AI ideas than IT can{' '}
+                <span className="lo-em">safely ship.</span>
               </>
             }
-            side="Leadership drives for growth, security mandates guardrails, developers want to ship, and operations is buried in manual deployments. Promising agents and apps stall — or land in an unmanaged public cloud with sensitive data at risk. Low-Ops resolves the conflict for every stakeholder."
+            side="Domain experts can now build a working agent or app in an afternoon. Most IT departments are not equipped for that volume — so ideas either stall in the queue, or ship as Shadow AI: ungoverned tools, in public clouds, with company data. Low-Ops.AI ends the trade-off."
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {STAKEHOLDERS.map((s, i) => (
-            <Reveal key={s.role} delay={i * 0.06}>
-              <div className="h-full rounded-xl border border-[var(--lo-line)] bg-[var(--lo-surface)] p-6 shadow-[var(--lo-shadow-sm)]">
-                <div className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--lo-accent)]">
-                  {s.role}
+        <Reveal>
+          <ol className="lo-ledger grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {SYMPTOMS.map((s, i) => (
+              <li
+                key={s.title}
+                className="lo-cell flex h-full flex-col justify-between gap-10 px-6 py-6 md:min-h-[260px]"
+              >
+                <span className="lo-label text-[var(--lo-fg-dim)]">
+                  Symptom 0{i + 1}
+                </span>
+                <div>
+                  <h3 className="lo-display text-[22px] text-[var(--lo-fg)]">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2.5 text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+                    {s.body}
+                  </p>
                 </div>
-                <div className="mt-3 text-[16px] font-semibold tracking-[-0.01em] text-[var(--lo-fg)]">
-                  {s.want}
-                </div>
-                <div className="mt-2 text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
-                  {s.tension}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );
