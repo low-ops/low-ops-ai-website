@@ -11,7 +11,6 @@ import Portal from '@/sections/landing/Portal';
 import PricingTeaser from '@/sections/landing/PricingTeaser';
 import Problem from '@/sections/landing/Problem';
 import Proof from '@/sections/landing/Proof';
-import RoiCalculator from '@/sections/landing/RoiCalculator';
 
 const Home = () => {
   return (
@@ -25,7 +24,6 @@ const Home = () => {
         <Pillars />
         <Features />
         <Portal />
-        <RoiCalculator />
         <PricingTeaser />
         <Industries />
         <Proof />
