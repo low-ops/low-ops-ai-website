@@ -28,12 +28,12 @@ const Hero: FC = () => {
         <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
             <Reveal>
-              <Kicker>Internal Developer Platform for the AI era</Kicker>
+              <Kicker>Private Innovation Factory</Kicker>
             </Reveal>
 
             <Reveal delay={0.05}>
               <h1 className="lo-display mt-7 text-[44px] text-balance text-[var(--lo-fg)] md:text-[66px] lg:text-[76px]">
-                Let your experts build AI.{' '}
+                Let your experts build with AI.{' '}
                 <span className="lo-em">Keep IT in control.</span>
               </h1>
             </Reveal>
@@ -50,7 +50,7 @@ const Hero: FC = () => {
             <Reveal delay={0.15}>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <CtaLink href={data.cta.shadowAiAuditLink}>
-                  Book a free Shadow AI audit
+                  Book a demo
                 </CtaLink>
                 <CtaLink href="#how-it-works" variant="secondary">
                   See how it works
