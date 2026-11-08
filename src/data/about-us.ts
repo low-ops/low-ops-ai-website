@@ -1,4 +1,5 @@
 import begaImage from '@/assets/bega-lowops.png';
+import kaanImage from '@/assets/kaan-lowops.jpeg';
 import viktorImage from '@/assets/viktor-lowops.png';
 import xiwenImage from '@/assets/xiwen-lowops.png';
 import type { StaticImageData } from 'next/image';
@@ -32,6 +33,14 @@ export const teamMembers: TeamMember[] = [
       linkedin: 'https://linkedin.com/in/xiwen',
       github: 'https://github.com/xiwenc',
     },
+  },
+  {
+    id: 4,
+    name: 'Kaan Guven',
+    position: 'CCO',
+    bio: 'Responsible for all commercial activity: direct sales, the partner channel, and how the licence is taken to market.',
+    image: kaanImage,
+    social: {},
   },
   {
     id: 2,

@@ -131,15 +131,15 @@ const AboutUsSection = () => {
               kicker="The team"
               title={
                 <>
-                  Platform engineers{' '}
-                  <span className="lo-em">who have done this before.</span>
+                  The people who have{' '}
+                  <span className="lo-em">done this before.</span>
                 </>
               }
-              side="A small team in Rotterdam with deep roots in private cloud, SRE, platform engineering and application development — and a healthy impatience with IT queues."
+              side="Platform engineering in Rotterdam, and a commercial lead for every deal, partner and licence — with the same impatience for ideas left in a queue."
             />
           </Reveal>
           <Reveal>
-            <ul className="lo-ledger grid-cols-1 md:grid-cols-3">
+            <ul className="lo-ledger grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.map((member, i) => (
                 <TeamMemberCard key={member.id} member={member} index={i} />
               ))}

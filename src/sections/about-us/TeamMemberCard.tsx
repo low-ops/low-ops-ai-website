@@ -16,7 +16,7 @@ const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
           src={member.image}
           alt={`${member.name} — ${member.position}`}
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-top grayscale transition-[filter] duration-500 hover:grayscale-0"
         />
         <span className="lo-label absolute left-4 top-4 rounded-[4px] bg-[var(--lo-surface)] px-2 py-1 text-[var(--lo-fg-dim)]">
