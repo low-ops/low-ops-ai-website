@@ -5,8 +5,8 @@ import SplitHead from './SplitHead';
 const PERSONAS = [
   {
     role: 'CIO / IT Director',
-    headline: 'End Shadow AI with one centralised self-service portal.',
-    body: 'Empower your business to build at the speed of thought without giving up architectural control, security or visibility. Every app and agent runs on your infrastructure, behind SSO, with an audit log.',
+    headline: 'Ship the ideas you can stand behind.',
+    body: 'The ideas are already there. What is missing is a place to run them that IT can live with — on your infrastructure, behind SSO, with an audit log.',
     points: [
       'Central oversight of every app, agent and owner',
       'Audit logs, policies and private-by-default networking',

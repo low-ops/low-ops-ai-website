@@ -238,7 +238,7 @@ const Header: FC<TProps> = ({ classes }) => {
             rel="noopener noreferrer"
             className="mt-8 inline-flex h-12 items-center justify-center rounded-[6px] bg-[var(--lo-fg)] px-5 text-[15px] font-medium text-white"
           >
-            Book a free Shadow AI audit
+            Book a working session
           </a>
         </nav>
       </div>

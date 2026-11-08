@@ -21,12 +21,12 @@ export const faqDataStrategic: FaqItem[] = [
   {
     title: 'Who is Low-Ops.AI for?',
     description:
-      'Mid-market organisations — typically 100 to 400 employees with dedicated IT leadership — in regulated or data-sensitive sectors such as healthcare, government, pharma, financial services and construction, plus the MSPs and IT consultancies that serve them. That is where the friction between business agility and IT governance is highest, and where Shadow AI does the most damage.',
+      'Mid-market organisations — typically 100 to 400 employees with dedicated IT leadership — in regulated or data-sensitive sectors such as healthcare, government, pharma, financial services and construction, plus the MSPs and IT consultancies that serve them. That is where the gap between the ideas the business has and the apps IT can ship is widest.',
   },
   {
-    title: 'What do you mean by "Shadow AI"?',
+    title: 'What is the cost of ideas that stay in the queue?',
     description:
-      'Shadow AI is the growing inventory of AI tools, scripts and low-code apps that employees adopt without IT ever seeing them: no owner, no audit trail, and company data flowing into public clouds. Low-Ops.AI replaces it with one centralised, self-hosted self-service portal — so the business keeps building and IT finally has visibility and control.',
+      'The cost is the value that never starts. A domain expert can shape an agent or internal app in an afternoon, then wait weeks for a database, a login and somewhere to host it. Those hours stay manual. Low-Ops.AI is the paved road: they deploy from a self-service portal, and IT sees the owner, the audit log and the backup from the moment it exists.',
   },
   {
     title: 'How is this different from a low-code tool or an AI assistant?',

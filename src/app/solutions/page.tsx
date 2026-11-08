@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Solutions by industry',
   description:
-    'How Low-Ops.AI ends Shadow AI and empowers domain experts in healthcare, government, pharma, financial services, construction and for MSPs & IT consultancies — self-hosted, governed, no per-seat tax.',
+    'How Low-Ops.AI lets domain experts ship the ideas waiting on IT in healthcare, government, pharma, financial services, construction and for MSPs and IT consultancies — self-hosted, governed, no per-seat tax.',
   alternates: { canonical: `${SITE_URL}/solutions` },
 };
 
@@ -21,7 +21,7 @@ const SolutionsPage = () => {
       <main className="relative overflow-hidden bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         <SectionHero
           title="Solutions by industry"
-          description="One platform, six front lines. Low-Ops.AI lets domain experts build and deploy governed AI agents and web apps on your own infrastructure — and the Shadow AI problem looks different in every sector."
+          description="One platform, six front lines. Low-Ops.AI lets domain experts build and deploy governed AI agents and web apps on your own infrastructure — the ideas waiting on IT look different in every sector."
         />
         <Industries
           kicker="Pick your industry"

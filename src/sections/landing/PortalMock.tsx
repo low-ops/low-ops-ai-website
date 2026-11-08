@@ -138,7 +138,7 @@ const PortalMock: FC<TProps> = ({ rows }) => {
             </span>
           ))}
         </span>
-        <span className="text-[var(--lo-accent)]">0 shadow AI tools</span>
+        <span className="text-[var(--lo-accent)]">4 ideas in production</span>
       </div>
     </div>
   );

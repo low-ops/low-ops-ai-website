@@ -13,7 +13,7 @@ const CTASection = () => {
         </>
       }
       body="Turn AI ideas into governed, permanent digital employees on your own infrastructure — self-service for domain experts, complete oversight for IT, and no per-seat creator tax."
-      primaryLabel="Book a free Shadow AI audit"
+      primaryLabel="Book a working session"
       primaryHref={data.cta.shadowAiAuditLink}
       secondaryLabel="Start free"
       secondaryHref={data.cta.freeAccessLink}

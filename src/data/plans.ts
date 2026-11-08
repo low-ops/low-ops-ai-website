@@ -197,6 +197,6 @@ export const pricingPrinciples = [
   },
   {
     title: 'Built-in cost governance',
-    body: 'Abandoned projects and Shadow AI are naturally cleaned up. If an app is no longer driving business value, simply delete it from the central portal and your billing instantly updates.',
+    body: 'An idea that never earned its place does not have to linger as cost. Delete it from the central portal and the bill updates.',
   },
 ];

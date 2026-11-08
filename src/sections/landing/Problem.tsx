@@ -4,16 +4,16 @@ import SplitHead from './SplitHead';
 
 const SYMPTOMS = [
   {
-    title: 'Shadow AI',
-    body: 'Employees adopt AI tools IT has never seen. No inventory, no audit trail, no idea where company data goes.',
+    title: 'Ideas left in the queue',
+    body: 'A database, SSO or a hostname waits on the same small team. The business case was ready. The value has not started.',
+  },
+  {
+    title: 'Hours that stay manual',
+    body: 'Whatever the app would have saved is still done by hand, every month the idea sits on a ticket.',
   },
   {
     title: 'The unmaintainable web',
-    body: 'Every successful experiment becomes an internal app nobody owns, hosts, secures or backs up properly.',
-  },
-  {
-    title: 'IT as the bottleneck',
-    body: 'Every request for hosting, a database or SSO lands on the same small team. Good ideas wait for weeks.',
+    body: 'Every experiment that does get out becomes an internal app nobody owns, hosts, secures or backs up properly.',
   },
   {
     title: 'The per-seat creator tax',
@@ -35,7 +35,7 @@ const Problem: FC = () => {
                 <span className="lo-em">safely ship.</span>
               </>
             }
-            side="Domain experts can now build a working agent or app in an afternoon. Most IT departments are not equipped for that volume — so ideas either stall in the queue, or ship as Shadow AI: ungoverned tools, in public clouds, with company data. Low-Ops.AI ends the trade-off."
+            side="Domain experts can now build a working agent or app in an afternoon. Most IT departments are not equipped for that volume, so the ideas wait. Every week in the queue is value the business does not get back. Low-Ops.AI is the road that lets them ship, with IT still in control."
           />
         </Reveal>
 

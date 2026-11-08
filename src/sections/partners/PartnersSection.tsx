@@ -9,8 +9,8 @@ import Image from 'next/image';
 const STEPS = [
   {
     n: '01',
-    title: 'Run the Shadow AI audit with your client',
-    body: 'Use our audit playbook to inventory the ungoverned AI tools and internal apps already in use. The result is a business case your client\u2019s CIO can take to the board.',
+    title: 'Find the value stuck in their queue',
+    body: 'Sit with the client and list the ideas waiting on tickets — and what those hours are worth if the next three shipped. That is the business case their CIO can take upstairs.',
   },
   {
     n: '02',

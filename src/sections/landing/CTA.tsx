@@ -15,17 +15,17 @@ type TProps = {
   secondaryHref?: string;
 };
 
-/** Play 1 — the Shadow AI audit is the default closing CTA site-wide. Dark band. */
+/** Default closing CTA site-wide: the value sitting in the IT queue. */
 const CTA: FC<TProps> = ({
-  kicker = 'End Shadow AI',
+  kicker = 'The ideas waiting on IT',
   title = (
     <>
-      Find out how much Shadow AI is in your{' '}
-      <span className="lo-em">organisation.</span>
+      See what your organisation is leaving{' '}
+      <span className="lo-em">in the queue.</span>
     </>
   ),
-  body = 'Book a free Shadow AI audit. We help you identify how many ungoverned AI tools your employees already use — and show how the Low-Ops.AI Professional tier brings them under one governed, self-hosted roof.',
-  primaryLabel = 'Book a free Shadow AI audit',
+  body = 'A short working session. We look at the innovations stuck behind tickets, what they are worth if they shipped, and how the next three can run on infrastructure you control.',
+  primaryLabel = 'Book a working session',
   primaryHref = data.cta.shadowAiAuditLink,
   secondaryLabel = 'Start free with Community',
   secondaryHref = data.cta.communityLink,

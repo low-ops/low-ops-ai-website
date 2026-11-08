@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'FAQ',
   description:
-    'Answers for CIOs, CEOs, IT teams and domain experts: what Low-Ops.AI is, who it is for, how Shadow AI is solved, how per-app pricing works, where your data lives and what runs under the hood.',
+    'Answers for CIOs, CEOs, IT teams and domain experts: what Low-Ops.AI is, who it is for, what stranded ideas cost, how per-app pricing works, where your data lives and what runs under the hood.',
 };
 
 const FAQPage = () => {

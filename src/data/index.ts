@@ -6,7 +6,7 @@ const data = {
     communityLink: 'https://github.com/low-ops/',
     vipAccessLink: 'https://hub.cinaq.com/low-ops-vip',
     personalDemoLink: 'https://hub.cinaq.com/low-ops-personal-demo',
-    /** Play 1 — the free "Shadow AI" audit for CIOs / IT directors. */
+    /** Working session for CIOs: the ideas waiting on IT, and what they are worth. */
     shadowAiAuditLink: 'https://hub.cinaq.com/low-ops-personal-demo',
     /** Play 3 — MSP / consultancy partner conversation. */
     partnerLink: 'https://hub.cinaq.com/low-ops-personal-demo',

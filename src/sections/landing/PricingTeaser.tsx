@@ -25,7 +25,7 @@ const TIERS = [
     price: `From ${formatEur(PRICING.professionalMonthly)}`,
     cadence: 'per month',
     tagline:
-      'The governed self-service portal for IT. The remedy to Shadow AI.',
+      'The self-service portal that gets ideas into production, with IT still in the loop.',
     points: [
       'Centralised self-service portal',
       'MCP server & automated pipelines',

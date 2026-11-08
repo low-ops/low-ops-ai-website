@@ -82,9 +82,9 @@ const IndustryHero: FC<TProps> = ({ industry }) => {
 
 const IndustryStakes: FC<TProps> = ({ industry }) => {
   const copy = industry.copy?.stakes ?? {
-    title: 'Why Shadow AI is not an option in',
+    title: 'What gets left on the table in',
     titleEm: `${industry.shortName.toLowerCase()}.`,
-    side: 'Most IT departments are not equipped to handle the volume of AI ideas coming from the business. In your sector the cost of getting it wrong is higher than most — and so is the upside of getting it right.',
+    side: 'Most IT departments are not equipped for the volume of ideas coming from the business. In your sector, every week an idea waits is value you do not get back — and the upside of shipping it safely is larger than most.',
   };
   return (
     <section className="relative z-10 py-16 md:py-24">
@@ -316,7 +316,7 @@ const IndustryPage: FC<TProps> = ({ industry }) => {
             Same platform, <span className="lo-em">different front line.</span>
           </>
         }
-        side="Low-Ops.AI is one platform; the Shadow AI problem just wears a different uniform in each sector."
+        side="The ideas waiting on IT look different in each sector. The platform is the same."
       />
       <CTA
         kicker={industry.cta.kicker}

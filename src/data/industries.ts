@@ -63,7 +63,7 @@ export type Industry = {
   };
 };
 
-const AUDIT_LABEL = 'Book a free Shadow AI audit';
+const AUDIT_LABEL = 'Book a working session';
 
 export const industries: Industry[] = [
   {
@@ -76,7 +76,7 @@ export const industries: Industry[] = [
       title:
         'Low-Ops.AI for Healthcare — Governed AI for hospitals & care providers',
       description:
-        'Let clinicians and care teams build and deploy their own AI agents and web apps inside your own network. Private by default, full audit trails, 100% self-hosted. End Shadow AI in healthcare.',
+        'Let clinicians and care teams build and deploy their own AI agents and web apps inside your own network. Private by default, full audit trails, 100% self-hosted. The ideas stop waiting on IT.',
     },
     hero: {
       kicker: 'Low-Ops.AI for Healthcare',
@@ -96,7 +96,7 @@ export const industries: Industry[] = [
       },
       {
         title: 'Clinical staff are already using AI',
-        body: 'Summarising notes, drafting letters, triaging inboxes — often in unapproved tools. The question is not whether, but where and how governed.',
+        body: 'Summarising notes, drafting letters, triaging inboxes. That work is ready to be a governed tool. Today it still waits on IT.',
       },
       {
         title: 'IT is a bottleneck — not by choice',
@@ -106,9 +106,9 @@ export const industries: Industry[] = [
     pains: [
       {
         who: 'CIO / CISO',
-        pain: 'Shadow AI across departments',
+        pain: 'Care ideas that never reach the ward',
         detail:
-          'Dozens of unsanctioned tools, no audit trail, and no way to prove to regulators where patient data went.',
+          'Clinicians already know which assistant would save hours. Hosting and an audit trail wait on the same team, so the time stays manual.',
       },
       {
         who: 'Board & executives',
@@ -176,10 +176,10 @@ export const industries: Industry[] = [
       },
     ],
     cta: {
-      kicker: 'The Shadow AI audit',
-      title: 'Find out how much Shadow AI is already in your',
-      titleEm: 'hospital.',
-      body: 'Book a free Shadow AI audit. We help you map which AI tools staff already use, where patient data goes, and how to bring it under one governed roof.',
+      kicker: 'The ideas in the queue',
+      title: 'See what your clinicians are waiting to',
+      titleEm: 'ship.',
+      body: 'A short working session. We look at the care-team ideas stuck behind tickets, what they are worth if they ran this quarter, and how to ship the next three inside your network.',
       primaryLabel: AUDIT_LABEL,
       primaryHref: data.cta.shadowAiAuditLink,
     },
@@ -232,9 +232,9 @@ export const industries: Industry[] = [
     pains: [
       {
         who: 'CIO / CISO',
-        pain: 'Shadow AI in every department',
+        pain: 'Service ideas stuck in IT',
         detail:
-          'Policy teams, caseworkers and communications staff already use consumer AI. Nobody can say where the data went.',
+          'Caseworkers and policy teams have the change. There is no sovereign place to run it yet, so the improvement waits.',
       },
       {
         who: 'Executive leadership',
@@ -302,10 +302,10 @@ export const industries: Industry[] = [
       },
     ],
     cta: {
-      kicker: 'The Shadow AI audit',
-      title: 'Bring Shadow AI in your organisation into the',
-      titleEm: 'light.',
-      body: 'Book a free Shadow AI audit for your ministry, municipality or agency. We map current AI usage and show how to govern it on sovereign infrastructure.',
+      kicker: 'The ideas in the queue',
+      title: 'See which service improvements are still',
+      titleEm: 'waiting.',
+      body: 'A short working session for your ministry, municipality or agency. We look at the ideas stuck without a sovereign place to run, and the path to ship the next three.',
       primaryLabel: AUDIT_LABEL,
       primaryHref: data.cta.shadowAiAuditLink,
     },
@@ -427,10 +427,10 @@ export const industries: Industry[] = [
       },
     ],
     cta: {
-      kicker: 'The Shadow AI audit',
-      title: 'Govern AI in R&D before the',
-      titleEm: 'audit does.',
-      body: 'Book a free Shadow AI audit. We help IT and QA map AI usage across sites and show how to centralise it on one governed, self-hosted platform.',
+      kicker: 'The ideas in the queue',
+      title: 'See what R&D is waiting to',
+      titleEm: 'ship.',
+      body: 'A short working session. We look at the site and QA ideas stuck behind hosting and review, and how to put the next three on one governed platform.',
       primaryLabel: AUDIT_LABEL,
       primaryHref: data.cta.shadowAiAuditLink,
     },
@@ -475,9 +475,9 @@ export const industries: Industry[] = [
     pains: [
       {
         who: 'CIO / CISO / CRO',
-        pain: 'Shadow AI across front and back office',
+        pain: 'Hours that stay on the desk',
         detail:
-          "No inventory, no audit trail, and no way to answer the regulator's question: which models touch client data?",
+          'Front and back office can describe the agent. A governed place to run it takes a project, so the saving never starts.',
       },
       {
         who: 'CEO / COO',
@@ -552,10 +552,10 @@ export const industries: Industry[] = [
       company: 'Efficient Group',
     },
     cta: {
-      kicker: 'The Shadow AI audit',
-      title: 'Bring Shadow AI under',
-      titleEm: 'control.',
-      body: 'Book a free Shadow AI audit. We help you inventory the AI tools your teams use today and show how to centralise them on one governed, DORA-ready platform.',
+      kicker: 'The ideas in the queue',
+      title: 'See the hours still sitting in the',
+      titleEm: 'queue.',
+      body: 'A short working session. We look at the front- and back-office ideas waiting on a governed place to run, and what they return if they ship.',
       primaryLabel: AUDIT_LABEL,
       primaryHref: data.cta.shadowAiAuditLink,
     },
@@ -607,9 +607,9 @@ export const industries: Industry[] = [
     pains: [
       {
         who: 'CIO / IT manager',
-        pain: 'Spreadsheets, macros and rogue AI tools',
+        pain: 'Every site invents its own spreadsheet',
         detail:
-          'Every project invents its own tooling. Nobody can maintain, secure or audit it.',
+          'The tracker, the daily report, the subcontractor list — useful on one project, and still not a system anyone can maintain.',
       },
       {
         who: 'CEO / COO',
@@ -677,10 +677,10 @@ export const industries: Industry[] = [
       },
     ],
     cta: {
-      kicker: 'The Shadow AI audit',
-      title: 'Turn spreadsheets and rogue tools into',
-      titleEm: 'governed digital employees.',
-      body: 'Book a free Shadow AI audit. We map what your projects already use and show how to centralise it — self-hosted, governed, and without a per-seat tax.',
+      kicker: 'The ideas in the queue',
+      title: 'See which project ideas are still a',
+      titleEm: 'spreadsheet.',
+      body: 'A short working session. We look at the tools your projects are waiting to have, and how to ship the next three — self-hosted, governed, and without a per-seat tax.',
       primaryLabel: AUDIT_LABEL,
       primaryHref: data.cta.shadowAiAuditLink,
     },
@@ -718,7 +718,7 @@ export const industries: Industry[] = [
       stakes: {
         title: 'Why clients pick partners who ship —',
         titleEm: 'not partners who set up.',
-        side: 'Your clients have the same Shadow AI problem as everyone else, and the same lean IT team. The partner who can deliver a governed solution inside their network in weeks, not quarters, wins the engagement and the relationship after it.',
+        side: 'Your clients have the same backlog as everyone else: more ideas than a lean IT team can ship. The partner who can put a governed solution inside their network in weeks, not quarters, wins the engagement and the relationship after it.',
       },
       pains: {
         title: 'Three roles, one platform,',

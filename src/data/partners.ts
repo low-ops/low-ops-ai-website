@@ -25,7 +25,7 @@ export const partnerBenefits = [
   },
   {
     title: 'Enablement, not just a reseller agreement',
-    body: 'Technical training for your engineers, co-marketing with the Shadow AI audit and ROI calculator plays, and a direct line to the team that builds the platform.',
+    body: 'Technical training for your engineers, co-marketing around the ideas waiting on IT and the ROI calculator, and a direct line to the team that builds the platform.',
   },
 ];
 
