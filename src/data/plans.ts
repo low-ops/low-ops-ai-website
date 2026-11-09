@@ -45,8 +45,8 @@ export const plans: Plan[] = [
       'Governance & UX': 'Manual config via CLI / Git',
     },
     isPopular: false,
-    link: data.cta.communityLink,
-    ctaLabel: 'Get the code',
+    link: data.cta.communityPageLink,
+    ctaLabel: 'See evaluation prerequisites',
   },
   {
     value: 'professional',
@@ -64,7 +64,7 @@ export const plans: Plan[] = [
     },
     isPopular: true,
     link: data.cta.personalDemoLink,
-    ctaLabel: 'Book a demo',
+    ctaLabel: 'Request a demo',
   },
   {
     value: 'enterprise',
@@ -135,7 +135,7 @@ export const planDetails: PlanDetail[] = [
       },
       {
         term: 'Deployment',
-        body: 'Self-hosted in your own environment — keep 100% of your data internal.',
+        body: 'Self-hosted in your own environment. Platform data stores stay there; apps can still call external services you configure.',
       },
       {
         term: `${PRICING.professionalIncludedApps} solutions included`,
@@ -159,7 +159,8 @@ export const planDetails: PlanDetail[] = [
     id: 'enterprise',
     label: 'Enterprise',
     title: 'Limitless scale',
-    tagline: 'For organizations scaling beyond 400 employees.',
+    tagline:
+      'Recommended when you are scaling beyond roughly 400 employees. That figure is guidance, not an eligibility rule.',
     points: [
       { term: 'Unlimited everything', body: 'Uncapped apps and agents.' },
       {
@@ -177,15 +178,15 @@ export const planDetails: PlanDetail[] = [
 export const managedServiceAddon = {
   label: 'Add-on',
   title: 'Fully managed service',
-  body: "Don't want to manage your own infrastructure? Let us handle the hosting. We can deploy, monitor and maintain your Low-Ops.AI Professional or Enterprise environment in our secure, private cloud.",
-  note: 'Pricing depends on compute and storage requirements.',
+  body: "Don't want to operate the platform yourselves? We can deploy, monitor and maintain your Professional or Enterprise environment. Two tenancy models are available: infrastructure that stays under your cloud account name, or a private cloud we operate on your behalf. We agree which model applies before work starts.",
+  note: 'Pricing depends on compute, storage and the tenancy model. It is not included in the software licence.',
 };
 
 /** "How our pricing scales with your success". */
 export const pricingPrinciples = [
   {
-    title: 'Absolute data privacy',
-    body: 'Because you self-host by default, your AI agents, corporate data and web apps never leave your corporate network.',
+    title: 'Customer-controlled hosting',
+    body: 'Self-hosting keeps the platform and its data stores in the environment you choose. Applications can still call external models or APIs if you attach them. See the security pack for the boundary.',
   },
   {
     title: 'Zero "creator" taxes',

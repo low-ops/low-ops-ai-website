@@ -5,13 +5,15 @@ import CTASection from '@/sections/cta/CTASection';
 import RoiCalculator from '@/sections/landing/RoiCalculator';
 import PricingSection from '@/sections/pricing/PricingSection';
 import TechWeUseSection from '@/sections/pricing/TechWeUseSection';
+import { pageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Pricing',
   description:
-    'Pay for value, never for seats. Community is free and open source; Professional starts at €499 per month with the self-service portal, MCP server, pipelines and 3 apps included, €39 per additional app. Managed-service add-on available.',
-};
+    'Professional is €499/month for three production apps or agents, then €39 per additional production app. Unlimited users. Ten production apps cost €772/month in licensing — a licence example, not a quote.',
+  path: '/pricing',
+});
 
 const PricingPage = () => {
   return (
@@ -20,8 +22,8 @@ const PricingPage = () => {
       <main className="bg-[var(--lo-ink)] text-[var(--lo-fg)]">
         <SectionHero
           kicker="Pricing"
-          title="Transform your organization with AI at the speed of thought."
-          description="Low-Ops.AI uses a predictable, value-based software license that scales strictly with the business value you generate. Keep your data completely private by hosting on your own infrastructure, with fully managed services available if your IT team prefers a hands-off approach."
+          title="Pay per production app. Never per seat."
+          description="A predictable software licence on infrastructure you control. Staging for a billed app is included. Infrastructure, model/API usage, implementation and optional managed operations are extra. The 400-employee Enterprise note is a recommendation, not an eligibility rule."
         />
         <PricingSection />
         <RoiCalculator

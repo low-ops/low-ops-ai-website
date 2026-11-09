@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://low-ops.ai';
 
-const TITLE = 'Low-Ops.AI — The Internal Developer Platform for the AI era';
+const TITLE =
+  'Low-Ops.AI — Deploy internal apps on your infrastructure, with IT in control';
 const DESCRIPTION =
-  'Let domain experts build and deploy AI agents and web apps at the speed of thought, while IT keeps complete oversight, governance and data privacy. Self-hosted, private by default, open-source core. Pay per app — never per seat.';
+  'Low-Ops is the deployment and operations layer for internal apps and AI agents. Automate deployment, SSO, backups and operational visibility while your IT team controls access and infrastructure. No per-seat licensing.';
 
 export const nextMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -17,59 +18,40 @@ export const nextMetadata: Metadata = {
     'internal developer platform',
     'idp',
     'AI internal developer platform',
-    'stranded ideas',
+    'self-hosted app platform',
     'IT bottleneck',
     'AI governance',
-    'AI adoption strategy',
     'self-service portal',
-    'digital employees',
-    'citizen developers',
-    'domain experts',
     'AI agents',
-    'vibe coding',
-    'agentic workflows',
     'MCP server',
-    'AI guardrails',
     'GDPR',
     'EU AI Act',
     'DORA',
     'NIS2',
-    'SOx compliance',
     'data sovereignty',
     'private cloud',
     'self-hosted',
     'on-premises',
     'open source',
-    'no vendor lock-in',
     'healthcare AI platform',
     'government AI platform',
     'pharma AI platform',
     'financial services AI platform',
     'construction AI platform',
     'MSP deployment platform',
-    'fintech',
-    'healthtech',
-    'insurtech',
-    'legaltech',
-    'biotech',
     'mendix',
     'kubernetes',
     'docker',
     'devops',
-    'devsecops',
     'platform engineering',
     'CI/CD',
     'Mendix private cloud',
     'secure Mendix hosting',
     'Mendix Kubernetes deployment',
   ],
-  alternates: {
-    canonical: SITE_URL,
-  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: SITE_URL,
     siteName: 'Low-Ops.AI',
     type: 'website',
     locale: 'en_US',
@@ -79,7 +61,7 @@ export const nextMetadata: Metadata = {
     card: 'summary_large_image',
     title: TITLE,
     description:
-      'Empower domain experts to build AI solutions. Give IT complete oversight. Self-hosted, private by default, no per-seat tax.',
+      'The deployment and operations layer for internal apps and AI agents. Self-hosted, no per-seat licensing, IT in control.',
     images: [`${SITE_URL}/preview.png`],
   },
 };
@@ -90,6 +72,7 @@ export const structuredData = {
   name: 'Low-Ops.AI',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
+  url: SITE_URL,
   offers: [
     {
       '@type': 'Offer',
@@ -104,7 +87,7 @@ export const structuredData = {
       price: '499',
       priceCurrency: 'EUR',
       description:
-        'Centralized self-service portal, MCP server, automated pipelines and 3 apps. Additional apps €39/mo each. Unlimited creators.',
+        'Centralized self-service portal, MCP server, automated pipelines and 3 production apps. Additional apps €39/mo each. Unlimited creators.',
     },
   ],
   description: DESCRIPTION,

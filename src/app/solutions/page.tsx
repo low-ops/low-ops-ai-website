@@ -1,18 +1,18 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
-import { SITE_URL } from '@/data/seo';
+import { pageMetadata } from '@/lib/metadata';
 import CTA from '@/sections/landing/CTA';
 import HowItWorks from '@/sections/landing/HowItWorks';
 import Industries from '@/sections/landing/Industries';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Solutions by industry',
   description:
-    'How Low-Ops.AI lets domain experts ship the ideas waiting on IT in healthcare, government, pharma, financial services, construction and for MSPs and IT consultancies — self-hosted, governed, no per-seat tax.',
-  alternates: { canonical: `${SITE_URL}/solutions` },
-};
+    'How Low-Ops.AI fits healthcare, government, pharma, financial services, construction and MSPs. Named proof is strongest in financial services and Mendix private-cloud operations.',
+  path: '/solutions',
+});
 
 const SolutionsPage = () => {
   return (

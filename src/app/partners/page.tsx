@@ -4,11 +4,18 @@ import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import data from '@/data';
 import { partnersMetadata } from '@/data/partners';
+import { pageMetadata } from '@/lib/metadata';
 import CTASection from '@/sections/cta/CTASection';
 import PartnersSection from '@/sections/partners/PartnersSection';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = partnersMetadata;
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: partnersMetadata.title,
+    description: partnersMetadata.description,
+    path: '/partners',
+  }),
+};
 
 const PartnersPage = () => {
   return (
@@ -21,7 +28,7 @@ const PartnersPage = () => {
           description="MSPs, IT consultancies and AI studios use Low-Ops.AI to give each client a private, governed self-service platform — passing the licence through and earning on implementation and managed services."
         >
           <div className="flex flex-wrap gap-3">
-            <CtaLink href={data.cta.partnerLink}>Become a partner</CtaLink>
+            <CtaLink href={data.cta.partnerApplyLink}>Become a partner</CtaLink>
             <CtaLink href="/solutions/msp" variant="secondary">
               Read the MSP playbook
             </CtaLink>

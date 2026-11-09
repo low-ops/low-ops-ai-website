@@ -1,7 +1,11 @@
 import Reveal from '@/components/animations/Reveal';
 import CtaLink from '@/components/CtaLink';
 import data from '@/data';
-import { partnerBenefits, partnersData } from '@/data/partners';
+import {
+  partnerBenefits,
+  partnerOperating,
+  partnersData,
+} from '@/data/partners';
 import SplitHead from '@/sections/landing/SplitHead';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -111,7 +115,7 @@ const PartnersSection = () => {
           </Reveal>
           <Reveal>
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <CtaLink href={data.cta.partnerLink} variant="inverse">
+              <CtaLink href={data.cta.partnerApplyLink} variant="inverse">
                 Apply to the partner programme
               </CtaLink>
               <CtaLink
@@ -126,12 +130,48 @@ const PartnersSection = () => {
         </div>
       </section>
 
+      {/* Operating promises */}
+      <section id="how-it-works-for-partners" className="py-16 md:py-24">
+        <div className="container">
+          <Reveal>
+            <SplitHead
+              index="03"
+              kicker="How the programme actually works"
+              title={
+                <>
+                  Onboarding, licences, delivery and{' '}
+                  <span className="lo-em">escalation — in writing.</span>
+                </>
+              }
+              side="Training and co-marketing are part of the programme. The items below are the operating rules a partner should be able to take to their own legal and delivery teams."
+            />
+          </Reveal>
+          <Reveal>
+            <div className="lo-ledger grid-cols-1 md:grid-cols-2">
+              {partnerOperating.map((item, i) => (
+                <div key={item.title} className="lo-cell px-6 py-7 md:px-8">
+                  <span className="lo-mono text-[13px] text-[var(--lo-accent)]">
+                    0{i + 1}
+                  </span>
+                  <h3 className="lo-display mt-4 text-[22px] text-[var(--lo-fg)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2.5 max-w-[44em] text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Current partners */}
       <section id="partners" className="py-16 md:py-24">
         <div className="container">
           <Reveal>
             <SplitHead
-              index="03"
+              index="04"
               kicker="Our partners"
               title={
                 <>

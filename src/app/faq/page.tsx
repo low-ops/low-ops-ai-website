@@ -3,13 +3,15 @@ import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import CTASection from '@/sections/cta/CTASection';
 import FaqSection from '@/sections/faq/FaqSection';
+import { pageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'FAQ',
   description:
-    'Answers for CIOs, CEOs, IT teams and domain experts: what Low-Ops.AI is, who it is for, what stranded ideas cost, how per-app pricing works, where your data lives and what runs under the hood.',
-};
+    'Answers for IT directors and technical buyers: what Low-Ops is, who it is for, how production-app pricing works, where data lives, installation versus production approval, and compliance limits.',
+  path: '/faq',
+});
 
 const FAQPage = () => {
   return (

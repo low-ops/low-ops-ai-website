@@ -13,10 +13,10 @@ const CTASection = () => {
         </>
       }
       body="Turn AI ideas into governed, permanent digital employees on your own infrastructure — self-service for domain experts, complete oversight for IT, and no per-seat creator tax."
-      primaryLabel="Book a working session"
-      primaryHref={data.cta.shadowAiAuditLink}
-      secondaryLabel="Start free"
-      secondaryHref={data.cta.freeAccessLink}
+      primaryLabel="Request a demo"
+      primaryHref={data.cta.requestDemoLink}
+      secondaryLabel="Ways to start"
+      secondaryHref={data.cta.startLink}
     />
   );
 };

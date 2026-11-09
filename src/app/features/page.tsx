@@ -2,13 +2,18 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import { metadata as featuresMetadata } from '@/data/features';
+import { pageMetadata } from '@/lib/metadata';
 import CTASection from '@/sections/cta/CTASection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
 import HowItWorks from '@/sections/landing/HowItWorks';
 import Portal from '@/sections/landing/Portal';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = featuresMetadata;
+export const metadata: Metadata = pageMetadata({
+  title: featuresMetadata.title,
+  description: featuresMetadata.description,
+  path: '/features',
+});
 
 const FeaturesPage = () => {
   return (

@@ -3,13 +3,15 @@ import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import ComparisonSection from '@/sections/comparison/ComparisonSection';
 import CTASection from '@/sections/cta/CTASection';
+import { pageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Comparison',
   description:
     'How Low-Ops.AI compares with building your own platform, hosted control planes and public PaaS — on CI/CD, developer portal, MCP access, monitoring, disaster recovery, privacy, licensing and total cost of ownership.',
-};
+  path: '/comparison',
+});
 
 const ComparisonPage = () => {
   return (

@@ -143,6 +143,10 @@ const RoiCalculator: FC<TProps> = ({
   const [apps, setApps] = useState<number>(PRICING.professionalIncludedApps);
   const [hours, setHours] = useState(40);
   const [rate, setRate] = useState(60);
+  const [itHours, setItHours] = useState<number>(
+    ROI_ASSUMPTIONS.itHoursSavedPerApp,
+  );
+  const [itRate, setItRate] = useState<number>(ROI_ASSUMPTIONS.itHourlyRate);
   const [infra, setInfra] = useState<number>(
     ROI_ASSUMPTIONS.defaultInfraMonthly,
   );
@@ -151,8 +155,7 @@ const RoiCalculator: FC<TProps> = ({
   const totalCost = licence + infra;
 
   const expertValue = apps * hours * rate;
-  const itValue =
-    apps * ROI_ASSUMPTIONS.itHoursSavedPerApp * ROI_ASSUMPTIONS.itHourlyRate;
+  const itValue = apps * itHours * itRate;
   const totalValue = expertValue + itValue;
 
   const netMonthly = totalValue - totalCost;
@@ -190,8 +193,8 @@ const RoiCalculator: FC<TProps> = ({
                 onChange={setApps}
               />
               <Slider
-                label="Hours saved per app, per month"
-                hint="A typical internal automation returns a working week of manual effort per month."
+                label="Domain-expert hours saved per app, per month"
+                hint="Replace with your own baseline. The default is illustrative, not a measured customer result."
                 value={hours}
                 min={10}
                 max={200}
@@ -210,8 +213,28 @@ const RoiCalculator: FC<TProps> = ({
                 onChange={setRate}
               />
               <Slider
+                label="IT hours saved per app, per month"
+                hint={`Default ${ROI_ASSUMPTIONS.itHoursSavedPerApp} h is an assumption for CI/CD, SSO, backups and monitoring — edit it.`}
+                value={itHours}
+                min={0}
+                max={40}
+                step={1}
+                format={(v) => `${v} h`}
+                onChange={setItHours}
+              />
+              <Slider
+                label="IT / DevOps hourly rate"
+                hint="Fully loaded cost of the operators who would otherwise run this by hand."
+                value={itRate}
+                min={40}
+                max={200}
+                step={5}
+                format={(v) => `${formatEur(v)}/h`}
+                onChange={setItRate}
+              />
+              <Slider
                 label="Monthly infrastructure cost"
-                hint="Your own servers or cloud tenancy. Set to what you already pay."
+                hint="Your own servers or cloud tenancy. Set to what you already pay. Licence cost is separate."
                 value={infra}
                 min={50}
                 max={1000}
@@ -220,10 +243,9 @@ const RoiCalculator: FC<TProps> = ({
                 onChange={setInfra}
               />
               <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--lo-fg-dim)]">
-                Assumes IT saves {ROI_ASSUMPTIONS.itHoursSavedPerApp} hours per
-                app per month at {formatEur(ROI_ASSUMPTIONS.itHourlyRate)}/h
-                thanks to the Low-Ops.AI automations (CI/CD, SSO, backups,
-                monitoring).
+                Prefer customer-supplied baselines over &ldquo;typical&rdquo;
+                savings. The calculator does not include implementation,
+                managed operations, model/API usage or tax.
               </p>
             </div>
 
@@ -275,7 +297,7 @@ const RoiCalculator: FC<TProps> = ({
                     value={itValue}
                     max={chartMax}
                     color="var(--lo-green)"
-                    note={`${apps} × ${ROI_ASSUMPTIONS.itHoursSavedPerApp} h × ${formatEur(ROI_ASSUMPTIONS.itHourlyRate)}/h`}
+                    note={`${apps} × ${itHours} h × ${formatEur(itRate)}/h`}
                   />
                 </div>
               </div>
@@ -295,7 +317,7 @@ const RoiCalculator: FC<TProps> = ({
 
               <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
                 <CtaLink
-                  href={data.cta.personalDemoLink}
+                  href={data.cta.requestDemoLink}
                   variant="inverse"
                   size="sm"
                 >
@@ -312,8 +334,8 @@ const RoiCalculator: FC<TProps> = ({
               </div>
               <p className="mt-5 text-[12px] leading-relaxed text-[var(--lo-on-black-dim)]">
                 Illustrative calculation based on your inputs and the
-                Professional tier list price. Excludes the optional managed
-                service add-on.
+                Professional list price. It is a licence-plus-infrastructure
+                sketch, not a quote or a measured ROI.
               </p>
             </div>
           </div>

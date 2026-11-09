@@ -7,6 +7,11 @@ import {
   planDetails,
   pricingPrinciples,
 } from '@/data/plans';
+import {
+  BILLABLE_UNIT,
+  formatEur,
+  TEN_APP_EXAMPLE,
+} from '@/data/pricing';
 import SplitHead from '@/sections/landing/SplitHead';
 import { cn } from '@/lib/utils';
 
@@ -153,7 +158,7 @@ const PricingSection = () => {
                 </p>
               </div>
               <CtaLink
-                href={data.cta.personalDemoLink}
+                href={data.cta.requestDemoLink}
                 variant="secondary"
                 size="sm"
               >
@@ -164,12 +169,135 @@ const PricingSection = () => {
         </div>
       </section>
 
+      {/* Billable unit */}
+      <section id="billable-unit" className="py-16 md:py-24">
+        <div className="container">
+          <Reveal>
+            <SplitHead
+              index="03"
+              kicker="The billable unit"
+              title={
+                <>
+                  Production apps and agents.{' '}
+                  <span className="lo-em">Not seats, not every environment.</span>
+                </>
+              }
+              side={`Ten billable production apps cost ${formatEur(TEN_APP_EXAMPLE.licenceMonthly)}/month in software licensing. That is a calculated licence example, not a complete quote.`}
+            />
+          </Reveal>
+          <Reveal>
+            <div className="lo-ledger grid-cols-1 md:grid-cols-3">
+              {(
+                [
+                  ['Counts as a billable app', BILLABLE_UNIT.counts],
+                  ['Included with a billed app', BILLABLE_UNIT.included],
+                  ['Billed separately', BILLABLE_UNIT.excluded],
+                ] as const
+              ).map(([title, items]) => (
+                <div key={title} className="lo-cell px-6 py-7 md:px-8">
+                  <h3 className="lo-display text-[22px] text-[var(--lo-fg)]">
+                    {title}
+                  </h3>
+                  <ul className="mt-5 flex flex-col divide-y divide-[var(--lo-line)] border-t border-[var(--lo-line)]">
+                    {items.map((item) => (
+                      <li
+                        key={item}
+                        className="py-3 text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Adoption checklist */}
+      <section id="first-deployment" className="bg-[var(--lo-ink-2)] py-16 md:py-24">
+        <div className="container">
+          <Reveal>
+            <SplitHead
+              index="04"
+              kicker="First deployment effort"
+              title={
+                <>
+                  Platform install is not the same as{' '}
+                  <span className="lo-em">production approval.</span>
+                </>
+              }
+              side="Documentation already states single-node sizing. “Less than a day” refers to installing the platform once prerequisites are met — not the entire customer rollout."
+            />
+          </Reveal>
+          <Reveal>
+            <div className="lo-ledger grid-cols-1 md:grid-cols-2">
+              <div className="lo-cell px-6 py-7 md:px-8">
+                <h3 className="lo-display text-[22px] text-[var(--lo-fg)]">
+                  Platform installation
+                </h3>
+                <ul className="mt-5 flex flex-col divide-y divide-[var(--lo-line)] border-t border-[var(--lo-line)] text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+                  <li className="py-3">
+                    Kubernetes-compatible platform, or the documented
+                    single-node evaluation host (16 GB RAM, 8-core CPU, 500 GB
+                    disk — not for production).
+                  </li>
+                  <li className="py-3">
+                    DNS for the platform base domain, SSH with sudo, and
+                    registry credentials.
+                  </li>
+                  <li className="py-3">
+                    With those in place, a Professional environment is typically
+                    installed in less than a day.
+                  </li>
+                </ul>
+              </div>
+              <div className="lo-cell px-6 py-7 md:px-8">
+                <h3 className="lo-display text-[22px] text-[var(--lo-fg)]">
+                  First-app production approval
+                </h3>
+                <ul className="mt-5 flex flex-col divide-y divide-[var(--lo-line)] border-t border-[var(--lo-line)] text-[14.5px] leading-relaxed text-[var(--lo-fg-mut)]">
+                  <li className="py-3">
+                    Identity provider connected; who can deploy vs who can open
+                    the app.
+                  </li>
+                  <li className="py-3">
+                    Network boundary checked; backups configured; a restore or
+                    rollback tested.
+                  </li>
+                  <li className="py-3">
+                    Named technical owner accepts the handoff. Application-level
+                    or AI-model controls that the platform does not provide are
+                    scoped separately.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal>
+            <p className="mt-6 text-[14px] text-[var(--lo-fg-mut)]">
+              Division of responsibility for updates, monitoring, incidents and
+              tested recovery is in the{' '}
+              <CtaLink href="/security" variant="ghost" className="text-[14px]">
+                security pack
+              </CtaLink>{' '}
+              and the{' '}
+              <CtaLink href="/pilot" variant="ghost" className="text-[14px]">
+                one-app pilot
+              </CtaLink>
+              .
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* How pricing scales */}
       <section id="how-it-scales" className="py-16 md:py-24">
         <div className="container">
           <Reveal>
             <SplitHead
-              index="03"
+              index="05"
               kicker="How our pricing scales with your success"
               title={
                 <>

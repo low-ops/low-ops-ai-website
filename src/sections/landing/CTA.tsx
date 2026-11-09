@@ -15,20 +15,20 @@ type TProps = {
   secondaryHref?: string;
 };
 
-/** Default closing CTA site-wide: the value sitting in the IT queue. */
+/** Default closing CTA site-wide: review one blocked app. */
 const CTA: FC<TProps> = ({
-  kicker = 'The ideas waiting on IT',
+  kicker = 'A smaller first decision',
   title = (
     <>
-      See what your organisation is leaving{' '}
-      <span className="lo-em">in the queue.</span>
+      Bring one app.{' '}
+      <span className="lo-em">See it deployed under IT control.</span>
     </>
   ),
-  body = 'A short working session. We look at the innovations stuck behind tickets, what they are worth if they shipped, and how the next three can run on infrastructure you control.',
-  primaryLabel = 'Book a working session',
-  primaryHref = data.cta.shadowAiAuditLink,
-  secondaryLabel = 'Start free with Community',
-  secondaryHref = data.cta.communityLink,
+  body = 'Request a 45-minute working session. We will contact you to schedule, usually within one business day. You should leave having seen one app deployed, its access controlled, and its deployment history reviewed — or a clear reason the stack is not a fit.',
+  primaryLabel = 'Request a demo',
+  primaryHref = data.cta.requestDemoLink,
+  secondaryLabel = 'Install Community',
+  secondaryHref = data.cta.communityPageLink,
 }) => {
   return (
     <section

@@ -144,21 +144,19 @@ const Header: FC<TProps> = ({ classes }) => {
 
             <div className="flex items-center gap-2">
               <a
-                href={data.cta.freeAccessLink}
+                href={data.cta.loginLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden h-10 items-center rounded-[6px] px-4 text-[14px] font-medium text-[var(--lo-fg-mut)] transition-colors hover:text-[var(--lo-fg)] md:inline-flex"
               >
-                Start free
+                Log in
               </a>
-              <a
-                href={data.cta.shadowAiAuditLink}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={data.cta.requestDemoLink}
                 className="inline-flex h-10 items-center rounded-[6px] bg-[var(--lo-fg)] px-4 text-[14px] font-medium text-white transition-colors hover:bg-[var(--lo-accent)]"
               >
-                Book a demo
-              </a>
+                Request a demo
+              </Link>
               <button
                 type="button"
                 onClick={() => setOpen(true)}
@@ -232,14 +230,28 @@ const Header: FC<TProps> = ({ classes }) => {
               </Link>
             ),
           )}
-          <a
-            href={data.cta.shadowAiAuditLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={data.cta.requestDemoLink}
+            onClick={() => setOpen(false)}
             className="mt-8 inline-flex h-12 items-center justify-center rounded-[6px] bg-[var(--lo-fg)] px-5 text-[15px] font-medium text-white"
           >
-            Book a working session
+            Request a demo
+          </Link>
+          <a
+            href={data.cta.loginLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex h-12 items-center justify-center rounded-[6px] border border-[var(--lo-line-strong)] px-5 text-[15px] font-medium text-[var(--lo-fg)]"
+          >
+            Log in
           </a>
+          <Link
+            href={data.cta.communityPageLink}
+            onClick={() => setOpen(false)}
+            className="mt-3 inline-flex h-12 items-center justify-center px-5 text-[15px] font-medium text-[var(--lo-fg-mut)]"
+          >
+            Install Community
+          </Link>
         </nav>
       </div>
     </>

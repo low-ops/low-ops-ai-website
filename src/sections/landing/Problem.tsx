@@ -4,20 +4,20 @@ import SplitHead from './SplitHead';
 
 const SYMPTOMS = [
   {
-    title: 'Ideas left in the queue',
-    body: 'A database, SSO or a hostname waits on the same small team. The business case was ready. The value has not started.',
+    title: 'The app is ready. Production is not.',
+    body: 'A useful internal app or AI prototype exists. Deployment, SSO, hosting or operational ownership is still a ticket.',
   },
   {
-    title: 'Hours that stay manual',
-    body: 'Whatever the app would have saved is still done by hand, every month the idea sits on a ticket.',
+    title: 'IT cannot accept the risk',
+    body: 'Without an owner, an audit trail and a place that already has backups and access control, saying yes is a project.',
   },
   {
-    title: 'The unmaintainable web',
-    body: 'Every experiment that does get out becomes an internal app nobody owns, hosts, secures or backs up properly.',
+    title: 'Shadow tools fill the gap',
+    body: 'Experiments that do get out become apps nobody operates. The hours they were meant to save stay manual.',
   },
   {
-    title: 'The per-seat creator tax',
-    body: 'Low-code and AI tools charge per creator — punishing exactly the experimentation you want to encourage.',
+    title: 'The first buyer is technical',
+    body: 'The business lead is the champion. The IT director or technical CTO authorises the environment and accepts operating responsibility.',
   },
 ];
 
@@ -28,14 +28,15 @@ const Problem: FC = () => {
         <Reveal>
           <SplitHead
             index="01"
-            kicker="The AI adoption bottleneck"
+            kicker="The buying problem"
             title={
               <>
-                Your business has more AI ideas than IT can{' '}
-                <span className="lo-em">safely ship.</span>
+                Useful apps get stuck between the person who builds them and the
+                IT team that must{' '}
+                <span className="lo-em">operate them.</span>
               </>
             }
-            side="Domain experts can now build a working agent or app in an afternoon. Most IT departments are not equipped for that volume, so the ideas wait. Every week in the queue is value the business does not get back. Low-Ops.AI is the road that lets them ship, with IT still in control."
+            side="Low-Ops is for an IT director or technical CTO who already has a working internal app blocked by deployment, access or operational ownership — and a real deadline to get it into production."
           />
         </Reveal>
 
@@ -44,10 +45,10 @@ const Problem: FC = () => {
             {SYMPTOMS.map((s, i) => (
               <li
                 key={s.title}
-                className="lo-cell flex h-full flex-col justify-between gap-10 px-6 py-6 md:min-h-[260px]"
+                className="lo-cell flex h-full flex-col justify-between gap-10 px-6 py-6 md:min-h-[240px]"
               >
                 <span className="lo-label text-[var(--lo-fg-dim)]">
-                  Symptom 0{i + 1}
+                  0{i + 1}
                 </span>
                 <div>
                   <h3 className="lo-display text-[22px] text-[var(--lo-fg)]">
