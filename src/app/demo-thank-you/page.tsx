@@ -2,7 +2,16 @@ import xiwenImage from '@/assets/xiwen-lowops.png';
 import CtaLink from '@/components/CtaLink';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import { pageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Demo request received',
+  description:
+    'Thank you. Low-Ops.AI will contact you to schedule the working session.',
+  path: '/demo-thank-you',
+});
 
 const Page = () => {
   return (

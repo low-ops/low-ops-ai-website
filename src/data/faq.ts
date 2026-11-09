@@ -16,12 +16,12 @@ export const faqDataStrategic: FaqItem[] = [
   {
     title: 'What is Low-Ops.AI in one sentence?',
     description:
-      'Low-Ops.AI is the Internal Developer Platform for the AI era: it lets domain experts build and deploy custom AI agents and web apps at rapid pace, while IT keeps complete oversight, governance and data privacy — on infrastructure you control.',
+      'Low-Ops.AI is the deployment and operations layer for internal apps and AI agents: it automates deployment, SSO, backups and operational visibility while your IT team controls access and infrastructure.',
   },
   {
     title: 'Who is Low-Ops.AI for?',
     description:
-      'Mid-market organisations — typically 100 to 400 employees with dedicated IT leadership — in regulated or data-sensitive sectors such as healthcare, government, pharma, financial services and construction, plus the MSPs and IT consultancies that serve them. That is where the gap between the ideas the business has and the apps IT can ship is widest.',
+      'The first buyer is an IT director or technical CTO with a useful internal app already blocked by deployment, access or operational ownership. The business or automation lead is usually the champion. Mid-market organisations of roughly 100–400 employees with dedicated IT leadership are the typical fit; 400 employees is a recommendation, not an eligibility rule.',
   },
   {
     title: 'What is the cost of ideas that stay in the queue?',
@@ -41,17 +41,17 @@ export const faqDataStrategic: FaqItem[] = [
   {
     title: 'Where does my data live? Do you host the platform?',
     description:
-      'Low-Ops.AI is self-hosted by design: it runs in your private cloud, your on-premises data centre or your own tenancy at any cloud provider. Apps and agents are private by default and reachable only via the corporate network. If you have no internal DevOps capacity, our optional Managed Service add-on lets us run and operate your Low-Ops.AI environment for you — still on infrastructure that stays under your name.',
+      'Low-Ops.AI is self-hosted by design: it runs in your private cloud, data centre or named cloud tenancy. Apps are private by default and reachable only via the corporate network unless you expose them. Self-hosting does not stop an app from calling an external model or API you configure. The optional Managed Service add-on can run on infrastructure in your tenancy or in a private cloud we operate; we agree the tenancy model in writing.',
   },
   {
     title: 'How does pricing work?',
     description:
-      'Software licensing is decoupled from headcount. The Community edition is free and open source. Professional starts at €499 per month, includes the centralised self-service portal, MCP server, automated pipelines and three apps or agents in production; each additional app is €39 per month. Unlimited creators, unlimited experiments — you only pay for the digital employees that actually make it to production.',
+      'Community is free. Professional is €499 per month for three production apps or agents, then €39 per additional production app. Unlimited creators and users. Development and staging for a billed production app are included. Ten production apps are €772/month in software licensing (€499 + seven × €39) — a licence example, not a complete quote. Infrastructure, model/API usage, implementation, managed operations and tax are extra.',
   },
   {
     title: 'How do I calculate the return on investment?',
     description:
-      'Think of each app or agent as a permanent digital employee. If three apps each save one person 40 hours a month at a fully loaded cost of €60 per hour, that is €7,200 of value per month against €499 of platform cost — an ROI above 1,000%. Our ROI calculator on the home page lets you plug in your own numbers.',
+      'The ROI calculator on the pricing page is illustrative. Every assumption is editable, including claimed IT hours saved per app. Prefer your own baseline data. The calculator covers licence plus the infrastructure figure you enter; it does not include implementation, managed operations, model/API usage or tax.',
   },
   {
     title: 'Am I locked in?',
@@ -61,12 +61,12 @@ export const faqDataStrategic: FaqItem[] = [
   {
     title: 'How does Low-Ops.AI help with compliance?',
     description:
-      'It provides the technical controls most frameworks ask for: private, self-hosted deployment for data residency and sovereignty, SSO and role-based access, automated security scanning in every pipeline, backups and complete audit trails. Teams use these to support GDPR, the EU AI Act, NIS2, DORA, ISO 27001 and SOx. Low-Ops.AI is an enabling platform, not a certificate — your processes still matter.',
+      'It provides technical controls many frameworks ask for: self-hosted deployment, SSO, role-based access, pipeline scanning, backups and audit trails. Teams use these to support GDPR, the EU AI Act, NIS2, DORA, ISO 27001 and SOx. Low-Ops.AI is an enabling platform, not a certificate. A deployment does not automatically establish compliance or eliminate vendor concentration risk. See the security pack for control vs customer responsibilities.',
   },
   {
     title: 'I am an MSP or IT consultancy. How do I work with you?',
     description:
-      'You deploy a governed Low-Ops.AI environment per client, pass the Professional licence through and keep the margin on implementation and managed services. Partners receive training, co-marketing and a direct line to our engineers. See our MSP & consultancies solution page or the Partners page to get started.',
+      'You deploy a governed environment per client. The end client holds the Professional licence; you earn on implementation and managed services. Onboarding steps, licence ownership, support escalation and delivery responsibilities are on the Partners page. Apply through the partner intake — not the generic demo form.',
   },
 ];
 
@@ -79,7 +79,7 @@ export const faqDataTechnical: FaqItem[] = [
   {
     title: 'How long does installation take?',
     description:
-      'With the requirements in place, a Professional environment is installed in less than a day. Domain experts can deploy their first app the same afternoon.',
+      'With the documented prerequisites in place, installing the platform itself is typically less than a day. That is not a guarantee for the whole customer rollout. First-app production approval — identity, network boundary, backups, ownership and a tested restore — is a separate checklist. See Community evaluation for single-node sizing and the pilot page for acceptance criteria.',
   },
   {
     title: 'What does a domain expert actually need to know?',

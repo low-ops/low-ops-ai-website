@@ -1,5 +1,15 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import { COMPANY, companyAddress } from '@/data/company';
+import { pageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = pageMetadata({
+  title: 'License agreement',
+  description: `Low-Ops.AI licence agreement issued by ${COMPANY.legalName}. Governs the proprietary portal and paid software. Community and open-source components are licensed separately.`,
+  path: '/license-agreement',
+});
 
 const LicenseAgreementPage = () => {
   return (
@@ -7,150 +17,177 @@ const LicenseAgreementPage = () => {
       <Header />
       <main className="min-h-screen w-full pt-[120px] pb-[40px]">
         <div className="container">
-          <h1 className="text-3xl font-medium text-center mb-10">
-            Low-Ops License Agreement
+          <h1 className="mb-4 text-center text-3xl font-medium">
+            Low-Ops.AI License Agreement
           </h1>
-
-          <h6 className="text-xl font-bold mb-2">1. Acceptance of Terms</h6>
-          <p className="mb-8 font-normal text-base">
-            By accessing and using LowOps Portal (the &apos;Service&apos;), you
-            acknowledge that you have read, understood, and agree to be bound by
-            these Terms and Conditions. If you do not agree to these terms,
-            please do not use the Service. We reserve the right to modify these
-            terms at any time, and such modifications shall be effective
-            immediately upon posting on the Service. Your continued use of the
-            Service following any modifications indicates your acceptance of the
-            modified terms.
+          <p className="mb-10 text-center text-[15px] text-[var(--lo-fg-mut)]">
+            Last updated: 9 November 2026 · Issued by {COMPANY.legalName}
           </p>
 
-          <h6 className="text-xl font-bold mb-2">
-            2. License Usage and Restrictions
-          </h6>
-          <p className="mb-3 font-normal text-base">
-            2.1. The license key provided is for use on a single domain only.
-            You may not transfer, sell, lease, rent, share, or otherwise make
-            available your license key to any third parties.
-          </p>
-          <p className="mb-3 font-normal text-base">
-            2.2. You agree not to modify, reverse engineer, decompile, or
-            attempt to extract the source code of the Service or any part
-            thereof.
-          </p>
-          <p className="mb-3 font-normal text-base">
-            2.3. You shall not use the Service for any illegal or unauthorized
-            purpose nor may you, in the use of the Service, violate any laws in
-            your jurisdiction.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            2.4. Multiple installations or usage on different domains requires
-            separate license purchases.
-          </p>
+          <div className="prose mx-auto max-w-4xl md:prose-md">
+            <p>
+              This agreement governs the proprietary {COMPANY.product}{' '}
+              Professional and Enterprise software, including the self-service
+              portal (the &apos;Service&apos;), issued by {COMPANY.legalName}.
+              The Community edition, published install charts, app templates and
+              third-party open-source components are licensed under their own
+              terms and are not rewritten by the source-code restrictions below.
+              A{' '}
+              <Link href="/licensing">
+                commercial explanation of environments, partners and
+                cancellation
+              </Link>{' '}
+              is published separately; if that summary and this agreement
+              differ, this agreement prevails.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">
-            3. User Responsibilities and Account Security
-          </h6>
-          <p className="mb-3 font-normal text-base">
-            3.1. You are responsible for maintaining the confidentiality of your
-            license key and account information.
-          </p>
-          <p className="mb-3 font-normal text-base">
-            3.2. You are responsible for all activities that occur under your
-            account or license key.
-          </p>
-          <p className="mb-3 font-normal text-base">
-            3.3. You must immediately notify us of any unauthorized use of your
-            account or any other breach of security.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            3.4. You agree to provide accurate, current, and complete
-            information during the registration process and to update such
-            information to keep it accurate, current, and complete.
-          </p>
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing and using the Service, you acknowledge that you have
+              read, understood, and agree to be bound by these terms. If you do
+              not agree, do not use the Service. We may modify these terms; the
+              modified terms take effect when posted on this page. Continued
+              use after posting indicates acceptance.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">
-            4. Service Availability and Updates
-          </h6>
-          <p className="mb-8 font-normal text-base">
-            4.1. While we strive to provide uninterrupted service, we do not
-            guarantee that the service will be available at all times. We may
-            experience hardware, software, or other problems resulting in
-            interruptions, delays, or errors.
-          </p>
-          <h6 className="text-xl font-bold mb-2">
-            4.2. We reserve the right to modify, suspend, or discontinue the
-            Service at any time with or without notice.
-          </h6>
-          <p className="mb-8 font-normal text-base">
-            4.3. We may perform maintenance or updates that could cause
-            temporary interruptions to the Service.
-          </p>
+            <h2>2. License Usage and Restrictions</h2>
+            <p>
+              2.1. The licence key is for a single customer installation of the
+              Service. Development, staging and production environments that
+              belong to that same organisation count as one licensed
+              installation. You may not transfer, sell, lease, rent, share, or
+              otherwise make the licence key available to third parties.
+            </p>
+            <p>
+              2.2. Additional organisations, white-label client productions, or
+              production use on a different domain than the licensed
+              installation require a separate licence.
+            </p>
+            <p>
+              2.3. You agree not to modify, reverse engineer, decompile, or
+              attempt to extract the source code of the proprietary Service.
+              This restriction does not apply to Community artefacts or
+              third-party open-source software distributed under their own
+              licences.
+            </p>
+            <p>
+              2.4. You shall not use the Service for any illegal or unauthorised
+              purpose, nor violate applicable law.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">
-            5. Privacy and Data Protection
-          </h6>
-          <p className="mb-3 font-normal text-base">
-            5.1. Your use of LowOps Portal is also governed by our Privacy
-            Policy, which is incorporated into these Terms by reference.
-          </p>
-          <p className="mb-3 font-normal text-base">
-            5.2. We collect and process personal data in accordance with our
-            Privacy Policy and applicable data protection laws.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            5.3. You retain all rights to your data. We will not share or sell
-            your personal information to third parties except as described in
-            our Privacy Policy.
-          </p>
+            <h2>3. User Responsibilities and Account Security</h2>
+            <p>
+              3.1. You are responsible for maintaining the confidentiality of
+              your licence key and account information.
+            </p>
+            <p>
+              3.2. You are responsible for all activities that occur under your
+              account or licence key.
+            </p>
+            <p>
+              3.3. You must immediately notify us of any unauthorised use of
+              your account or any other breach of security.
+            </p>
+            <p>
+              3.4. You agree to provide accurate, current, and complete
+              information during registration and to keep it updated.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">
-            6. Intellectual Property Rights
-          </h6>
-          <p className="mb-3 font-normal text-base">
-            6.1. The Service and its original content, features, and
-            functionality are owned by LowOps and are protected by international
-            copyright, trademark, patent, trade secret, and other intellectual
-            property laws.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            6.2. You may not copy, modify, create derivative works of, publicly
-            display, publicly perform, republish, download, store, or transmit
-            any materials from the Service without our explicit consent.
-          </p>
+            <h2>4. Service Availability and Updates</h2>
+            <p>
+              4.1. We strive to provide reliable software. We do not guarantee
+              that the Service will be available at all times. Hardware,
+              software or network issues at your site, or ours, may cause
+              interruptions, delays or errors.
+            </p>
+            <p>
+              4.2. We may modify, suspend, or discontinue the Service. Material
+              discontinuance of a paid tier will be communicated to current
+              licensees.
+            </p>
+            <p>
+              4.3. Maintenance or updates may cause temporary interruptions.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">7. Limitation of Liability</h6>
-          <p className="mb-3 font-normal text-base">
-            7.1. In no event shall LowOps, its directors, employees, partners,
-            agents, suppliers, or affiliates be liable for any indirect,
-            incidental, special, consequential, or punitive damages.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            7.2. Our liability is limited to the maximum extent permitted by law
-            and shall not exceed the amount paid by you, if any, for accessing
-            the Service.
-          </p>
+            <h2>5. Privacy and Data Protection</h2>
+            <p>
+              5.1. Use of the Service is also governed by our{' '}
+              <Link href="/privacy-policy">Privacy Policy</Link>.
+            </p>
+            <p>
+              5.2. We collect and process personal data in accordance with that
+              policy and applicable data protection law, including Dutch and EU
+              law.
+            </p>
+            <p>
+              5.3. You retain rights to your data. Self-hosting means
+              application data is stored in the environment you control, subject
+              to integrations you configure. See the{' '}
+              <Link href="/security">security pack</Link>.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">8. Termination</h6>
-          <p className="mb-3 font-normal text-base">
-            8.1. We may terminate or suspend your access to the Service
-            immediately, without prior notice or liability, for any reason.
-          </p>
-          <p className="mb-8 font-normal text-base">
-            8.2. Upon termination, your right to use the Service will
-            immediately cease.
-          </p>
+            <h2>6. Intellectual Property Rights</h2>
+            <p>
+              6.1. The Service and its original content, features and
+              functionality are owned by {COMPANY.legalName} and protected by
+              applicable intellectual property law.
+            </p>
+            <p>
+              6.2. You may not copy, modify, create derivative works of,
+              publicly display, republish, download, store or transmit
+              proprietary materials from the Service without our consent, except
+              as this agreement or an open-source licence expressly allows.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">9. Governing Law</h6>
-          <p className="mb-8 font-normal text-base">
-            These Terms shall be governed by and construed in accordance with
-            the laws of [Your Jurisdiction], without regard to its conflict of
-            law provisions.
-          </p>
+            <h2>7. Limitation of Liability</h2>
+            <p>
+              7.1. To the maximum extent permitted by law, {COMPANY.legalName},
+              its directors, employees, partners, agents, suppliers or
+              affiliates shall not be liable for any indirect, incidental,
+              special, consequential or punitive damages.
+            </p>
+            <p>
+              7.2. Our aggregate liability shall not exceed the amount paid by
+              you for the Service in the twelve months before the claim.
+              Mandatory rights under Dutch law are unaffected.
+            </p>
 
-          <h6 className="text-xl font-bold mb-2">10. Contact Information</h6>
-          <p className="mb-3 font-normal text-base">
-            For any questions about these Terms, please contact us at
-            [contact@email.com].
-          </p>
+            <h2>8. Termination and continuity</h2>
+            <p>
+              8.1. We may terminate or suspend access for material breach,
+              including licence-key sharing, after notice where reasonably
+              practicable.
+            </p>
+            <p>
+              8.2. On termination of a paid licence, the right to use
+              proprietary portal features ceases. Workloads remain ordinary
+              containers; Community and open-source components remain usable
+              under their own licences. Export of your data is your
+              responsibility.
+            </p>
+
+            <h2>9. Governing Law</h2>
+            <p>
+              These terms are governed by the laws of {COMPANY.jurisdiction},
+              without regard to conflict-of-law provisions. Courts of Rotterdam
+              have jurisdiction, without prejudice to mandatory consumer or
+              employment venues.
+            </p>
+
+            <h2>10. Contact Information</h2>
+            <p>
+              For questions about these terms, contact {COMPANY.legalName} at{' '}
+              <a href={`mailto:${COMPANY.legalEmail}`}>
+                {COMPANY.legalEmail}
+              </a>
+              .
+            </p>
+            <p>
+              {COMPANY.legalName} · KvK {COMPANY.kvk}
+              <br />
+              {companyAddress}
+            </p>
+          </div>
         </div>
       </main>
       <Footer />

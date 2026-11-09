@@ -63,7 +63,7 @@ export type Industry = {
   };
 };
 
-const AUDIT_LABEL = 'Book a working session';
+const AUDIT_LABEL = 'Request a demo';
 
 export const industries: Industry[] = [
   {
@@ -423,7 +423,7 @@ export const industries: Industry[] = [
       },
       {
         title: '100% self-hosted, in-region',
-        body: 'Runs on your own infrastructure or private cloud. IP and GxP data never leave your boundary.',
+        body: 'Runs on your own infrastructure or private cloud. IP and GxP data stay in that environment unless you explicitly configure an external service.',
       },
     ],
     cta: {
@@ -443,7 +443,7 @@ export const industries: Industry[] = [
     icon: Banknote,
     seo: {
       title:
-        'Low-Ops.AI for Financial Services — DORA-ready, self-hosted AI platform',
+        'Low-Ops.AI for Financial Services — self-hosted AI with controls that support DORA',
       description:
         'Let operations, risk and client teams build and deploy governed AI agents and web apps on your own infrastructure. Audit trails by default, SSO, resilience built in. Pay per app — never per seat.',
     },
@@ -452,7 +452,7 @@ export const industries: Industry[] = [
       title: 'Innovate like a fintech.',
       titleEm: 'Govern like a bank.',
       subtitle:
-        'Operations, risk, compliance and client teams have a backlog of AI ideas. Low-Ops.AI gives them a governed self-service portal to build and deploy agents and web apps on your own infrastructure — with full audit trails, SSO and the operational resilience DORA expects.',
+        'Operations, risk, compliance and client teams have a backlog of AI ideas. Low-Ops.AI gives them a governed self-service portal to build and deploy agents and web apps on your own infrastructure — with audit trails, SSO and technical controls teams use to support DORA. The platform is not a DORA certificate.',
       chipsLabel: 'Supports your obligations under',
       chips: ['DORA', 'GDPR', 'EU AI Act', 'SOx', 'ISO 27001', 'PCI DSS'],
       primaryLabel: AUDIT_LABEL,
@@ -541,7 +541,7 @@ export const industries: Industry[] = [
       },
       {
         title: 'Self-hosted, in your jurisdiction',
-        body: 'Your private cloud or data centre. Portable thanks to an open-source core — no concentration risk on a single vendor.',
+        body: 'Your private cloud or data centre. An open-source core reduces lock-in. It does not, by itself, eliminate ICT concentration or third-party risk.',
       },
     ],
     testimonial: {

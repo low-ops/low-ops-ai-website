@@ -5,8 +5,8 @@ import SplitHead from './SplitHead';
 const PILLARS = [
   {
     n: '01',
-    title: 'Absolute data privacy',
-    body: 'Web apps and agents are private by default, reachable only via the corporate network. 100% self-hosted capability ensures data never leaves the organisation.',
+    title: 'Customer-controlled hosting',
+    body: 'Web apps and agents are private by default, reachable only via the corporate network. Self-hosting keeps platform data stores in your environment; apps can still call external services you configure.',
   },
   {
     n: '02',

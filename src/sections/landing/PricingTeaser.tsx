@@ -17,7 +17,7 @@ const TIERS = [
       'Manual configuration',
       'Community support',
     ],
-    cta: { label: 'Get the code', href: data.cta.communityLink },
+    cta: { label: 'See evaluation prerequisites', href: data.cta.communityPageLink },
     highlight: false,
   },
   {
@@ -33,7 +33,7 @@ const TIERS = [
       'Unlimited creators — no seat tax',
       'SSO, backups & Day-2 ops automated',
     ],
-    cta: { label: 'Book a demo', href: data.cta.personalDemoLink },
+    cta: { label: 'Request a demo', href: data.cta.requestDemoLink },
     highlight: true,
   },
   {
@@ -47,7 +47,7 @@ const TIERS = [
       'Upgrades, monitoring & recovery handled',
       'Ideal for MSP-delivered client platforms',
     ],
-    cta: { label: 'Talk to us', href: data.cta.personalDemoLink },
+    cta: { label: 'Talk to us', href: data.cta.requestDemoLink },
     highlight: false,
   },
 ];
@@ -61,14 +61,15 @@ const PricingTeaser: FC = () => {
       <div className="container">
         <Reveal>
           <SplitHead
-            index="08"
-            kicker="Pricing"
+            index="04"
+            kicker="Price and responsibilities"
             title={
               <>
-                Pay for value. <span className="lo-em">Never for seats.</span>
+                Pay per production app.{' '}
+                <span className="lo-em">Never per seat.</span>
               </>
             }
-            side="Software licensing decoupled from headcount. Let everyone experiment; pay only for the apps and agents that make it to production. Start free with the Community edition, or go straight to the governed Professional tier."
+            side="Professional is €499/month for three production apps or agents, then €39 per additional production app. Unlimited creators and users. Staging and development for a billed production app are included. Infrastructure, model/API usage, implementation and optional managed operations are separate."
           />
         </Reveal>
 
@@ -167,13 +168,31 @@ const PricingTeaser: FC = () => {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <p className="mt-6 text-[14px] text-[var(--lo-fg-mut)]">
-            Need air-gapped deployment, volume pricing or a dedicated SLA?{' '}
-            <CtaLink href="/pricing" variant="ghost" className="text-[14px]">
-              Compare all tiers
-            </CtaLink>
-          </p>
+        <Reveal delay={0.08}>
+          <div className="mt-6 rounded-[8px] border border-[var(--lo-line-strong)] bg-[var(--lo-surface)] px-6 py-5 md:px-8">
+            <p className="text-[14.5px] leading-relaxed text-[var(--lo-fg)]">
+              Worked licence example, not a quote: ten billable production apps
+              cost{' '}
+              <strong>
+                {formatEur(
+                  PRICING.professionalMonthly +
+                    7 * PRICING.additionalAppMonthly,
+                )}
+                /month
+              </strong>{' '}
+              in software licensing ({formatEur(PRICING.professionalMonthly)}{' '}
+              plus seven additional apps at{' '}
+              {formatEur(PRICING.additionalAppMonthly)}). Taxes, infrastructure
+              and services are extra.
+            </p>
+            <p className="mt-3 text-[14px] text-[var(--lo-fg-mut)]">
+              The 400-employee Enterprise description is a recommendation, not
+              an eligibility rule.{' '}
+              <CtaLink href="/pricing" variant="ghost" className="text-[14px]">
+                Billable unit, checklist and all tiers
+              </CtaLink>
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>

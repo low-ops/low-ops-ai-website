@@ -1,5 +1,14 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import { pageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Privacy policy',
+  description:
+    'How CINAQ B.V. collects, uses and protects personal information on low-ops.ai, including demo and evaluation requests.',
+  path: '/privacy-policy',
+});
 
 const PrivacyPolicyPage = () => {
   return (

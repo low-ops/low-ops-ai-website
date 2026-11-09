@@ -24,7 +24,7 @@ const Industries: FC<TProps> = ({
       <span className="lo-em">isn&rsquo;t optional.</span>
     </>
   ),
-  side = 'Mid-market organisations in regulated and data-sensitive sectors feel the queue first: more ideas than IT can ship. See how Low-Ops.AI fits the way your industry works.',
+  side = 'Mid-market organisations of roughly 100–400 employees, with dedicated IT leadership, feel the queue first. Industry pages explain the fit; named customer proof is strongest in financial services and Mendix private-cloud operations.',
 }) => {
   const items = industries.filter((i) => i.slug !== excludeSlug);
 

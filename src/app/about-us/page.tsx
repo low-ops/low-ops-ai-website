@@ -2,11 +2,16 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SectionHero from '@/components/SectionHero';
 import { aboutMetadata } from '@/data/about-us';
+import { pageMetadata } from '@/lib/metadata';
 import AboutUsSection from '@/sections/about-us/AboutUsSection';
 import CTASection from '@/sections/cta/CTASection';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = aboutMetadata;
+export const metadata: Metadata = pageMetadata({
+  title: aboutMetadata.title,
+  description: aboutMetadata.description,
+  path: '/about-us',
+});
 
 const AboutUsPage = () => {
   return (

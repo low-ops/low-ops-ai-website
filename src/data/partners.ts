@@ -25,7 +25,26 @@ export const partnerBenefits = [
   },
   {
     title: 'Enablement, not just a reseller agreement',
-    body: 'Technical training for your engineers, co-marketing around the ideas waiting on IT and the ROI calculator, and a direct line to the team that builds the platform.',
+    body: 'Technical training for your engineers, co-marketing, and a direct line to the team that builds the platform. The operating details — onboarding, licence ownership, support and delivery — are listed below.',
+  },
+];
+
+export const partnerOperating = [
+  {
+    title: 'Onboarding',
+    body: '1) Apply through the partner intake. 2) We confirm fit and run technical enablement. 3) You register the first named client opportunity with us in writing before the pitch. 4) You install a Professional environment in the client tenancy and complete a one-app handoff.',
+  },
+  {
+    title: 'Client-licence ownership',
+    body: 'The end client is the licensee of the Professional (or Enterprise) software. Partners do not share or reuse a client licence key across customers. Development, staging and production for that client count as one licensed installation.',
+  },
+  {
+    title: 'Delivery responsibilities',
+    body: 'You own implementation, first-app configuration and (if contracted) managed operations. We own the product, patches to the platform, and partner engineering support. Application-level security and AI-model controls remain a separately scoped workstream.',
+  },
+  {
+    title: 'Support escalation',
+    body: 'The client’s first line is the partner. The partner escalates platform defects to Low-Ops.AI engineering. There is no public deal-registration portal yet — email hello@low-ops.ai to register an opportunity. We will not invent rules we do not operate.',
   },
 ];
 
