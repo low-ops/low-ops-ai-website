@@ -2,6 +2,9 @@ import { sitemapPaths } from '@/data/routes';
 import { SITE_URL } from '@/data/seo';
 import type { MetadataRoute } from 'next';
 
+/** Required for GitHub Pages (`output: 'export'`). */
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return sitemapPaths.map((path) => ({
     url: path === '/' ? SITE_URL : `${SITE_URL}${path}`,
